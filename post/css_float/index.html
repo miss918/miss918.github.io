@@ -1,0 +1,1088 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="浮动的简介
+浮动的作用
+通过浮动可以使一个元素向其父元素的左侧或右侧移动
+设置浮动
+
+使用 float 属性来设置于元素的浮动
+可选值：
+
+none 默认值 ，元素不浮动
+left 元素向左浮动
+right 元素向右浮动
+
+
+注意，元素设置..." />
+    <meta name="keywords" content="HTML" />
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
+              
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    <title>Miss918</title>
+</head>
+
+<body>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div class="nav-large">
+            <div class="row">
+                <div class="side"><html>
+
+<head>
+    <link rel="stylesheet" href="https://miss918.github.io/styles/main.css">
+    <meta name="description" content="少管闲事,做好自己" />
+    <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://miss918.github.io/images/avatar.png?v=1589500701615" class="avatar">
+        </div>
+        <div class="sitename">Miss918</div>
+        <span class="describtion" data-text='["少管闲事,做好自己"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        
+        <a onclick="showqq()"><i><img class="icon" src="https://miss918.github.io/media/images/QQ.png" alt=""></i></a>
+        
+        
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none">544465786</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="/" class="menubutton">
+            首页
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/archives" class="menubutton">
+            归档
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/tags" class="menubutton">
+            标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/post/about" class="menubutton">
+            关于
+        </a>
+    </div>
+    
+    
+    
+        <div class="mchocie describtion">
+            <a href="https://miss918.github.io/friends" class="menubutton">友人帐</a>
+        </div>
+    
+    <hr>
+    <div id="footinfo">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | Theme: <a href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    <div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div>
+    <div id="cussitetime" style="display:none">07/05/2020</div>
+    </div>
+</body>
+
+</html>
+<script src="https://miss918.github.io/media/js/wordshow.js"></script>
+<script>
+    //----------------------站点运行时间
+    var now = new Date();
+
+    function createtime() {
+        var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+        var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+            snum = "0" + snum;
+        }
+        document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+        document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            console.log(arrItems);
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            alert("博主的QQ联系方式为：" + qq);
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script></div>
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div id="main" class="col-xs-12 col-sm-7">
+                    <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-13</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 7 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/MSWz_4w_dA/" class="postlink">
+                        <i class="fa fa-tag"></i> HTML
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>CSS浮动（float）</h2>
+            </div>
+            <div class="text ">
+                <h1 id="浮动的简介">浮动的简介</h1>
+<h2 id="浮动的作用">浮动的作用</h2>
+<p>通过浮动可以使一个元素向其父元素的左侧或右侧移动</p>
+<h2 id="设置浮动">设置浮动</h2>
+<ul>
+<li>使用 float 属性来设置于元素的浮动</li>
+<li>可选值：
+<ul>
+<li>none 默认值 ，元素不浮动</li>
+<li>left 元素向左浮动</li>
+<li>right 元素向右浮动</li>
+</ul>
+</li>
+<li>注意，元素设置浮动以后，水平布局的等式便不需要强制成立<br>
+元素设置浮动以后，会完全从文档流中脱离，不再占用文档流的位置，所以元素下边的还在文档流中的元素会自动向上移动：</li>
+</ul>
+<h2 id="浮动的特点">浮动的特点</h2>
+<ol>
+<li>浮动元素会完全脱离文档流，不再占据文档流中的位置</li>
+<li>设置浮动以后元素会向父元素的左侧或右侧移动</li>
+<li>浮动元素默认不会从父元素中移出</li>
+<li>浮动元素向左或向右移动时，不会超过它前边的其他浮动元素</li>
+<li>如果浮动元素的上边是一个没有浮动的块元素，则浮动元素无法上移</li>
+<li>浮动元素不会超过它上边的浮动的兄弟元素，最多最多就是和它一样高</li>
+<li>浮动元素不会盖住文字，文字会自动环绕在浮动元素的周围，所以我们可以利用浮动来设置文字环绕图片的效果</li>
+<li>元素设置浮动以后，将会从文档流中脱离，从文档流中脱离后，元素的一些特点也会发生变化</li>
+</ol>
+<h3 id="脱离文档流的特点">脱离文档流的特点：</h3>
+<ul>
+<li>块元素：
+<ol>
+<li>块元素不在独占页面的一行</li>
+<li>脱离文档流以后，块元素的宽度和高度默认都被内容撑开</li>
+</ol>
+</li>
+<li>行内元素：
+<ul>
+<li>行内元素脱离文档流以后会变成块元素，特点和块元素一样</li>
+</ul>
+</li>
+<li>脱离文档流以后，不需要再区分块和行内了</li>
+</ul>
+<h2 id="浮动的应用">浮动的应用</h2>
+<p>浮动目前来讲它的主要作用就是让页面中的元素可以水平排列，通过浮动可以制作一些水平方向的布局</p>
+<h2 id="网页的布局">网页的布局</h2>
+<p>经典网页布局：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+    header,
+    main,
+    footer {
+        width: 1000px;
+        margin: 0 auto;
+}
+
+      /* 设置头部 */
+    header {
+        height: 150px;
+        background-color: silver;
+    }
+
+      /* 设置主体 */
+    main {
+        height: 500px;
+        background-color: #bfa;
+        margin: 10px auto;
+    }
+
+    nav,
+    article,
+    aside {
+        float: left;
+        height: 100%;
+    }
+
+      /* 设置左侧的导航 */
+    nav {
+        width: 200px;
+        background-color: yellow;
+    }
+
+      /* 设置中间的内容 */
+    article {
+        width: 580px;
+        background-color: orange;
+        margin: 0 10px;
+    }
+
+      /* 设置右侧的内容 */
+    aside {
+        width: 200px;
+        background-color: pink;
+    }
+
+      /* 设置底部 */
+    footer {
+        height: 150px;
+        background-color: tomato;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 创建头部 --&gt;
+    &lt;header&gt;&lt;/header&gt;
+
+    &lt;!-- 创建网页的主体 --&gt;
+    &lt;main&gt;
+    &lt;!-- 左侧导航 --&gt;
+    &lt;nav&gt;&lt;/nav&gt;
+
+    &lt;!-- 中间的内容 --&gt;
+    &lt;article&gt;&lt;/article&gt;
+
+    &lt;!-- 右边的边栏 --&gt;
+    &lt;aside&gt;&lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;!-- 网页的底部 --&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="高度塌陷问题">高度塌陷问题</h1>
+<h2 id="成因">成因</h2>
+<ol>
+<li>在浮动布局中，父元素的高度默认是被子元素撑开的，</li>
+<li>当子元素浮动后，其会完全脱离文档流，子元素从文档流中脱离，将会无法撑起父元素的高度，导致父元素的高度丢失</li>
+<li>父元素高度丢失以后，其下的元素会自动上移，导致页面的布局混乱</li>
+<li>所以高度塌陷是浮动布局中比较常见的一个问题，这个问题我们必须要进行处理！</li>
+</ol>
+<h2 id="解决方法">解决方法</h2>
+<h3 id="bfcblock-formatting-context-块级格式化环境">BFC(Block Formatting Context) 块级格式化环境</h3>
+<ul>
+<li>BFC是一个CSS中的一个隐含的属性，可以为一个元素开启BFC,开启BFC该元素会变成一个独立的布局区域</li>
+<li>元素开启BFC后的特点：
+<ol>
+<li>开启BFC的元素不会被浮动元素所覆盖</li>
+<li>开启BFC的元素子元素和父元素外边距不会重叠</li>
+<li>开启BFC的元素可以包含浮动的子元素</li>
+</ol>
+</li>
+<li>可以通过一些特殊方式来开启元素的BFC：
+<ol>
+<li>设置元素的浮动（不推荐）</li>
+<li>将元素设置为行内块元素（不推荐）</li>
+<li>将元素的overflow设置为一个非visible的值，常用的方式为元素设置 overflow:hidden 开启其BFC 以使其可以包含浮动元素</li>
+</ol>
+</li>
+</ul>
+<h3 id="clear">clear</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+    div {
+        font-size: 50px;
+    }
+
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: #bfa;
+        float: left;
+    }
+
+    .box2 {
+        width: 400px;
+        height: 150px;
+        background-color: #ff0;
+        float: right;
+    }
+
+    .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        clear: both;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box2&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box3&quot;&gt;3&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>由于box1的浮动，导致box3位置上移, 也就是box3收到了box1浮动的影响，位置发生了改变,如果我们不希望某个元素因为其他元素浮动的影响而改变位置，</li>
+<li>可以通过clear属性来清除浮动元素对当前元素所产生的影响</li>
+<li>clear
+<ul>
+<li>作用：清除浮动元素对当前元素所产生的影响</li>
+<li>可选值：
+<ul>
+<li>left 清除左侧浮动元素对当前元素的影响</li>
+<li>right 清除右侧浮动元素对当前元素的影响</li>
+<li>both 清除两侧中最大影响的那侧<br>
+原理：<br>
+设置清除浮动以后，浏览器会自动为元素添加一个上外边距，以使其位置不受其他元素的影响</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="高度塌陷的最终解决方案">高度塌陷的最终解决方案</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        /* .box1::before{
+            content: '';
+            display: table;
+        } */
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 100px;
+        }
+
+/* clearfix 这个样式可以同时解决高度塌陷和外边距重叠的问题，当你在遇到这些问题时，直接使用clearfix这个类即可 */
+        .clearfix::before,
+        .clearfix::after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;div class=&quot;box1 clearfix&quot;&gt;
+        &lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+                    <div name="comment" style="background: white">
+                        <div class="commentcontainer">
+                            
+                            <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="toc-container">
+                    <ul class="markdownIt-TOC">
+<li><a href="#%E6%B5%AE%E5%8A%A8%E7%9A%84%E7%AE%80%E4%BB%8B">浮动的简介</a>
+<ul>
+<li><a href="#%E6%B5%AE%E5%8A%A8%E7%9A%84%E4%BD%9C%E7%94%A8">浮动的作用</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E6%B5%AE%E5%8A%A8">设置浮动</a></li>
+<li><a href="#%E6%B5%AE%E5%8A%A8%E7%9A%84%E7%89%B9%E7%82%B9">浮动的特点</a>
+<ul>
+<li><a href="#%E8%84%B1%E7%A6%BB%E6%96%87%E6%A1%A3%E6%B5%81%E7%9A%84%E7%89%B9%E7%82%B9">脱离文档流的特点：</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B5%AE%E5%8A%A8%E7%9A%84%E5%BA%94%E7%94%A8">浮动的应用</a></li>
+<li><a href="#%E7%BD%91%E9%A1%B5%E7%9A%84%E5%B8%83%E5%B1%80">网页的布局</a></li>
+</ul>
+</li>
+<li><a href="#%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98">高度塌陷问题</a>
+<ul>
+<li><a href="#%E6%88%90%E5%9B%A0">成因</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95">解决方法</a>
+<ul>
+<li><a href="#bfcblock-formatting-context-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%8E%AF%E5%A2%83">BFC(Block Formatting Context) 块级格式化环境</a></li>
+<li><a href="#clear">clear</a></li>
+<li><a href="#%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E7%9A%84%E6%9C%80%E7%BB%88%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">高度塌陷的最终解决方案</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                </div>
+            </div>
+        </div>
+        <div id="bg">
+        </div>
+        <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
+    </div>
+    <!-- 响应式布局，针对手机端内容显示 -->
+    <div class="nav-small">
+        <head>
+
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Miss918&nbsp;&nbsp;|</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="/">
+              首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives">
+              归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags">
+              标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              关于
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://miss918.github.io/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- 引入BootStrap核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+        <div style="margin-top:30px"></div>
+        <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-13</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 7 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/MSWz_4w_dA/" class="postlink">
+                        <i class="fa fa-tag"></i> HTML
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>CSS浮动（float）</h2>
+            </div>
+            <div class="text ">
+                <h1 id="浮动的简介">浮动的简介</h1>
+<h2 id="浮动的作用">浮动的作用</h2>
+<p>通过浮动可以使一个元素向其父元素的左侧或右侧移动</p>
+<h2 id="设置浮动">设置浮动</h2>
+<ul>
+<li>使用 float 属性来设置于元素的浮动</li>
+<li>可选值：
+<ul>
+<li>none 默认值 ，元素不浮动</li>
+<li>left 元素向左浮动</li>
+<li>right 元素向右浮动</li>
+</ul>
+</li>
+<li>注意，元素设置浮动以后，水平布局的等式便不需要强制成立<br>
+元素设置浮动以后，会完全从文档流中脱离，不再占用文档流的位置，所以元素下边的还在文档流中的元素会自动向上移动：</li>
+</ul>
+<h2 id="浮动的特点">浮动的特点</h2>
+<ol>
+<li>浮动元素会完全脱离文档流，不再占据文档流中的位置</li>
+<li>设置浮动以后元素会向父元素的左侧或右侧移动</li>
+<li>浮动元素默认不会从父元素中移出</li>
+<li>浮动元素向左或向右移动时，不会超过它前边的其他浮动元素</li>
+<li>如果浮动元素的上边是一个没有浮动的块元素，则浮动元素无法上移</li>
+<li>浮动元素不会超过它上边的浮动的兄弟元素，最多最多就是和它一样高</li>
+<li>浮动元素不会盖住文字，文字会自动环绕在浮动元素的周围，所以我们可以利用浮动来设置文字环绕图片的效果</li>
+<li>元素设置浮动以后，将会从文档流中脱离，从文档流中脱离后，元素的一些特点也会发生变化</li>
+</ol>
+<h3 id="脱离文档流的特点">脱离文档流的特点：</h3>
+<ul>
+<li>块元素：
+<ol>
+<li>块元素不在独占页面的一行</li>
+<li>脱离文档流以后，块元素的宽度和高度默认都被内容撑开</li>
+</ol>
+</li>
+<li>行内元素：
+<ul>
+<li>行内元素脱离文档流以后会变成块元素，特点和块元素一样</li>
+</ul>
+</li>
+<li>脱离文档流以后，不需要再区分块和行内了</li>
+</ul>
+<h2 id="浮动的应用">浮动的应用</h2>
+<p>浮动目前来讲它的主要作用就是让页面中的元素可以水平排列，通过浮动可以制作一些水平方向的布局</p>
+<h2 id="网页的布局">网页的布局</h2>
+<p>经典网页布局：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+    header,
+    main,
+    footer {
+        width: 1000px;
+        margin: 0 auto;
+}
+
+      /* 设置头部 */
+    header {
+        height: 150px;
+        background-color: silver;
+    }
+
+      /* 设置主体 */
+    main {
+        height: 500px;
+        background-color: #bfa;
+        margin: 10px auto;
+    }
+
+    nav,
+    article,
+    aside {
+        float: left;
+        height: 100%;
+    }
+
+      /* 设置左侧的导航 */
+    nav {
+        width: 200px;
+        background-color: yellow;
+    }
+
+      /* 设置中间的内容 */
+    article {
+        width: 580px;
+        background-color: orange;
+        margin: 0 10px;
+    }
+
+      /* 设置右侧的内容 */
+    aside {
+        width: 200px;
+        background-color: pink;
+    }
+
+      /* 设置底部 */
+    footer {
+        height: 150px;
+        background-color: tomato;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 创建头部 --&gt;
+    &lt;header&gt;&lt;/header&gt;
+
+    &lt;!-- 创建网页的主体 --&gt;
+    &lt;main&gt;
+    &lt;!-- 左侧导航 --&gt;
+    &lt;nav&gt;&lt;/nav&gt;
+
+    &lt;!-- 中间的内容 --&gt;
+    &lt;article&gt;&lt;/article&gt;
+
+    &lt;!-- 右边的边栏 --&gt;
+    &lt;aside&gt;&lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;!-- 网页的底部 --&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="高度塌陷问题">高度塌陷问题</h1>
+<h2 id="成因">成因</h2>
+<ol>
+<li>在浮动布局中，父元素的高度默认是被子元素撑开的，</li>
+<li>当子元素浮动后，其会完全脱离文档流，子元素从文档流中脱离，将会无法撑起父元素的高度，导致父元素的高度丢失</li>
+<li>父元素高度丢失以后，其下的元素会自动上移，导致页面的布局混乱</li>
+<li>所以高度塌陷是浮动布局中比较常见的一个问题，这个问题我们必须要进行处理！</li>
+</ol>
+<h2 id="解决方法">解决方法</h2>
+<h3 id="bfcblock-formatting-context-块级格式化环境">BFC(Block Formatting Context) 块级格式化环境</h3>
+<ul>
+<li>BFC是一个CSS中的一个隐含的属性，可以为一个元素开启BFC,开启BFC该元素会变成一个独立的布局区域</li>
+<li>元素开启BFC后的特点：
+<ol>
+<li>开启BFC的元素不会被浮动元素所覆盖</li>
+<li>开启BFC的元素子元素和父元素外边距不会重叠</li>
+<li>开启BFC的元素可以包含浮动的子元素</li>
+</ol>
+</li>
+<li>可以通过一些特殊方式来开启元素的BFC：
+<ol>
+<li>设置元素的浮动（不推荐）</li>
+<li>将元素设置为行内块元素（不推荐）</li>
+<li>将元素的overflow设置为一个非visible的值，常用的方式为元素设置 overflow:hidden 开启其BFC 以使其可以包含浮动元素</li>
+</ol>
+</li>
+</ul>
+<h3 id="clear">clear</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+    div {
+        font-size: 50px;
+    }
+
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: #bfa;
+        float: left;
+    }
+
+    .box2 {
+        width: 400px;
+        height: 150px;
+        background-color: #ff0;
+        float: right;
+    }
+
+    .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        clear: both;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box2&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box3&quot;&gt;3&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>由于box1的浮动，导致box3位置上移, 也就是box3收到了box1浮动的影响，位置发生了改变,如果我们不希望某个元素因为其他元素浮动的影响而改变位置，</li>
+<li>可以通过clear属性来清除浮动元素对当前元素所产生的影响</li>
+<li>clear
+<ul>
+<li>作用：清除浮动元素对当前元素所产生的影响</li>
+<li>可选值：
+<ul>
+<li>left 清除左侧浮动元素对当前元素的影响</li>
+<li>right 清除右侧浮动元素对当前元素的影响</li>
+<li>both 清除两侧中最大影响的那侧<br>
+原理：<br>
+设置清除浮动以后，浏览器会自动为元素添加一个上外边距，以使其位置不受其他元素的影响</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="高度塌陷的最终解决方案">高度塌陷的最终解决方案</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        /* .box1::before{
+            content: '';
+            display: table;
+        } */
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 100px;
+        }
+
+/* clearfix 这个样式可以同时解决高度塌陷和外边距重叠的问题，当你在遇到这些问题时，直接使用clearfix这个类即可 */
+        .clearfix::before,
+        .clearfix::after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;div class=&quot;box1 clearfix&quot;&gt;
+        &lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+        <div name="comment" style="background: white">
+            <div class="commentcontainer">
+                
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                
+            </div>
+        </div>
+    </div>
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+</body>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://miss918.github.io/media/js/post.js"></script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://ericam.top/' //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://miss918.github.io/media/live2d/assets/tororo.model.json");
+</script>

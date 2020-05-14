@@ -1,0 +1,575 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="
+计算机这一类工作易操作，很枯燥，没有技术你随时可能被代替掉，如果没有掌握过硬的技术，又是专科学历，你可想而知。毕竟你现在在深圳，深圳人才济济你没有看门本事，真的很难发展，在大城市是拼实力的地方，小城市就是讲人情的地方，如果没有背景没有技术..." />
+    <meta name="keywords" content="生活笔记" />
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
+              
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    <title>Miss918</title>
+</head>
+
+<body>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div class="nav-large">
+            <div class="row">
+                <div class="side"><html>
+
+<head>
+    <link rel="stylesheet" href="https://miss918.github.io/styles/main.css">
+    <meta name="description" content="少管闲事,做好自己" />
+    <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://miss918.github.io/images/avatar.png?v=1589500701615" class="avatar">
+        </div>
+        <div class="sitename">Miss918</div>
+        <span class="describtion" data-text='["少管闲事,做好自己"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        
+        <a onclick="showqq()"><i><img class="icon" src="https://miss918.github.io/media/images/QQ.png" alt=""></i></a>
+        
+        
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none">544465786</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="/" class="menubutton">
+            首页
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/archives" class="menubutton">
+            归档
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/tags" class="menubutton">
+            标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/post/about" class="menubutton">
+            关于
+        </a>
+    </div>
+    
+    
+    
+        <div class="mchocie describtion">
+            <a href="https://miss918.github.io/friends" class="menubutton">友人帐</a>
+        </div>
+    
+    <hr>
+    <div id="footinfo">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | Theme: <a href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    <div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div>
+    <div id="cussitetime" style="display:none">07/05/2020</div>
+    </div>
+</body>
+
+</html>
+<script src="https://miss918.github.io/media/js/wordshow.js"></script>
+<script>
+    //----------------------站点运行时间
+    var now = new Date();
+
+    function createtime() {
+        var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+        var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+            snum = "0" + snum;
+        }
+        document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+        document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            console.log(arrItems);
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            alert("博主的QQ联系方式为：" + qq);
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script></div>
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div id="main" class="col-xs-12 col-sm-7">
+                    <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2019-08-18</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 4 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/z-kc-K_VpN/" class="postlink">
+                        <i class="fa fa-tag"></i> 生活笔记
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>关于大学的一些意见</h2>
+            </div>
+            <div class="text ">
+                <ul>
+<li>计算机这一类工作易操作，很枯燥，没有技术你随时可能被代替掉，如果没有掌握过硬的技术，又是专科学历，你可想而知。毕竟你现在在深圳，深圳人才济济你没有看门本事，真的很难发展，在大城市是拼实力的地方，小城市就是讲人情的地方，如果没有背景没有技术，你打算找多好的工作。</li>
+<li>第一：学历一定要提高上去，多去图书馆少呆宿舍！！即使你看一些杂书也不要经常在宿舍呆着，因为呆多了会很懒散。</li>
+<li>如果你不想升学，就抓紧把专业提高起来，要站得住脚！</li>
+<li>第二：多拿奖学金！考证一定要考，四级一定要考！还有计算机这些证书你可以考虑一下！</li>
+<li>hcie  ocm顶级证 软考（计算机证书）pat  运维 ccie</li>
+<li>要看自己想学什么考证书，不要盲目考。</li>
+<li>第三：不喜欢这个专业没关系，大一上结束的时候就去平转！如果转不了就看看别人的课表去蹭课，不要不好意思要提高自己。  提前保证：别挂科！</li>
+<li>不知道自己该做什么，人生方向往哪里走，自己想做什么工作，那就倒过来推理。摒弃一切限制条件，觉得自己最想要的薪资待遇是多高，或者自己想过怎样的生活，过这种生活需要的经济水平是什么高度。圈出一些符合的工作，看这些工作应聘所需必备的条件，就知道自己该从哪方面开始提高入手，哪些需要学。是该提升学历还是提升技术，还是两者都有。努力让自己学习，让自己去符合那些条件。另外多了解一些资料，对那些工作进行优劣分析。觉得自己比较中意哪一种工作。</li>
+<li>第四：别气馁，要多提高自己，多利用身边环境。如果你对你未来迷茫：我建议你先把四级考了，就专专心心准备插本，不要考虑其他的，因为我们的中职上来的，跟别人普高生区别还是很大的。</li>
+<li>第五：你可能在大学找不到共同目标的朋友，也有可能被别人排斥在外，我想说，别怕，这个圈子不适合你，你要跳出这个圈子才是最重要的。</li>
+<li>不要为了一些人情世故耽误了自己的宝贵时间，付出你太多精力，熬过去了你就是不一样的你，没有熬过去未来这个就是个无底洞。</li>
+<li>第六：做事情要分清主次，踏踏实实做，慢慢来，不要定太多计划，先从小计划入手，让自己有成就感。</li>
+<li>第七：多认识老师！因为老师能改变你人生轨迹，可能是你人生中的贵人，在学校最能帮助你的是老师，不是朋友和同学。</li>
+<li>老师有项目要跟着去做，不会不要紧可以学，要有一个谦虚学习的心，要相信自己。</li>
+<li>第八：建议你入个党，因为入党意义很大，你去哪里都有优惠，工作也会有特殊性，入党保密性也强，很多公司都爱这些党员，你要考虑到的是你未来去的大公司，很多大公司里面都有中方的大老板，别人最看中的是党员和当兵。</li>
+<li>第九：可以去接触接触比赛，即使很忙天天早出晚归，但是认识很多人也是很好的，也学到了很多东西。</li>
+<li>第十：如果你想往管理方面走，我建议你去参加学生会，因为只有你把集体利益放在自身利益之上，你才能在一个小团体混的下去。</li>
+<li>学生会很多沟通的事情，组织的事情，这是一个很好的成长经验，</li>
+<li>第十一：要合理安排好自己的时间，要进入一个良好的圈子，跟更好的人一起努力，努力变成更好的自己，互相帮助，这是良好的圈子。</li>
+<li>不好的圈子：总有一些人质疑你的努力和行为，你还得花费大量时间去应对这些无用的负面情绪，要远离这个环境。</li>
+<li>第十二：我觉得最好的工作是什么，是你不用低三下四的去求别人，而是别人来拜托你去做这些Hi</li>
+</ul>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+                    <div name="comment" style="background: white">
+                        <div class="commentcontainer">
+                            
+                            <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="toc-container">
+                    
+                </div>
+            </div>
+        </div>
+        <div id="bg">
+        </div>
+        <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
+    </div>
+    <!-- 响应式布局，针对手机端内容显示 -->
+    <div class="nav-small">
+        <head>
+
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Miss918&nbsp;&nbsp;|</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="/">
+              首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives">
+              归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags">
+              标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              关于
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://miss918.github.io/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- 引入BootStrap核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+        <div style="margin-top:30px"></div>
+        <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2019-08-18</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 4 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/z-kc-K_VpN/" class="postlink">
+                        <i class="fa fa-tag"></i> 生活笔记
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>关于大学的一些意见</h2>
+            </div>
+            <div class="text ">
+                <ul>
+<li>计算机这一类工作易操作，很枯燥，没有技术你随时可能被代替掉，如果没有掌握过硬的技术，又是专科学历，你可想而知。毕竟你现在在深圳，深圳人才济济你没有看门本事，真的很难发展，在大城市是拼实力的地方，小城市就是讲人情的地方，如果没有背景没有技术，你打算找多好的工作。</li>
+<li>第一：学历一定要提高上去，多去图书馆少呆宿舍！！即使你看一些杂书也不要经常在宿舍呆着，因为呆多了会很懒散。</li>
+<li>如果你不想升学，就抓紧把专业提高起来，要站得住脚！</li>
+<li>第二：多拿奖学金！考证一定要考，四级一定要考！还有计算机这些证书你可以考虑一下！</li>
+<li>hcie  ocm顶级证 软考（计算机证书）pat  运维 ccie</li>
+<li>要看自己想学什么考证书，不要盲目考。</li>
+<li>第三：不喜欢这个专业没关系，大一上结束的时候就去平转！如果转不了就看看别人的课表去蹭课，不要不好意思要提高自己。  提前保证：别挂科！</li>
+<li>不知道自己该做什么，人生方向往哪里走，自己想做什么工作，那就倒过来推理。摒弃一切限制条件，觉得自己最想要的薪资待遇是多高，或者自己想过怎样的生活，过这种生活需要的经济水平是什么高度。圈出一些符合的工作，看这些工作应聘所需必备的条件，就知道自己该从哪方面开始提高入手，哪些需要学。是该提升学历还是提升技术，还是两者都有。努力让自己学习，让自己去符合那些条件。另外多了解一些资料，对那些工作进行优劣分析。觉得自己比较中意哪一种工作。</li>
+<li>第四：别气馁，要多提高自己，多利用身边环境。如果你对你未来迷茫：我建议你先把四级考了，就专专心心准备插本，不要考虑其他的，因为我们的中职上来的，跟别人普高生区别还是很大的。</li>
+<li>第五：你可能在大学找不到共同目标的朋友，也有可能被别人排斥在外，我想说，别怕，这个圈子不适合你，你要跳出这个圈子才是最重要的。</li>
+<li>不要为了一些人情世故耽误了自己的宝贵时间，付出你太多精力，熬过去了你就是不一样的你，没有熬过去未来这个就是个无底洞。</li>
+<li>第六：做事情要分清主次，踏踏实实做，慢慢来，不要定太多计划，先从小计划入手，让自己有成就感。</li>
+<li>第七：多认识老师！因为老师能改变你人生轨迹，可能是你人生中的贵人，在学校最能帮助你的是老师，不是朋友和同学。</li>
+<li>老师有项目要跟着去做，不会不要紧可以学，要有一个谦虚学习的心，要相信自己。</li>
+<li>第八：建议你入个党，因为入党意义很大，你去哪里都有优惠，工作也会有特殊性，入党保密性也强，很多公司都爱这些党员，你要考虑到的是你未来去的大公司，很多大公司里面都有中方的大老板，别人最看中的是党员和当兵。</li>
+<li>第九：可以去接触接触比赛，即使很忙天天早出晚归，但是认识很多人也是很好的，也学到了很多东西。</li>
+<li>第十：如果你想往管理方面走，我建议你去参加学生会，因为只有你把集体利益放在自身利益之上，你才能在一个小团体混的下去。</li>
+<li>学生会很多沟通的事情，组织的事情，这是一个很好的成长经验，</li>
+<li>第十一：要合理安排好自己的时间，要进入一个良好的圈子，跟更好的人一起努力，努力变成更好的自己，互相帮助，这是良好的圈子。</li>
+<li>不好的圈子：总有一些人质疑你的努力和行为，你还得花费大量时间去应对这些无用的负面情绪，要远离这个环境。</li>
+<li>第十二：我觉得最好的工作是什么，是你不用低三下四的去求别人，而是别人来拜托你去做这些Hi</li>
+</ul>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+        <div name="comment" style="background: white">
+            <div class="commentcontainer">
+                
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                
+            </div>
+        </div>
+    </div>
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+</body>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://miss918.github.io/media/js/post.js"></script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://ericam.top/' //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://miss918.github.io/media/live2d/assets/tororo.model.json");
+</script>

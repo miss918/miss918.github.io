@@ -1,0 +1,1340 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="定位（position）的简介
+定位是一种更加高级的布局手段
+
+通过定位可以将元素摆放到页面的任意位置
+使用position属性来设置定位
+可选值：
+
+static 默认值，元素是静止的没有开启定位
+relative 开启元素的相对定位
+a..." />
+    <meta name="keywords" content="HTML" />
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
+              
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    <title>Miss918</title>
+</head>
+
+<body>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div class="nav-large">
+            <div class="row">
+                <div class="side"><html>
+
+<head>
+    <link rel="stylesheet" href="https://miss918.github.io/styles/main.css">
+    <meta name="description" content="少管闲事,做好自己" />
+    <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://miss918.github.io/images/avatar.png?v=1589500701615" class="avatar">
+        </div>
+        <div class="sitename">Miss918</div>
+        <span class="describtion" data-text='["少管闲事,做好自己"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        
+        <a onclick="showqq()"><i><img class="icon" src="https://miss918.github.io/media/images/QQ.png" alt=""></i></a>
+        
+        
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none">544465786</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="/" class="menubutton">
+            首页
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/archives" class="menubutton">
+            归档
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/tags" class="menubutton">
+            标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/post/about" class="menubutton">
+            关于
+        </a>
+    </div>
+    
+    
+    
+        <div class="mchocie describtion">
+            <a href="https://miss918.github.io/friends" class="menubutton">友人帐</a>
+        </div>
+    
+    <hr>
+    <div id="footinfo">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | Theme: <a href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    <div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div>
+    <div id="cussitetime" style="display:none">07/05/2020</div>
+    </div>
+</body>
+
+</html>
+<script src="https://miss918.github.io/media/js/wordshow.js"></script>
+<script>
+    //----------------------站点运行时间
+    var now = new Date();
+
+    function createtime() {
+        var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+        var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+            snum = "0" + snum;
+        }
+        document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+        document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            console.log(arrItems);
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            alert("博主的QQ联系方式为：" + qq);
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script></div>
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div id="main" class="col-xs-12 col-sm-7">
+                    <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-13</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 10 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/MSWz_4w_dA/" class="postlink">
+                        <i class="fa fa-tag"></i> HTML
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>CSS定位（position）</h2>
+            </div>
+            <div class="text ">
+                <h1 id="定位position的简介">定位（position）的简介</h1>
+<p>定位是一种更加高级的布局手段</p>
+<ul>
+<li>通过定位可以将元素摆放到页面的任意位置</li>
+<li>使用position属性来设置定位</li>
+<li>可选值：
+<ul>
+<li>static 默认值，元素是静止的没有开启定位</li>
+<li>relative 开启元素的相对定位</li>
+<li>absolute 开启元素的绝对定位</li>
+<li>fixed 开启元素的固定定位</li>
+<li>sticky 开启元素的粘滞定位</li>
+</ul>
+</li>
+</ul>
+<h1 id="相对定位">相对定位</h1>
+<h2 id="相对定位的设置">相对定位的设置</h2>
+<p>当元素的position属性值设置为relative时则开启了元素的相对定位</p>
+<h2 id="相对定位的特点">相对定位的特点</h2>
+<ol>
+<li>元素开启相对定位以后，如果不设置偏移量元素不会发生任何的变化</li>
+<li>相对定位是参照于元素在文档流中的位置进行定位的</li>
+<li>相对定位会提升元素的层级</li>
+<li>相对定位不会使元素脱离文档流</li>
+<li>相对定位不会改变元素的性质块还是块，行内还是行内</li>
+</ol>
+<h2 id="偏移量offset">偏移量（offset）</h2>
+<p>当元素开启了定位以后，可以通过偏移量来设置元素的位置</p>
+<ul>
+<li>top
+<ul>
+<li>定位元素和定位位置上边的距离</li>
+</ul>
+</li>
+<li>bottom
+<ul>
+<li>定位元素和定位位置</li>
+</ul>
+</li>
+<li>定位元素垂直方向的位置由top和bottom两个属性来控制，通常情况下我们只会使用其中一
+<ul>
+<li>top值越大，定位元素越向下移动</li>
+<li>bottom值越大，定位元素越向上移动</li>
+</ul>
+</li>
+<li>left
+<ul>
+<li>定位元素和定位位置的左侧距离</li>
+</ul>
+</li>
+<li>right
+<ul>
+<li>定位元素和定位位置的右侧距离</li>
+</ul>
+</li>
+<li>定位元素水平方向的位置由left和right两个属性控制，通常情况下只会使用一个
+<ul>
+<li>left越大元素越靠右</li>
+<li>right越大元素越靠左</li>
+</ul>
+</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+    body {
+        font-size: 60px;
+    }
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: #bfa;
+    }
+
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+
+        position: relative;
+
+        left: 100px;
+        top: -200px;
+    }
+
+    .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box2&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box3&quot;&gt;3&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="绝对定位">绝对定位</h1>
+<h2 id="绝对定位的设置">绝对定位的设置</h2>
+<p>当元素的position属性值设置为absolute时，则开启了元素的绝对定位</p>
+<h2 id="绝对定位的特点">绝对定位的特点</h2>
+<ol>
+<li>开启绝对定位后，如果不设置偏移量元素的位置不会发生变化</li>
+<li>开启绝对定位后，元素会从文档流中脱离</li>
+<li>绝对定位会改变元素的性质，行内变成块，块的宽高被内容撑开</li>
+<li>绝对定位会使元素提升一个层级</li>
+<li>绝对定位元素是相对于其包含块进行定位的</li>
+</ol>
+<h2 id="包含块-containing-block">包含块( containing block )</h2>
+<ul>
+<li>正常情况下：<br>
+包含块就是离当前元素最近的祖先块元素</li>
+<li>绝对定位的包含块:<br>
+包含块就是离它最近的开启了定位的祖先元素，如果所有的祖先元素都没有,开启定位则根元素就是它的包含块</li>
+<li>html（根元素、初始包含块）</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+    body {
+        font-size: 60px;
+    }
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: #bfa;
+    }
+
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+
+    .box4 {
+        width: 400px;
+        height: 400px;
+        background-color: tomato;
+        position: relative;
+    }
+
+    .box5 {
+        width: 300px;
+        height: 300px;
+        background-color: aliceblue;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+
+    &lt;div class=&quot;box4&quot;&gt;
+    4
+    &lt;div class=&quot;box5&quot;&gt;
+    5
+        &lt;div class=&quot;box2&quot;&gt;2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;box3&quot;&gt;3&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="绝对定位元素的布局">绝对定位元素的布局</h2>
+<ul>
+<li>水平布局<br>
+left + margin-left + border-left + padding-left + width + padding-right + border-right + margin-right + right = 包含块的内容区的宽度</li>
+<li>当我们开启了绝对定位后:
+<ol>
+<li>水平方向的布局等式就需要添加left 和 right 两个值，</li>
+<li>此时规则和之前一样只是多添加了两个值：</li>
+<li>当发生过度约束：</li>
+<li>如果9个值中没有 auto 则自动调整right值以使等式满足，</li>
+<li>如果有auto，则自动调整auto的值以使等式满足</li>
+</ol>
+</li>
+<li>可设置auto的值：
+<ol>
+<li>margin width left right</li>
+<li>因为left 和 right的值默认是auto，所以如果不指定left和right，则等式不满足时，会自动调整这两个值</li>
+</ol>
+</li>
+<li>垂直方向布局的等式的也必须要满足<br>
+top + margin-top/bottom + padding-top/bottom + border-top/bottom + height = 包含块的高度</li>
+</ul>
+<h1 id="固定定位">固定定位</h1>
+<h2 id="固定定位的设置">固定定位的设置</h2>
+<p>将元素的position属性设置为fixed则开启了元素的固定定位</p>
+<h2 id="固定定位特点">固定定位特点</h2>
+<p>固定定位也是一种绝对定位，所以固定定位的大部分特点都和绝对定位一样，唯一不同的是固定定位永远参照于浏览器的视口进行定位，固定定位的元素不会随网页的滚动条滚动</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+    body {
+        font-size: 60px;
+        height: 2000px;
+    }
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: #bfa;
+    }
+
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+
+    .box4 {
+        width: 400px;
+        height: 400px;
+        background-color: tomato;
+    }
+
+    .box5 {
+        width: 300px;
+        height: 300px;
+        background-color: aliceblue;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+
+    &lt;div class=&quot;box4&quot;&gt;
+    4
+    &lt;div class=&quot;box5&quot;&gt;
+    5
+    &lt;div class=&quot;box2&quot;&gt;2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;box3&quot;&gt;3&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="粘滞定位">粘滞定位</h1>
+<h2 id="粘滞定位的设置">粘滞定位的设置</h2>
+<p>当元素的position属性设置为sticky时则开启了元素的粘滞定位</p>
+<h2 id="粘滞定位的特点">粘滞定位的特点</h2>
+<p>粘滞定位和相对定位的特点基本一致，<br>
+不同的是粘滞定位可以在元素到达某个位置时将其固定</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;导航条&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./css/reset.css&quot;&gt;
+    &lt;style&gt;
+
+        body{
+            height: 3000px;
+        }
+        
+        /* 设置nav的大小 */
+        .nav{
+
+            /* 设置宽度和高度 */
+            width: 1210px;
+            height: 48px;
+            /* 设置背景颜色 */
+            background-color: #E8E7E3;
+            margin:100px auto;
+            position: sticky;
+            top: 10px;
+
+        }
+
+        /* 设置nav中li */
+        .nav li{
+            /* 设置li向左浮动，已使菜单横向排列 */
+            float: left;
+            /* 设置li的高度 */
+            /* height: 48px; */
+            /* 将文字在父元素中垂直居中 */
+            line-height: 48px;
+
+        }
+
+        /* 设置a的样式 */
+        .nav a{
+            /* 将a转换为块元素 */
+            display: block;
+            /* 去除下划线 */
+            text-decoration: none;
+            /* 设置字体颜色 */
+            color: #777777;
+            /* 修改字体大小 */
+            font-size: 18px;
+
+            padding: 0 39px;
+        }
+
+        .nav li:last-child a{
+            padding: 0 42px 0 41px;
+        }
+
+        /* 设置鼠标移入的效果 */
+        .nav a:hover{
+            background-color: #3F3F3F;
+            color: #E8E7E3;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!-- 创建导航条的结构 --&gt;
+    &lt;ul class=&quot;nav&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;HTML/CSS&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Browser Side&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Server Side&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Programming&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;XML&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Web Building&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Reference&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h1 id="元素的层级">元素的层级</h1>
+<h2 id="元素的层级的设置">元素的层级的设置</h2>
+<p>对于开启了定位元素，可以通过z-index属性来指定元素的层级</p>
+<h2 id="z-index">z-index</h2>
+<p>z-index需要一个整数作为参数，值越大元素的层级越高，元素的层级越高越优先显示</p>
+<h2 id="元素的显示与层级">元素的显示与层级</h2>
+<ul>
+<li>如果元素的层级一样，则优先显示靠下的元素</li>
+<li>祖先的元素的层级再高也不会盖住后代元素</li>
+</ul>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+                    <div name="comment" style="background: white">
+                        <div class="commentcontainer">
+                            
+                            <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="toc-container">
+                    <ul class="markdownIt-TOC">
+<li><a href="#%E5%AE%9A%E4%BD%8Dposition%E7%9A%84%E7%AE%80%E4%BB%8B">定位（position）的简介</a></li>
+<li><a href="#%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D">相对定位</a>
+<ul>
+<li><a href="#%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D%E7%9A%84%E8%AE%BE%E7%BD%AE">相对定位的设置</a></li>
+<li><a href="#%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D%E7%9A%84%E7%89%B9%E7%82%B9">相对定位的特点</a></li>
+<li><a href="#%E5%81%8F%E7%A7%BB%E9%87%8Foffset">偏移量（offset）</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D">绝对定位</a>
+<ul>
+<li><a href="#%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E7%9A%84%E8%AE%BE%E7%BD%AE">绝对定位的设置</a></li>
+<li><a href="#%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E7%9A%84%E7%89%B9%E7%82%B9">绝对定位的特点</a></li>
+<li><a href="#%E5%8C%85%E5%90%AB%E5%9D%97-containing-block">包含块( containing block )</a></li>
+<li><a href="#%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E5%85%83%E7%B4%A0%E7%9A%84%E5%B8%83%E5%B1%80">绝对定位元素的布局</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D">固定定位</a>
+<ul>
+<li><a href="#%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D%E7%9A%84%E8%AE%BE%E7%BD%AE">固定定位的设置</a></li>
+<li><a href="#%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D%E7%89%B9%E7%82%B9">固定定位特点</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B2%98%E6%BB%9E%E5%AE%9A%E4%BD%8D">粘滞定位</a>
+<ul>
+<li><a href="#%E7%B2%98%E6%BB%9E%E5%AE%9A%E4%BD%8D%E7%9A%84%E8%AE%BE%E7%BD%AE">粘滞定位的设置</a></li>
+<li><a href="#%E7%B2%98%E6%BB%9E%E5%AE%9A%E4%BD%8D%E7%9A%84%E7%89%B9%E7%82%B9">粘滞定位的特点</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%82%E7%BA%A7">元素的层级</a>
+<ul>
+<li><a href="#%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%82%E7%BA%A7%E7%9A%84%E8%AE%BE%E7%BD%AE">元素的层级的设置</a></li>
+<li><a href="#z-index">z-index</a></li>
+<li><a href="#%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E5%B1%82%E7%BA%A7">元素的显示与层级</a></li>
+</ul>
+</li>
+</ul>
+
+                </div>
+            </div>
+        </div>
+        <div id="bg">
+        </div>
+        <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
+    </div>
+    <!-- 响应式布局，针对手机端内容显示 -->
+    <div class="nav-small">
+        <head>
+
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Miss918&nbsp;&nbsp;|</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="/">
+              首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives">
+              归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags">
+              标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              关于
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://miss918.github.io/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- 引入BootStrap核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+        <div style="margin-top:30px"></div>
+        <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-13</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 10 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/MSWz_4w_dA/" class="postlink">
+                        <i class="fa fa-tag"></i> HTML
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>CSS定位（position）</h2>
+            </div>
+            <div class="text ">
+                <h1 id="定位position的简介">定位（position）的简介</h1>
+<p>定位是一种更加高级的布局手段</p>
+<ul>
+<li>通过定位可以将元素摆放到页面的任意位置</li>
+<li>使用position属性来设置定位</li>
+<li>可选值：
+<ul>
+<li>static 默认值，元素是静止的没有开启定位</li>
+<li>relative 开启元素的相对定位</li>
+<li>absolute 开启元素的绝对定位</li>
+<li>fixed 开启元素的固定定位</li>
+<li>sticky 开启元素的粘滞定位</li>
+</ul>
+</li>
+</ul>
+<h1 id="相对定位">相对定位</h1>
+<h2 id="相对定位的设置">相对定位的设置</h2>
+<p>当元素的position属性值设置为relative时则开启了元素的相对定位</p>
+<h2 id="相对定位的特点">相对定位的特点</h2>
+<ol>
+<li>元素开启相对定位以后，如果不设置偏移量元素不会发生任何的变化</li>
+<li>相对定位是参照于元素在文档流中的位置进行定位的</li>
+<li>相对定位会提升元素的层级</li>
+<li>相对定位不会使元素脱离文档流</li>
+<li>相对定位不会改变元素的性质块还是块，行内还是行内</li>
+</ol>
+<h2 id="偏移量offset">偏移量（offset）</h2>
+<p>当元素开启了定位以后，可以通过偏移量来设置元素的位置</p>
+<ul>
+<li>top
+<ul>
+<li>定位元素和定位位置上边的距离</li>
+</ul>
+</li>
+<li>bottom
+<ul>
+<li>定位元素和定位位置</li>
+</ul>
+</li>
+<li>定位元素垂直方向的位置由top和bottom两个属性来控制，通常情况下我们只会使用其中一
+<ul>
+<li>top值越大，定位元素越向下移动</li>
+<li>bottom值越大，定位元素越向上移动</li>
+</ul>
+</li>
+<li>left
+<ul>
+<li>定位元素和定位位置的左侧距离</li>
+</ul>
+</li>
+<li>right
+<ul>
+<li>定位元素和定位位置的右侧距离</li>
+</ul>
+</li>
+<li>定位元素水平方向的位置由left和right两个属性控制，通常情况下只会使用一个
+<ul>
+<li>left越大元素越靠右</li>
+<li>right越大元素越靠左</li>
+</ul>
+</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+    body {
+        font-size: 60px;
+    }
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: #bfa;
+    }
+
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+
+        position: relative;
+
+        left: 100px;
+        top: -200px;
+    }
+
+    .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box2&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box3&quot;&gt;3&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="绝对定位">绝对定位</h1>
+<h2 id="绝对定位的设置">绝对定位的设置</h2>
+<p>当元素的position属性值设置为absolute时，则开启了元素的绝对定位</p>
+<h2 id="绝对定位的特点">绝对定位的特点</h2>
+<ol>
+<li>开启绝对定位后，如果不设置偏移量元素的位置不会发生变化</li>
+<li>开启绝对定位后，元素会从文档流中脱离</li>
+<li>绝对定位会改变元素的性质，行内变成块，块的宽高被内容撑开</li>
+<li>绝对定位会使元素提升一个层级</li>
+<li>绝对定位元素是相对于其包含块进行定位的</li>
+</ol>
+<h2 id="包含块-containing-block">包含块( containing block )</h2>
+<ul>
+<li>正常情况下：<br>
+包含块就是离当前元素最近的祖先块元素</li>
+<li>绝对定位的包含块:<br>
+包含块就是离它最近的开启了定位的祖先元素，如果所有的祖先元素都没有,开启定位则根元素就是它的包含块</li>
+<li>html（根元素、初始包含块）</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+    body {
+        font-size: 60px;
+    }
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: #bfa;
+    }
+
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+
+    .box4 {
+        width: 400px;
+        height: 400px;
+        background-color: tomato;
+        position: relative;
+    }
+
+    .box5 {
+        width: 300px;
+        height: 300px;
+        background-color: aliceblue;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+
+    &lt;div class=&quot;box4&quot;&gt;
+    4
+    &lt;div class=&quot;box5&quot;&gt;
+    5
+        &lt;div class=&quot;box2&quot;&gt;2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;box3&quot;&gt;3&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="绝对定位元素的布局">绝对定位元素的布局</h2>
+<ul>
+<li>水平布局<br>
+left + margin-left + border-left + padding-left + width + padding-right + border-right + margin-right + right = 包含块的内容区的宽度</li>
+<li>当我们开启了绝对定位后:
+<ol>
+<li>水平方向的布局等式就需要添加left 和 right 两个值，</li>
+<li>此时规则和之前一样只是多添加了两个值：</li>
+<li>当发生过度约束：</li>
+<li>如果9个值中没有 auto 则自动调整right值以使等式满足，</li>
+<li>如果有auto，则自动调整auto的值以使等式满足</li>
+</ol>
+</li>
+<li>可设置auto的值：
+<ol>
+<li>margin width left right</li>
+<li>因为left 和 right的值默认是auto，所以如果不指定left和right，则等式不满足时，会自动调整这两个值</li>
+</ol>
+</li>
+<li>垂直方向布局的等式的也必须要满足<br>
+top + margin-top/bottom + padding-top/bottom + border-top/bottom + height = 包含块的高度</li>
+</ul>
+<h1 id="固定定位">固定定位</h1>
+<h2 id="固定定位的设置">固定定位的设置</h2>
+<p>将元素的position属性设置为fixed则开启了元素的固定定位</p>
+<h2 id="固定定位特点">固定定位特点</h2>
+<p>固定定位也是一种绝对定位，所以固定定位的大部分特点都和绝对定位一样，唯一不同的是固定定位永远参照于浏览器的视口进行定位，固定定位的元素不会随网页的滚动条滚动</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+    body {
+        font-size: 60px;
+        height: 2000px;
+    }
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: #bfa;
+    }
+
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+
+    .box4 {
+        width: 400px;
+        height: 400px;
+        background-color: tomato;
+    }
+
+    .box5 {
+        width: 300px;
+        height: 300px;
+        background-color: aliceblue;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+
+    &lt;div class=&quot;box4&quot;&gt;
+    4
+    &lt;div class=&quot;box5&quot;&gt;
+    5
+    &lt;div class=&quot;box2&quot;&gt;2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;box3&quot;&gt;3&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="粘滞定位">粘滞定位</h1>
+<h2 id="粘滞定位的设置">粘滞定位的设置</h2>
+<p>当元素的position属性设置为sticky时则开启了元素的粘滞定位</p>
+<h2 id="粘滞定位的特点">粘滞定位的特点</h2>
+<p>粘滞定位和相对定位的特点基本一致，<br>
+不同的是粘滞定位可以在元素到达某个位置时将其固定</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;导航条&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./css/reset.css&quot;&gt;
+    &lt;style&gt;
+
+        body{
+            height: 3000px;
+        }
+        
+        /* 设置nav的大小 */
+        .nav{
+
+            /* 设置宽度和高度 */
+            width: 1210px;
+            height: 48px;
+            /* 设置背景颜色 */
+            background-color: #E8E7E3;
+            margin:100px auto;
+            position: sticky;
+            top: 10px;
+
+        }
+
+        /* 设置nav中li */
+        .nav li{
+            /* 设置li向左浮动，已使菜单横向排列 */
+            float: left;
+            /* 设置li的高度 */
+            /* height: 48px; */
+            /* 将文字在父元素中垂直居中 */
+            line-height: 48px;
+
+        }
+
+        /* 设置a的样式 */
+        .nav a{
+            /* 将a转换为块元素 */
+            display: block;
+            /* 去除下划线 */
+            text-decoration: none;
+            /* 设置字体颜色 */
+            color: #777777;
+            /* 修改字体大小 */
+            font-size: 18px;
+
+            padding: 0 39px;
+        }
+
+        .nav li:last-child a{
+            padding: 0 42px 0 41px;
+        }
+
+        /* 设置鼠标移入的效果 */
+        .nav a:hover{
+            background-color: #3F3F3F;
+            color: #E8E7E3;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!-- 创建导航条的结构 --&gt;
+    &lt;ul class=&quot;nav&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;HTML/CSS&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Browser Side&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Server Side&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Programming&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;XML&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Web Building&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Reference&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h1 id="元素的层级">元素的层级</h1>
+<h2 id="元素的层级的设置">元素的层级的设置</h2>
+<p>对于开启了定位元素，可以通过z-index属性来指定元素的层级</p>
+<h2 id="z-index">z-index</h2>
+<p>z-index需要一个整数作为参数，值越大元素的层级越高，元素的层级越高越优先显示</p>
+<h2 id="元素的显示与层级">元素的显示与层级</h2>
+<ul>
+<li>如果元素的层级一样，则优先显示靠下的元素</li>
+<li>祖先的元素的层级再高也不会盖住后代元素</li>
+</ul>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+        <div name="comment" style="background: white">
+            <div class="commentcontainer">
+                
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                
+            </div>
+        </div>
+    </div>
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+</body>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://miss918.github.io/media/js/post.js"></script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://ericam.top/' //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://miss918.github.io/media/live2d/assets/tororo.model.json");
+</script>

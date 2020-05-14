@@ -1,0 +1,1240 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="文档流（normal flow）
+
+网页是一个多层的结构，一层摞着一层
+通过CSS可以分别为每一层来设置样式
+作为用户来讲只能看到最顶上一层
+这些层中，最底下的一层称为文档流，文档流是网页的基础，我们所创建的元素默认都是在文档流中进行排列
+..." />
+    <meta name="keywords" content="HTML" />
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
+              
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    <title>Miss918</title>
+</head>
+
+<body>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div class="nav-large">
+            <div class="row">
+                <div class="side"><html>
+
+<head>
+    <link rel="stylesheet" href="https://miss918.github.io/styles/main.css">
+    <meta name="description" content="少管闲事,做好自己" />
+    <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://miss918.github.io/images/avatar.png?v=1589500701615" class="avatar">
+        </div>
+        <div class="sitename">Miss918</div>
+        <span class="describtion" data-text='["少管闲事,做好自己"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        
+        <a onclick="showqq()"><i><img class="icon" src="https://miss918.github.io/media/images/QQ.png" alt=""></i></a>
+        
+        
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none">544465786</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="/" class="menubutton">
+            首页
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/archives" class="menubutton">
+            归档
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/tags" class="menubutton">
+            标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/post/about" class="menubutton">
+            关于
+        </a>
+    </div>
+    
+    
+    
+        <div class="mchocie describtion">
+            <a href="https://miss918.github.io/friends" class="menubutton">友人帐</a>
+        </div>
+    
+    <hr>
+    <div id="footinfo">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | Theme: <a href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    <div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div>
+    <div id="cussitetime" style="display:none">07/05/2020</div>
+    </div>
+</body>
+
+</html>
+<script src="https://miss918.github.io/media/js/wordshow.js"></script>
+<script>
+    //----------------------站点运行时间
+    var now = new Date();
+
+    function createtime() {
+        var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+        var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+            snum = "0" + snum;
+        }
+        document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+        document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            console.log(arrItems);
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            alert("博主的QQ联系方式为：" + qq);
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script></div>
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div id="main" class="col-xs-12 col-sm-7">
+                    <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-13</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 10 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/MSWz_4w_dA/" class="postlink">
+                        <i class="fa fa-tag"></i> HTML
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>CSS布局(layout)</h2>
+            </div>
+            <div class="text ">
+                <h1 id="文档流normal-flow">文档流（normal flow）</h1>
+<ul>
+<li>网页是一个多层的结构，一层摞着一层</li>
+<li>通过CSS可以分别为每一层来设置样式</li>
+<li>作为用户来讲只能看到最顶上一层</li>
+<li>这些层中，最底下的一层称为文档流，文档流是网页的基础，我们所创建的元素默认都是在文档流中进行排列</li>
+<li>对于我们来元素主要有两个状态
+<ul>
+<li>在文档流中</li>
+<li>不在文档流中（脱离文档流）</li>
+</ul>
+</li>
+</ul>
+<h2 id="元素在文档流中有什么特点">元素在文档流中有什么特点：</h2>
+<ul>
+<li>块元素
+<ul>
+<li>块元素会在页面中独占一行(自上向下垂直排列)</li>
+<li>默认宽度是父元素的全部（会把父元素撑满）</li>
+<li>默认高度是被内容撑开（子元素）</li>
+</ul>
+</li>
+<li>行内元素
+<ul>
+<li>行内元素不会独占页面的一行，只占自身的大小</li>
+<li>行内元素在页面中左向右水平排列，如果一行之中不能容纳下所有的行内元素，则元素会换到第二行继续自左向右排列（书写习惯一致）</li>
+<li>行内元素的默认宽度和高度都是被内容撑开</li>
+</ul>
+</li>
+</ul>
+<h1 id="盒模型">盒模型</h1>
+<h2 id="盒模型简介">盒模型简介</h2>
+<ul>
+<li>盒模型,又称盒子模型、框模型（box model）</li>
+<li>CSS将页面中的所有元素都设置为了一个矩形的盒子</li>
+<li>将元素设置为矩形的盒子后，对页面的布局就变成将不同的盒子摆放同的位置</li>
+<li>每一个盒子都由一下几个部分组成：
+<ul>
+<li>内容区（content）</li>
+<li>内边距（padding）</li>
+<li>边框（border）</li>
+<li>外边距（margin）</li>
+</ul>
+</li>
+</ul>
+<h2 id="盒模型-内容区content">盒模型-内容区(content)</h2>
+<ul>
+<li>内容区（content），元素中的所有的子元素和文本内容都在内容区中排列</li>
+<li>内容区的大小由width 和 height两个属性来设置
+<ul>
+<li>width 设置内容区的宽度</li>
+<li>height 设置内容区的高度</li>
+</ul>
+</li>
+</ul>
+<h1 id="盒模型-边框border">盒模型-边框(border)</h1>
+<h2 id="边框简介">边框简介</h2>
+<ul>
+<li>边框（border），边框属于盒子边缘，边框里边属于盒子内部，出了边框都是盒子的外部</li>
+<li>边框的大小会影响到整个盒子的大小</li>
+<li>要设置边框，需要至少设置三个样式：
+<ul>
+<li>边框的宽度 border-width</li>
+<li>边框的颜色 border-color</li>
+<li>边框的样式 border-style</li>
+</ul>
+</li>
+</ul>
+<h2 id="边框的宽度-border-width">边框的宽度 border-width</h2>
+<ul>
+<li>默认值，一般都是 3个像素</li>
+<li>border-width可以用来指定四个方向的边框的宽度</li>
+<li>值的情况:
+<ul>
+<li>四个值：上 右 下 左</li>
+<li>三个值：上 左右 下</li>
+<li>两个值：上下 左右</li>
+<li>一个值：上下左右</li>
+</ul>
+</li>
+<li>除了border-width还有一组 border-xxx-width,xxx可以是 top right bottom left,用来单独指定某一个边的宽度</li>
+</ul>
+<h2 id="边框的颜色-border-color">边框的颜色 border-color</h2>
+<ul>
+<li>border-color用来指定边框的颜色，同样可以分别指定四个边的边框</li>
+<li>规则和border-width一样</li>
+<li>border-color也可以省略不写，如果省略了则自动使用color的颜色值</li>
+</ul>
+<h2 id="边框的样式-border-style">边框的样式 border-style</h2>
+<ul>
+<li>border-style 指定边框的样式
+<ul>
+<li>值	样式</li>
+<li>solid	表示实线</li>
+<li>dotted	点状虚线</li>
+<li>dashed	虚线</li>
+<li>double	双线</li>
+<li>none（默认值）	没有边框</li>
+</ul>
+</li>
+</ul>
+<h2 id="border简写属性">border简写属性</h2>
+<ul>
+<li>border简写属性，通过该属性可以同时设置边框所有的相关样式，并且没有顺序要求</li>
+<li>除了border以外还有四个 border-xxx
+<ul>
+<li>border-top</li>
+<li>border-right</li>
+<li>border-bottom</li>
+<li>border-left</li>
+</ul>
+</li>
+</ul>
+<h2 id="盒模型内边距padding">盒模型—内边距(padding)</h2>
+<ul>
+<li>内容区和边框之间的距离是内边距</li>
+<li>一共有四个方向的内边距：
+<ul>
+<li>padding-top</li>
+<li>padding-right</li>
+<li>padding-bottom</li>
+<li>padding-left</li>
+</ul>
+</li>
+<li>内边距的设置会影响到盒子的大小</li>
+<li>背景颜色会延伸到内边距上</li>
+<li>padding 内边距的简写属性，可以同时指定四个方向的内边距，规则和border-width 一样</li>
+</ul>
+<h2 id="盒子可见框的大小">盒子可见框的大小</h2>
+<ul>
+<li>盒子的可见框的大小，由内容区 内边距 和 边框共同决定，所以在计算盒子大小时，需要将这三个区域加到一起计算</li>
+</ul>
+<h2 id="盒模型-外边距margin">盒模型-外边距(margin)</h2>
+<ul>
+<li>外边距不会影响盒子可见框的大小</li>
+<li>但是外边距会影响盒子的位置</li>
+<li>一共有四个方向的外边距：
+<ul>
+<li>margin-top
+<ul>
+<li>上外边距，设置一个正值，元素会向下移动</li>
+</ul>
+</li>
+<li>margin-right
+<ul>
+<li>默认情况下设置margin-right不会产生任何效果</li>
+</ul>
+</li>
+<li>margin-bottom
+<ul>
+<li>下外边距，设置一个正值，其下边的元素会向下移动</li>
+</ul>
+</li>
+<li>margin-left
+<ul>
+<li>左外边距，设置一个正值，元素会向右移动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>margin也可以设置负值，如果是负值则元素会向相反的方向移动</li>
+<li>元素在页面中是按照自左向右的顺序排列的，所以默认情况下如果我们设置的左和上外边距则会移动元素自身，而设置下和右外边距会移动其他元素</li>
+<li>margin的简写属性： margin 可以同时设置四个方向的外边距 ，用法和padding一样</li>
+<li>margin会影响到盒子实际占用空间</li>
+</ul>
+<h2 id="盒子水平方向的布局">盒子水平方向的布局</h2>
+<ul>
+<li>元素在其父元素中水平方向的位置由以下几个属性共同决定
+<ul>
+<li>margin-left</li>
+<li>border-left</li>
+<li>padding-left</li>
+<li>width</li>
+<li>padding-right</li>
+<li>border-right</li>
+<li>margin-right</li>
+</ul>
+</li>
+<li>一个元素在其父元素中，水平布局必须要满足以下的等式<br>
+margin-left+border-left+padding-left+width+padding-right+border-right+margin-right = 其父元素内容区的宽度 （必须满足）</li>
+<li>以上等式必须满足，如果相加结果使等式不成立，则称为过度约束，则等式会自动调整</li>
+</ul>
+<h3 id="调整的情况">调整的情况：</h3>
+<ul>
+<li>如果这七个值中没有为 auto 的情况，则浏览器会自动调整margin-right值以使等式满足</li>
+<li>如果某个值为auto，则会自动调整为auto的那个值以使等式成立</li>
+<li>如果将一个宽度和一个外边距设置为auto，则宽度会调整到最大，设置为auto的外边距会自动为0</li>
+<li>如果将三个值都设置为auto，则外边距都是0，宽度最大</li>
+<li>如果将两个外边距设置为auto，宽度固定值，则会将外边距设置为相同的值，所以我们经常利用这个特点来使一个元素在其父元素中水平居中</li>
+</ul>
+<pre><code>示例：
+width:xxxpx;
+margin:0 auto;
+</code></pre>
+<h2 id="盒子垂直方向的布局">盒子垂直方向的布局</h2>
+<ul>
+<li>默认情况下父元素的高度被内容撑开</li>
+<li>子元素是在父元素的内容区中排列的，如果子元素的大小超过了父元素，则子元素会从父元素中溢出,使用 overflow 属性来设置父元素如何处理溢出的子元素</li>
+<li>可选值：
+<ul>
+<li>visible，默认值 子元素会从父元素中溢出，在父元素外部的位置显示</li>
+<li>hidden 溢出内容将会被裁剪不会显示</li>
+<li>scroll 生成两个滚动条，通过滚动条来查看完整的内容</li>
+<li>auto 根据需要生成滚动条</li>
+</ul>
+</li>
+<li>定义水平方向或者垂直方向的overflow
+<ul>
+<li>overflow-x:</li>
+<li>overflow-y:</li>
+</ul>
+</li>
+</ul>
+<h2 id="垂直外边距的重叠折叠">垂直外边距的重叠（折叠）</h2>
+<ul>
+<li>相邻的垂直方向外边距会发生重叠现象</li>
+<li>兄弟元素
+<ul>
+<li>兄弟元素间的相邻垂直外边距会取两者之间的较大值（两者都是正值）</li>
+<li>特殊情况：
+<ul>
+<li>如果相邻的外边距一正一负，则取两者的和</li>
+<li>如果相邻的外边距都是负值，则取两者中绝对值较大的</li>
+</ul>
+</li>
+<li>兄弟元素之间的外边距的重叠，对于开发是有利的，所以我们不需要进行处理</li>
+</ul>
+</li>
+<li>父子元素
+<ul>
+<li>父子元素间相邻外边距，子元素的会传递给父元素（上外边距）</li>
+<li>父子外边距的折叠会影响到页面的布局，必须要进行处理</li>
+</ul>
+</li>
+</ul>
+<h1 id="行内元素的盒模型">行内元素的盒模型</h1>
+<h2 id="行内元素的盒模型-2">行内元素的盒模型</h2>
+<ul>
+<li>行内元素不支持设置宽度和高度</li>
+<li>行内元素可以设置padding，但是垂直方向padding不会影响页面的布局</li>
+<li>行内元素可以设置border，垂直方向的border不会影响页面的布局</li>
+<li>行内元素可以设置margin，垂直方向的margin不会影响布局</li>
+</ul>
+<h1 id="display">display</h1>
+<ul>
+<li>display 用来设置元素显示的类型</li>
+<li>可选值：
+<ul>
+<li>inline 将元素设置为行内元素</li>
+<li>block 将元素设置为块元素</li>
+<li>inline-block 将元素设置为行内块元素<br>
+（行内块元素，既可以设置宽度和高度又不会独占一行）</li>
+<li>table 将元素设置为一个表格</li>
+<li>none 元素不在页面中显示</li>
+</ul>
+</li>
+</ul>
+<h2 id="visibility">visibility</h2>
+<ul>
+<li>visibility 用来设置元素的显示状态</li>
+<li>可选值：
+<ul>
+<li>visible 默认值，元素在页面中正常显示</li>
+<li>hidden 元素在页面中隐藏 不显示，但是依然占据页面的位置</li>
+</ul>
+</li>
+</ul>
+<h1 id="默认样式">默认样式</h1>
+<h2 id="默认样式-2">默认样式</h2>
+<ul>
+<li>通常情况，浏览器都会为元素设置一些默认样式</li>
+<li>默认样式的存在会影响到页面的布局，通常情况下编写网页时必须要去除浏览器的默认样式（PC端的页面）</li>
+</ul>
+<h2 id="重置样式表">重置样式表</h2>
+<ul>
+<li>作用：专门用来对浏览器的样式进行重置的
+<ul>
+<li>reset.css 直接去除了浏览器的默认样式</li>
+<li>normalize.css 对默认样式进行了统一</li>
+</ul>
+</li>
+</ul>
+<h1 id="盒子的尺寸">盒子的尺寸</h1>
+<h2 id="可见框的尺寸">可见框的尺寸</h2>
+<ul>
+<li>默认情况下，盒子可见框的大小由内容区、内边距和边框共同决定</li>
+</ul>
+<h2 id="盒子的尺寸-2">盒子的尺寸</h2>
+<ul>
+<li>box-sizing 用来设置盒子尺寸的计算方式（设置width和height的作用）</li>
+<li>可选值：
+<ul>
+<li>content-box 默认值，宽度和高度用来设置内容区的大小</li>
+<li>border-box 宽度和高度用来设置整个盒子可见框的大小</li>
+<li>width 和 height 指的是内容区 和 内边距 和 边框的总大小</li>
+</ul>
+</li>
+</ul>
+<h1 id="轮廓和圆角">轮廓和圆角</h1>
+<h2 id="轮廓">轮廓</h2>
+<p>box-shadow 用来设置元素的阴影效果，阴影不会影响页面布局</p>
+<ul>
+<li>第一个值 水平偏移量 设置阴影的水平位置 正值向右移动 负值向左移动</li>
+<li>第二个值 垂直偏移量 设置阴影的水平位置 正值向下移动 负值向上移动</li>
+<li>第三个值 阴影的模糊半径</li>
+<li>第四个值 阴影的颜色<br>
+<code>box-shadow: 0px 0px 50px rgba(0, 0, 0, .3) ;</code></li>
+</ul>
+<h2 id="圆角">圆角</h2>
+<ul>
+<li>border-radius: 用来设置圆角 圆角设置的圆的半径大小</li>
+<li>设置左上角的圆角border-top-left-radius</li>
+<li>设置右上角的圆角border-top-right-radius</li>
+<li>设置左下角的圆角border-bottom-left-radius</li>
+<li>设置右下角的圆角border-bottom-right-radius:</li>
+<li>border-radius 可以分别指定四个角的圆角
+<ul>
+<li>四个值 左上 右上 右下 左下</li>
+<li>三个值 左上 右上/左下 右下</li>
+<li>两个个值 左上/右下 右上/左下</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+                    <div name="comment" style="background: white">
+                        <div class="commentcontainer">
+                            
+                            <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="toc-container">
+                    <ul class="markdownIt-TOC">
+<li><a href="#%E6%96%87%E6%A1%A3%E6%B5%81normal-flow">文档流（normal flow）</a>
+<ul>
+<li><a href="#%E5%85%83%E7%B4%A0%E5%9C%A8%E6%96%87%E6%A1%A3%E6%B5%81%E4%B8%AD%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9">元素在文档流中有什么特点：</a></li>
+</ul>
+</li>
+<li><a href="#%E7%9B%92%E6%A8%A1%E5%9E%8B">盒模型</a>
+<ul>
+<li><a href="#%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%AE%80%E4%BB%8B">盒模型简介</a></li>
+<li><a href="#%E7%9B%92%E6%A8%A1%E5%9E%8B-%E5%86%85%E5%AE%B9%E5%8C%BAcontent">盒模型-内容区(content)</a></li>
+</ul>
+</li>
+<li><a href="#%E7%9B%92%E6%A8%A1%E5%9E%8B-%E8%BE%B9%E6%A1%86border">盒模型-边框(border)</a>
+<ul>
+<li><a href="#%E8%BE%B9%E6%A1%86%E7%AE%80%E4%BB%8B">边框简介</a></li>
+<li><a href="#%E8%BE%B9%E6%A1%86%E7%9A%84%E5%AE%BD%E5%BA%A6-border-width">边框的宽度 border-width</a></li>
+<li><a href="#%E8%BE%B9%E6%A1%86%E7%9A%84%E9%A2%9C%E8%89%B2-border-color">边框的颜色 border-color</a></li>
+<li><a href="#%E8%BE%B9%E6%A1%86%E7%9A%84%E6%A0%B7%E5%BC%8F-border-style">边框的样式 border-style</a></li>
+<li><a href="#border%E7%AE%80%E5%86%99%E5%B1%9E%E6%80%A7">border简写属性</a></li>
+<li><a href="#%E7%9B%92%E6%A8%A1%E5%9E%8B%E5%86%85%E8%BE%B9%E8%B7%9Dpadding">盒模型—内边距(padding)</a></li>
+<li><a href="#%E7%9B%92%E5%AD%90%E5%8F%AF%E8%A7%81%E6%A1%86%E7%9A%84%E5%A4%A7%E5%B0%8F">盒子可见框的大小</a></li>
+<li><a href="#%E7%9B%92%E6%A8%A1%E5%9E%8B-%E5%A4%96%E8%BE%B9%E8%B7%9Dmargin">盒模型-外边距(margin)</a></li>
+<li><a href="#%E7%9B%92%E5%AD%90%E6%B0%B4%E5%B9%B3%E6%96%B9%E5%90%91%E7%9A%84%E5%B8%83%E5%B1%80">盒子水平方向的布局</a>
+<ul>
+<li><a href="#%E8%B0%83%E6%95%B4%E7%9A%84%E6%83%85%E5%86%B5">调整的情况：</a></li>
+</ul>
+</li>
+<li><a href="#%E7%9B%92%E5%AD%90%E5%9E%82%E7%9B%B4%E6%96%B9%E5%90%91%E7%9A%84%E5%B8%83%E5%B1%80">盒子垂直方向的布局</a></li>
+<li><a href="#%E5%9E%82%E7%9B%B4%E5%A4%96%E8%BE%B9%E8%B7%9D%E7%9A%84%E9%87%8D%E5%8F%A0%E6%8A%98%E5%8F%A0">垂直外边距的重叠（折叠）</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E7%9A%84%E7%9B%92%E6%A8%A1%E5%9E%8B">行内元素的盒模型</a>
+<ul>
+<li><a href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E7%9A%84%E7%9B%92%E6%A8%A1%E5%9E%8B-2">行内元素的盒模型</a></li>
+</ul>
+</li>
+<li><a href="#display">display</a>
+<ul>
+<li><a href="#visibility">visibility</a></li>
+</ul>
+</li>
+<li><a href="#%E9%BB%98%E8%AE%A4%E6%A0%B7%E5%BC%8F">默认样式</a>
+<ul>
+<li><a href="#%E9%BB%98%E8%AE%A4%E6%A0%B7%E5%BC%8F-2">默认样式</a></li>
+<li><a href="#%E9%87%8D%E7%BD%AE%E6%A0%B7%E5%BC%8F%E8%A1%A8">重置样式表</a></li>
+</ul>
+</li>
+<li><a href="#%E7%9B%92%E5%AD%90%E7%9A%84%E5%B0%BA%E5%AF%B8">盒子的尺寸</a>
+<ul>
+<li><a href="#%E5%8F%AF%E8%A7%81%E6%A1%86%E7%9A%84%E5%B0%BA%E5%AF%B8">可见框的尺寸</a></li>
+<li><a href="#%E7%9B%92%E5%AD%90%E7%9A%84%E5%B0%BA%E5%AF%B8-2">盒子的尺寸</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BD%AE%E5%BB%93%E5%92%8C%E5%9C%86%E8%A7%92">轮廓和圆角</a>
+<ul>
+<li><a href="#%E8%BD%AE%E5%BB%93">轮廓</a></li>
+<li><a href="#%E5%9C%86%E8%A7%92">圆角</a></li>
+</ul>
+</li>
+</ul>
+
+                </div>
+            </div>
+        </div>
+        <div id="bg">
+        </div>
+        <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
+    </div>
+    <!-- 响应式布局，针对手机端内容显示 -->
+    <div class="nav-small">
+        <head>
+
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Miss918&nbsp;&nbsp;|</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="/">
+              首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives">
+              归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags">
+              标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              关于
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://miss918.github.io/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- 引入BootStrap核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+        <div style="margin-top:30px"></div>
+        <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-13</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 10 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/MSWz_4w_dA/" class="postlink">
+                        <i class="fa fa-tag"></i> HTML
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>CSS布局(layout)</h2>
+            </div>
+            <div class="text ">
+                <h1 id="文档流normal-flow">文档流（normal flow）</h1>
+<ul>
+<li>网页是一个多层的结构，一层摞着一层</li>
+<li>通过CSS可以分别为每一层来设置样式</li>
+<li>作为用户来讲只能看到最顶上一层</li>
+<li>这些层中，最底下的一层称为文档流，文档流是网页的基础，我们所创建的元素默认都是在文档流中进行排列</li>
+<li>对于我们来元素主要有两个状态
+<ul>
+<li>在文档流中</li>
+<li>不在文档流中（脱离文档流）</li>
+</ul>
+</li>
+</ul>
+<h2 id="元素在文档流中有什么特点">元素在文档流中有什么特点：</h2>
+<ul>
+<li>块元素
+<ul>
+<li>块元素会在页面中独占一行(自上向下垂直排列)</li>
+<li>默认宽度是父元素的全部（会把父元素撑满）</li>
+<li>默认高度是被内容撑开（子元素）</li>
+</ul>
+</li>
+<li>行内元素
+<ul>
+<li>行内元素不会独占页面的一行，只占自身的大小</li>
+<li>行内元素在页面中左向右水平排列，如果一行之中不能容纳下所有的行内元素，则元素会换到第二行继续自左向右排列（书写习惯一致）</li>
+<li>行内元素的默认宽度和高度都是被内容撑开</li>
+</ul>
+</li>
+</ul>
+<h1 id="盒模型">盒模型</h1>
+<h2 id="盒模型简介">盒模型简介</h2>
+<ul>
+<li>盒模型,又称盒子模型、框模型（box model）</li>
+<li>CSS将页面中的所有元素都设置为了一个矩形的盒子</li>
+<li>将元素设置为矩形的盒子后，对页面的布局就变成将不同的盒子摆放同的位置</li>
+<li>每一个盒子都由一下几个部分组成：
+<ul>
+<li>内容区（content）</li>
+<li>内边距（padding）</li>
+<li>边框（border）</li>
+<li>外边距（margin）</li>
+</ul>
+</li>
+</ul>
+<h2 id="盒模型-内容区content">盒模型-内容区(content)</h2>
+<ul>
+<li>内容区（content），元素中的所有的子元素和文本内容都在内容区中排列</li>
+<li>内容区的大小由width 和 height两个属性来设置
+<ul>
+<li>width 设置内容区的宽度</li>
+<li>height 设置内容区的高度</li>
+</ul>
+</li>
+</ul>
+<h1 id="盒模型-边框border">盒模型-边框(border)</h1>
+<h2 id="边框简介">边框简介</h2>
+<ul>
+<li>边框（border），边框属于盒子边缘，边框里边属于盒子内部，出了边框都是盒子的外部</li>
+<li>边框的大小会影响到整个盒子的大小</li>
+<li>要设置边框，需要至少设置三个样式：
+<ul>
+<li>边框的宽度 border-width</li>
+<li>边框的颜色 border-color</li>
+<li>边框的样式 border-style</li>
+</ul>
+</li>
+</ul>
+<h2 id="边框的宽度-border-width">边框的宽度 border-width</h2>
+<ul>
+<li>默认值，一般都是 3个像素</li>
+<li>border-width可以用来指定四个方向的边框的宽度</li>
+<li>值的情况:
+<ul>
+<li>四个值：上 右 下 左</li>
+<li>三个值：上 左右 下</li>
+<li>两个值：上下 左右</li>
+<li>一个值：上下左右</li>
+</ul>
+</li>
+<li>除了border-width还有一组 border-xxx-width,xxx可以是 top right bottom left,用来单独指定某一个边的宽度</li>
+</ul>
+<h2 id="边框的颜色-border-color">边框的颜色 border-color</h2>
+<ul>
+<li>border-color用来指定边框的颜色，同样可以分别指定四个边的边框</li>
+<li>规则和border-width一样</li>
+<li>border-color也可以省略不写，如果省略了则自动使用color的颜色值</li>
+</ul>
+<h2 id="边框的样式-border-style">边框的样式 border-style</h2>
+<ul>
+<li>border-style 指定边框的样式
+<ul>
+<li>值	样式</li>
+<li>solid	表示实线</li>
+<li>dotted	点状虚线</li>
+<li>dashed	虚线</li>
+<li>double	双线</li>
+<li>none（默认值）	没有边框</li>
+</ul>
+</li>
+</ul>
+<h2 id="border简写属性">border简写属性</h2>
+<ul>
+<li>border简写属性，通过该属性可以同时设置边框所有的相关样式，并且没有顺序要求</li>
+<li>除了border以外还有四个 border-xxx
+<ul>
+<li>border-top</li>
+<li>border-right</li>
+<li>border-bottom</li>
+<li>border-left</li>
+</ul>
+</li>
+</ul>
+<h2 id="盒模型内边距padding">盒模型—内边距(padding)</h2>
+<ul>
+<li>内容区和边框之间的距离是内边距</li>
+<li>一共有四个方向的内边距：
+<ul>
+<li>padding-top</li>
+<li>padding-right</li>
+<li>padding-bottom</li>
+<li>padding-left</li>
+</ul>
+</li>
+<li>内边距的设置会影响到盒子的大小</li>
+<li>背景颜色会延伸到内边距上</li>
+<li>padding 内边距的简写属性，可以同时指定四个方向的内边距，规则和border-width 一样</li>
+</ul>
+<h2 id="盒子可见框的大小">盒子可见框的大小</h2>
+<ul>
+<li>盒子的可见框的大小，由内容区 内边距 和 边框共同决定，所以在计算盒子大小时，需要将这三个区域加到一起计算</li>
+</ul>
+<h2 id="盒模型-外边距margin">盒模型-外边距(margin)</h2>
+<ul>
+<li>外边距不会影响盒子可见框的大小</li>
+<li>但是外边距会影响盒子的位置</li>
+<li>一共有四个方向的外边距：
+<ul>
+<li>margin-top
+<ul>
+<li>上外边距，设置一个正值，元素会向下移动</li>
+</ul>
+</li>
+<li>margin-right
+<ul>
+<li>默认情况下设置margin-right不会产生任何效果</li>
+</ul>
+</li>
+<li>margin-bottom
+<ul>
+<li>下外边距，设置一个正值，其下边的元素会向下移动</li>
+</ul>
+</li>
+<li>margin-left
+<ul>
+<li>左外边距，设置一个正值，元素会向右移动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>margin也可以设置负值，如果是负值则元素会向相反的方向移动</li>
+<li>元素在页面中是按照自左向右的顺序排列的，所以默认情况下如果我们设置的左和上外边距则会移动元素自身，而设置下和右外边距会移动其他元素</li>
+<li>margin的简写属性： margin 可以同时设置四个方向的外边距 ，用法和padding一样</li>
+<li>margin会影响到盒子实际占用空间</li>
+</ul>
+<h2 id="盒子水平方向的布局">盒子水平方向的布局</h2>
+<ul>
+<li>元素在其父元素中水平方向的位置由以下几个属性共同决定
+<ul>
+<li>margin-left</li>
+<li>border-left</li>
+<li>padding-left</li>
+<li>width</li>
+<li>padding-right</li>
+<li>border-right</li>
+<li>margin-right</li>
+</ul>
+</li>
+<li>一个元素在其父元素中，水平布局必须要满足以下的等式<br>
+margin-left+border-left+padding-left+width+padding-right+border-right+margin-right = 其父元素内容区的宽度 （必须满足）</li>
+<li>以上等式必须满足，如果相加结果使等式不成立，则称为过度约束，则等式会自动调整</li>
+</ul>
+<h3 id="调整的情况">调整的情况：</h3>
+<ul>
+<li>如果这七个值中没有为 auto 的情况，则浏览器会自动调整margin-right值以使等式满足</li>
+<li>如果某个值为auto，则会自动调整为auto的那个值以使等式成立</li>
+<li>如果将一个宽度和一个外边距设置为auto，则宽度会调整到最大，设置为auto的外边距会自动为0</li>
+<li>如果将三个值都设置为auto，则外边距都是0，宽度最大</li>
+<li>如果将两个外边距设置为auto，宽度固定值，则会将外边距设置为相同的值，所以我们经常利用这个特点来使一个元素在其父元素中水平居中</li>
+</ul>
+<pre><code>示例：
+width:xxxpx;
+margin:0 auto;
+</code></pre>
+<h2 id="盒子垂直方向的布局">盒子垂直方向的布局</h2>
+<ul>
+<li>默认情况下父元素的高度被内容撑开</li>
+<li>子元素是在父元素的内容区中排列的，如果子元素的大小超过了父元素，则子元素会从父元素中溢出,使用 overflow 属性来设置父元素如何处理溢出的子元素</li>
+<li>可选值：
+<ul>
+<li>visible，默认值 子元素会从父元素中溢出，在父元素外部的位置显示</li>
+<li>hidden 溢出内容将会被裁剪不会显示</li>
+<li>scroll 生成两个滚动条，通过滚动条来查看完整的内容</li>
+<li>auto 根据需要生成滚动条</li>
+</ul>
+</li>
+<li>定义水平方向或者垂直方向的overflow
+<ul>
+<li>overflow-x:</li>
+<li>overflow-y:</li>
+</ul>
+</li>
+</ul>
+<h2 id="垂直外边距的重叠折叠">垂直外边距的重叠（折叠）</h2>
+<ul>
+<li>相邻的垂直方向外边距会发生重叠现象</li>
+<li>兄弟元素
+<ul>
+<li>兄弟元素间的相邻垂直外边距会取两者之间的较大值（两者都是正值）</li>
+<li>特殊情况：
+<ul>
+<li>如果相邻的外边距一正一负，则取两者的和</li>
+<li>如果相邻的外边距都是负值，则取两者中绝对值较大的</li>
+</ul>
+</li>
+<li>兄弟元素之间的外边距的重叠，对于开发是有利的，所以我们不需要进行处理</li>
+</ul>
+</li>
+<li>父子元素
+<ul>
+<li>父子元素间相邻外边距，子元素的会传递给父元素（上外边距）</li>
+<li>父子外边距的折叠会影响到页面的布局，必须要进行处理</li>
+</ul>
+</li>
+</ul>
+<h1 id="行内元素的盒模型">行内元素的盒模型</h1>
+<h2 id="行内元素的盒模型-2">行内元素的盒模型</h2>
+<ul>
+<li>行内元素不支持设置宽度和高度</li>
+<li>行内元素可以设置padding，但是垂直方向padding不会影响页面的布局</li>
+<li>行内元素可以设置border，垂直方向的border不会影响页面的布局</li>
+<li>行内元素可以设置margin，垂直方向的margin不会影响布局</li>
+</ul>
+<h1 id="display">display</h1>
+<ul>
+<li>display 用来设置元素显示的类型</li>
+<li>可选值：
+<ul>
+<li>inline 将元素设置为行内元素</li>
+<li>block 将元素设置为块元素</li>
+<li>inline-block 将元素设置为行内块元素<br>
+（行内块元素，既可以设置宽度和高度又不会独占一行）</li>
+<li>table 将元素设置为一个表格</li>
+<li>none 元素不在页面中显示</li>
+</ul>
+</li>
+</ul>
+<h2 id="visibility">visibility</h2>
+<ul>
+<li>visibility 用来设置元素的显示状态</li>
+<li>可选值：
+<ul>
+<li>visible 默认值，元素在页面中正常显示</li>
+<li>hidden 元素在页面中隐藏 不显示，但是依然占据页面的位置</li>
+</ul>
+</li>
+</ul>
+<h1 id="默认样式">默认样式</h1>
+<h2 id="默认样式-2">默认样式</h2>
+<ul>
+<li>通常情况，浏览器都会为元素设置一些默认样式</li>
+<li>默认样式的存在会影响到页面的布局，通常情况下编写网页时必须要去除浏览器的默认样式（PC端的页面）</li>
+</ul>
+<h2 id="重置样式表">重置样式表</h2>
+<ul>
+<li>作用：专门用来对浏览器的样式进行重置的
+<ul>
+<li>reset.css 直接去除了浏览器的默认样式</li>
+<li>normalize.css 对默认样式进行了统一</li>
+</ul>
+</li>
+</ul>
+<h1 id="盒子的尺寸">盒子的尺寸</h1>
+<h2 id="可见框的尺寸">可见框的尺寸</h2>
+<ul>
+<li>默认情况下，盒子可见框的大小由内容区、内边距和边框共同决定</li>
+</ul>
+<h2 id="盒子的尺寸-2">盒子的尺寸</h2>
+<ul>
+<li>box-sizing 用来设置盒子尺寸的计算方式（设置width和height的作用）</li>
+<li>可选值：
+<ul>
+<li>content-box 默认值，宽度和高度用来设置内容区的大小</li>
+<li>border-box 宽度和高度用来设置整个盒子可见框的大小</li>
+<li>width 和 height 指的是内容区 和 内边距 和 边框的总大小</li>
+</ul>
+</li>
+</ul>
+<h1 id="轮廓和圆角">轮廓和圆角</h1>
+<h2 id="轮廓">轮廓</h2>
+<p>box-shadow 用来设置元素的阴影效果，阴影不会影响页面布局</p>
+<ul>
+<li>第一个值 水平偏移量 设置阴影的水平位置 正值向右移动 负值向左移动</li>
+<li>第二个值 垂直偏移量 设置阴影的水平位置 正值向下移动 负值向上移动</li>
+<li>第三个值 阴影的模糊半径</li>
+<li>第四个值 阴影的颜色<br>
+<code>box-shadow: 0px 0px 50px rgba(0, 0, 0, .3) ;</code></li>
+</ul>
+<h2 id="圆角">圆角</h2>
+<ul>
+<li>border-radius: 用来设置圆角 圆角设置的圆的半径大小</li>
+<li>设置左上角的圆角border-top-left-radius</li>
+<li>设置右上角的圆角border-top-right-radius</li>
+<li>设置左下角的圆角border-bottom-left-radius</li>
+<li>设置右下角的圆角border-bottom-right-radius:</li>
+<li>border-radius 可以分别指定四个角的圆角
+<ul>
+<li>四个值 左上 右上 右下 左下</li>
+<li>三个值 左上 右上/左下 右下</li>
+<li>两个个值 左上/右下 右上/左下</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+        <div name="comment" style="background: white">
+            <div class="commentcontainer">
+                
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                
+            </div>
+        </div>
+    </div>
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+</body>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://miss918.github.io/media/js/post.js"></script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://ericam.top/' //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://miss918.github.io/media/live2d/assets/tororo.model.json");
+</script>

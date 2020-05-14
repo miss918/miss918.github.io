@@ -1,0 +1,1010 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="字体
+字体的颜色
+color 用来设置字体颜色
+字体的大小
+
+font-size 字体的大小
+和font-size相关的单位
+
+em 相当于当前元素的一个font-size
+rem 相对于根元素的一个font-size
+
+
+
+字体的格式
+
+..." />
+    <meta name="keywords" content="HTML" />
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
+              
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    <title>Miss918</title>
+</head>
+
+<body>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div class="nav-large">
+            <div class="row">
+                <div class="side"><html>
+
+<head>
+    <link rel="stylesheet" href="https://miss918.github.io/styles/main.css">
+    <meta name="description" content="少管闲事,做好自己" />
+    <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://miss918.github.io/images/avatar.png?v=1589500701615" class="avatar">
+        </div>
+        <div class="sitename">Miss918</div>
+        <span class="describtion" data-text='["少管闲事,做好自己"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        
+        <a onclick="showqq()"><i><img class="icon" src="https://miss918.github.io/media/images/QQ.png" alt=""></i></a>
+        
+        
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none">544465786</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="/" class="menubutton">
+            首页
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/archives" class="menubutton">
+            归档
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/tags" class="menubutton">
+            标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/post/about" class="menubutton">
+            关于
+        </a>
+    </div>
+    
+    
+    
+        <div class="mchocie describtion">
+            <a href="https://miss918.github.io/friends" class="menubutton">友人帐</a>
+        </div>
+    
+    <hr>
+    <div id="footinfo">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | Theme: <a href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    <div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div>
+    <div id="cussitetime" style="display:none">07/05/2020</div>
+    </div>
+</body>
+
+</html>
+<script src="https://miss918.github.io/media/js/wordshow.js"></script>
+<script>
+    //----------------------站点运行时间
+    var now = new Date();
+
+    function createtime() {
+        var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+        var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+            snum = "0" + snum;
+        }
+        document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+        document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            console.log(arrItems);
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            alert("博主的QQ联系方式为：" + qq);
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script></div>
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div id="main" class="col-xs-12 col-sm-7">
+                    <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-13</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 5 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/MSWz_4w_dA/" class="postlink">
+                        <i class="fa fa-tag"></i> HTML
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>CSS字体（font）</h2>
+            </div>
+            <div class="text ">
+                <h1 id="字体">字体</h1>
+<h2 id="字体的颜色">字体的颜色</h2>
+<p>color 用来设置字体颜色</p>
+<h2 id="字体的大小">字体的大小</h2>
+<ul>
+<li>font-size 字体的大小</li>
+<li>和font-size相关的单位
+<ul>
+<li>em 相当于当前元素的一个font-size</li>
+<li>rem 相对于根元素的一个font-size</li>
+</ul>
+</li>
+</ul>
+<h2 id="字体的格式">字体的格式</h2>
+<ul>
+<li>font-family 字体族</li>
+<li>可选值：
+<ul>
+<li>serif 衬线字体</li>
+<li>sans-serif 非衬线字体</li>
+<li>monospace 等宽字体</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>指定字体的类别，浏览器会自动使用该类别下的字体</li>
+<li>font-family 可以同时指定多个字体，多个字体间使用,隔开.字体生效时优先使用第一个，第一个无法使用则使用第二个 以此类推</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+      @font-face {
+        /* 指定字体的名字 */
+        font-family: &quot;myfont&quot;;
+        /* 服务器中字体的路径 */
+        src: url(&quot;./font/ZCOOLKuaiLe-Regular.ttf&quot;) format(&quot;truetype&quot;);
+      }
+
+      p {
+        color: blue;
+        font-size: 40px;
+        font-family: myfont;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+      今天天气真不错，Hello Hello How are you！
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="font-face">font-face</h2>
+<ul>
+<li>font-face可以将服务器中的字体直接提供给用户去使用</li>
+<li>问题：
+<ol>
+<li>加载速度</li>
+<li>版权</li>
+<li>字体格式</li>
+</ol>
+</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+      @font-face {
+        /* 指定字体的名字 */
+        font-family: &quot;myfont&quot;;
+        /* 服务器中字体的路径 */
+        src: url(&quot;./font/ZCOOLKuaiLe-Regular.ttf&quot;) format(&quot;truetype&quot;);
+      }
+      p {
+        color: blue;
+        font-size: 40px;
+        font-family: myfont;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+      今天天气真不错，Hello Hello How are you！
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="图标字体">图标字体</h1>
+<h2 id="图标字体iconfont简介">图标字体（iconfont）简介</h2>
+<ul>
+<li>在网页中经常需要使用一些图标，可以通过图片来引入图标，但是图片大小本身比较大，并且非常的不灵活</li>
+<li>所以在使用图标时，我们还可以将图标直接设置为字体，然后通过font-face的形式来对字体进行引入</li>
+<li>这样我们就可以通过使用字体的形式来使用图标</li>
+</ul>
+<h1 id="使用图标字体的方法">使用图标字体的方法</h1>
+<h2 id="fontawesome">fontawesome</h2>
+<ol>
+<li>下载 https://fontawesome.com/</li>
+<li>解压</li>
+<li>将css和webfonts移动到项目中</li>
+<li>将all.css引入到网页中</li>
+<li>使用图标字体</li>
+</ol>
+<ul>
+<li>直接通过类名来使用图标字体
+<ul>
+<li>class=&quot;fas fa-bell&quot;</li>
+<li>class=&quot;fab fa-accessible-icon&quot;</li>
+</ul>
+</li>
+</ul>
+<h2 id="阿里巴巴矢量图标库">阿里巴巴矢量图标库</h2>
+<p>详情见阿里的介绍</p>
+<h1 id="行高">行高</h1>
+<h2 id="行高line-height简介">行高（line height）简介</h2>
+<ul>
+<li>行高指的是文字占有的实际高度</li>
+<li>可以通过line-height来设置行高</li>
+<li>行高可以直接指定一个大小（px em），也可以直接为行高设置一个整数</li>
+<li>如果是一个整数的话，行高将会是字体的指定的倍数</li>
+<li>行高经常还用来设置文字的行间距</li>
+<li>行间距 = 行高 - 字体大小</li>
+</ul>
+<h2 id="字体框">字体框</h2>
+<ul>
+<li>字体框就是字体存在的格子，设置font-size实际上就是在设置字体框的高度</li>
+<li>行高会在字体框的上下平均分配</li>
+</ul>
+<h2 id="行高在布局中的应用">行高在布局中的应用</h2>
+<p>可以将行高设置为和高度一样的值，使单行文字在一个元素中垂直居中</p>
+<h2 id="字体的粗细">字体的粗细</h2>
+<ul>
+<li>font-weight 字重 字体的加粗</li>
+<li>可选值：
+<ol>
+<li>normal 默认值 不加粗</li>
+<li>bold 加粗</li>
+<li>100-900 九个级别（没什么用）</li>
+</ol>
+</li>
+</ul>
+<h2 id="字体风格">字体风格</h2>
+<ul>
+<li>font-style 字体的风格</li>
+<li>可选值:
+<ol>
+<li>normal 正常的</li>
+<li>italic 斜体</li>
+</ol>
+</li>
+</ul>
+<h2 id="字体的简写属性">字体的简写属性</h2>
+<ul>
+<li>font 可以设置字体相关的所有属性</li>
+<li>语法：
+<ul>
+<li>font: 字体大小 字体颜色 字体粗细 字体风格 字体大小/行高 字体族</li>
+<li>行高可以省略不写 如果不写使用默认值</li>
+</ul>
+</li>
+</ul>
+<h1 id="文本的样式">文本的样式</h1>
+<h2 id="text-align-文本的水平对齐">text-align 文本的水平对齐</h2>
+<ul>
+<li>可选值：
+<ul>
+<li>left 左侧对齐</li>
+<li>right 右对齐</li>
+<li>center 居中对齐</li>
+<li>justify 两端对齐</li>
+</ul>
+</li>
+</ul>
+<h2 id="vertical-align-设置元素垂直对齐的方式">vertical-align 设置元素垂直对齐的方式</h2>
+<ul>
+<li>可选值：
+<ul>
+<li>baseline 默认值 基线对齐</li>
+<li>top 顶部对齐</li>
+<li>bottom 底部对齐</li>
+<li>middle 居中对齐</li>
+</ul>
+</li>
+</ul>
+<h2 id="text-decoration-设置文本修饰">text-decoration 设置文本修饰</h2>
+<ul>
+<li>可选值：
+<ul>
+<li>none 什么都没有</li>
+<li>underline 下划线</li>
+<li>line-through 删除线</li>
+<li>overline 上划线</li>
+</ul>
+</li>
+</ul>
+<h2 id="white-space-设置网页如何处理空白">white-space 设置网页如何处理空白</h2>
+<ul>
+<li>可选值：
+<ul>
+<li>normal 正常</li>
+<li>nowrap 不换行</li>
+<li>pre 保留空白</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+                    <div name="comment" style="background: white">
+                        <div class="commentcontainer">
+                            
+                            <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="toc-container">
+                    <ul class="markdownIt-TOC">
+<li><a href="#%E5%AD%97%E4%BD%93">字体</a>
+<ul>
+<li><a href="#%E5%AD%97%E4%BD%93%E7%9A%84%E9%A2%9C%E8%89%B2">字体的颜色</a></li>
+<li><a href="#%E5%AD%97%E4%BD%93%E7%9A%84%E5%A4%A7%E5%B0%8F">字体的大小</a></li>
+<li><a href="#%E5%AD%97%E4%BD%93%E7%9A%84%E6%A0%BC%E5%BC%8F">字体的格式</a></li>
+<li><a href="#font-face">font-face</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%BE%E6%A0%87%E5%AD%97%E4%BD%93">图标字体</a>
+<ul>
+<li><a href="#%E5%9B%BE%E6%A0%87%E5%AD%97%E4%BD%93iconfont%E7%AE%80%E4%BB%8B">图标字体（iconfont）简介</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E6%B3%95">使用图标字体的方法</a>
+<ul>
+<li><a href="#fontawesome">fontawesome</a></li>
+<li><a href="#%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E7%9F%A2%E9%87%8F%E5%9B%BE%E6%A0%87%E5%BA%93">阿里巴巴矢量图标库</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A1%8C%E9%AB%98">行高</a>
+<ul>
+<li><a href="#%E8%A1%8C%E9%AB%98line-height%E7%AE%80%E4%BB%8B">行高（line height）简介</a></li>
+<li><a href="#%E5%AD%97%E4%BD%93%E6%A1%86">字体框</a></li>
+<li><a href="#%E8%A1%8C%E9%AB%98%E5%9C%A8%E5%B8%83%E5%B1%80%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8">行高在布局中的应用</a></li>
+<li><a href="#%E5%AD%97%E4%BD%93%E7%9A%84%E7%B2%97%E7%BB%86">字体的粗细</a></li>
+<li><a href="#%E5%AD%97%E4%BD%93%E9%A3%8E%E6%A0%BC">字体风格</a></li>
+<li><a href="#%E5%AD%97%E4%BD%93%E7%9A%84%E7%AE%80%E5%86%99%E5%B1%9E%E6%80%A7">字体的简写属性</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E6%9C%AC%E7%9A%84%E6%A0%B7%E5%BC%8F">文本的样式</a>
+<ul>
+<li><a href="#text-align-%E6%96%87%E6%9C%AC%E7%9A%84%E6%B0%B4%E5%B9%B3%E5%AF%B9%E9%BD%90">text-align 文本的水平对齐</a></li>
+<li><a href="#vertical-align-%E8%AE%BE%E7%BD%AE%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E5%AF%B9%E9%BD%90%E7%9A%84%E6%96%B9%E5%BC%8F">vertical-align 设置元素垂直对齐的方式</a></li>
+<li><a href="#text-decoration-%E8%AE%BE%E7%BD%AE%E6%96%87%E6%9C%AC%E4%BF%AE%E9%A5%B0">text-decoration 设置文本修饰</a></li>
+<li><a href="#white-space-%E8%AE%BE%E7%BD%AE%E7%BD%91%E9%A1%B5%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E7%A9%BA%E7%99%BD">white-space 设置网页如何处理空白</a></li>
+</ul>
+</li>
+</ul>
+
+                </div>
+            </div>
+        </div>
+        <div id="bg">
+        </div>
+        <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
+    </div>
+    <!-- 响应式布局，针对手机端内容显示 -->
+    <div class="nav-small">
+        <head>
+
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Miss918&nbsp;&nbsp;|</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="/">
+              首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives">
+              归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags">
+              标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              关于
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://miss918.github.io/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- 引入BootStrap核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+        <div style="margin-top:30px"></div>
+        <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-13</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 5 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/MSWz_4w_dA/" class="postlink">
+                        <i class="fa fa-tag"></i> HTML
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>CSS字体（font）</h2>
+            </div>
+            <div class="text ">
+                <h1 id="字体">字体</h1>
+<h2 id="字体的颜色">字体的颜色</h2>
+<p>color 用来设置字体颜色</p>
+<h2 id="字体的大小">字体的大小</h2>
+<ul>
+<li>font-size 字体的大小</li>
+<li>和font-size相关的单位
+<ul>
+<li>em 相当于当前元素的一个font-size</li>
+<li>rem 相对于根元素的一个font-size</li>
+</ul>
+</li>
+</ul>
+<h2 id="字体的格式">字体的格式</h2>
+<ul>
+<li>font-family 字体族</li>
+<li>可选值：
+<ul>
+<li>serif 衬线字体</li>
+<li>sans-serif 非衬线字体</li>
+<li>monospace 等宽字体</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>指定字体的类别，浏览器会自动使用该类别下的字体</li>
+<li>font-family 可以同时指定多个字体，多个字体间使用,隔开.字体生效时优先使用第一个，第一个无法使用则使用第二个 以此类推</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+      @font-face {
+        /* 指定字体的名字 */
+        font-family: &quot;myfont&quot;;
+        /* 服务器中字体的路径 */
+        src: url(&quot;./font/ZCOOLKuaiLe-Regular.ttf&quot;) format(&quot;truetype&quot;);
+      }
+
+      p {
+        color: blue;
+        font-size: 40px;
+        font-family: myfont;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+      今天天气真不错，Hello Hello How are you！
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="font-face">font-face</h2>
+<ul>
+<li>font-face可以将服务器中的字体直接提供给用户去使用</li>
+<li>问题：
+<ol>
+<li>加载速度</li>
+<li>版权</li>
+<li>字体格式</li>
+</ol>
+</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+      @font-face {
+        /* 指定字体的名字 */
+        font-family: &quot;myfont&quot;;
+        /* 服务器中字体的路径 */
+        src: url(&quot;./font/ZCOOLKuaiLe-Regular.ttf&quot;) format(&quot;truetype&quot;);
+      }
+      p {
+        color: blue;
+        font-size: 40px;
+        font-family: myfont;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+      今天天气真不错，Hello Hello How are you！
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="图标字体">图标字体</h1>
+<h2 id="图标字体iconfont简介">图标字体（iconfont）简介</h2>
+<ul>
+<li>在网页中经常需要使用一些图标，可以通过图片来引入图标，但是图片大小本身比较大，并且非常的不灵活</li>
+<li>所以在使用图标时，我们还可以将图标直接设置为字体，然后通过font-face的形式来对字体进行引入</li>
+<li>这样我们就可以通过使用字体的形式来使用图标</li>
+</ul>
+<h1 id="使用图标字体的方法">使用图标字体的方法</h1>
+<h2 id="fontawesome">fontawesome</h2>
+<ol>
+<li>下载 https://fontawesome.com/</li>
+<li>解压</li>
+<li>将css和webfonts移动到项目中</li>
+<li>将all.css引入到网页中</li>
+<li>使用图标字体</li>
+</ol>
+<ul>
+<li>直接通过类名来使用图标字体
+<ul>
+<li>class=&quot;fas fa-bell&quot;</li>
+<li>class=&quot;fab fa-accessible-icon&quot;</li>
+</ul>
+</li>
+</ul>
+<h2 id="阿里巴巴矢量图标库">阿里巴巴矢量图标库</h2>
+<p>详情见阿里的介绍</p>
+<h1 id="行高">行高</h1>
+<h2 id="行高line-height简介">行高（line height）简介</h2>
+<ul>
+<li>行高指的是文字占有的实际高度</li>
+<li>可以通过line-height来设置行高</li>
+<li>行高可以直接指定一个大小（px em），也可以直接为行高设置一个整数</li>
+<li>如果是一个整数的话，行高将会是字体的指定的倍数</li>
+<li>行高经常还用来设置文字的行间距</li>
+<li>行间距 = 行高 - 字体大小</li>
+</ul>
+<h2 id="字体框">字体框</h2>
+<ul>
+<li>字体框就是字体存在的格子，设置font-size实际上就是在设置字体框的高度</li>
+<li>行高会在字体框的上下平均分配</li>
+</ul>
+<h2 id="行高在布局中的应用">行高在布局中的应用</h2>
+<p>可以将行高设置为和高度一样的值，使单行文字在一个元素中垂直居中</p>
+<h2 id="字体的粗细">字体的粗细</h2>
+<ul>
+<li>font-weight 字重 字体的加粗</li>
+<li>可选值：
+<ol>
+<li>normal 默认值 不加粗</li>
+<li>bold 加粗</li>
+<li>100-900 九个级别（没什么用）</li>
+</ol>
+</li>
+</ul>
+<h2 id="字体风格">字体风格</h2>
+<ul>
+<li>font-style 字体的风格</li>
+<li>可选值:
+<ol>
+<li>normal 正常的</li>
+<li>italic 斜体</li>
+</ol>
+</li>
+</ul>
+<h2 id="字体的简写属性">字体的简写属性</h2>
+<ul>
+<li>font 可以设置字体相关的所有属性</li>
+<li>语法：
+<ul>
+<li>font: 字体大小 字体颜色 字体粗细 字体风格 字体大小/行高 字体族</li>
+<li>行高可以省略不写 如果不写使用默认值</li>
+</ul>
+</li>
+</ul>
+<h1 id="文本的样式">文本的样式</h1>
+<h2 id="text-align-文本的水平对齐">text-align 文本的水平对齐</h2>
+<ul>
+<li>可选值：
+<ul>
+<li>left 左侧对齐</li>
+<li>right 右对齐</li>
+<li>center 居中对齐</li>
+<li>justify 两端对齐</li>
+</ul>
+</li>
+</ul>
+<h2 id="vertical-align-设置元素垂直对齐的方式">vertical-align 设置元素垂直对齐的方式</h2>
+<ul>
+<li>可选值：
+<ul>
+<li>baseline 默认值 基线对齐</li>
+<li>top 顶部对齐</li>
+<li>bottom 底部对齐</li>
+<li>middle 居中对齐</li>
+</ul>
+</li>
+</ul>
+<h2 id="text-decoration-设置文本修饰">text-decoration 设置文本修饰</h2>
+<ul>
+<li>可选值：
+<ul>
+<li>none 什么都没有</li>
+<li>underline 下划线</li>
+<li>line-through 删除线</li>
+<li>overline 上划线</li>
+</ul>
+</li>
+</ul>
+<h2 id="white-space-设置网页如何处理空白">white-space 设置网页如何处理空白</h2>
+<ul>
+<li>可选值：
+<ul>
+<li>normal 正常</li>
+<li>nowrap 不换行</li>
+<li>pre 保留空白</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+        <div name="comment" style="background: white">
+            <div class="commentcontainer">
+                
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                
+            </div>
+        </div>
+    </div>
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+</body>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://miss918.github.io/media/js/post.js"></script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://ericam.top/' //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://miss918.github.io/media/live2d/assets/tororo.model.json");
+</script>

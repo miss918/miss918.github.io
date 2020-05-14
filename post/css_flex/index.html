@@ -1,0 +1,1278 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="#flex(弹性盒、伸缩盒)
+
+是CSS中的又一种布局手段，它主要用来代替浮动来完成页面的布局
+flex可以使元素具有弹性，让元素可以跟随页面的大小的改变而改变
+弹性容器
+
+要使用弹性盒，必须先将一个元素设置为弹性容器
+我们 通过 disp..." />
+    <meta name="keywords" content="HTML" />
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
+              
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+    <title>Miss918</title>
+</head>
+
+<body>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div class="nav-large">
+            <div class="row">
+                <div class="side"><html>
+
+<head>
+    <link rel="stylesheet" href="https://miss918.github.io/styles/main.css">
+    <meta name="description" content="少管闲事,做好自己" />
+    <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://miss918.github.io/images/avatar.png?v=1589500701615" class="avatar">
+        </div>
+        <div class="sitename">Miss918</div>
+        <span class="describtion" data-text='["少管闲事,做好自己"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        
+        <a onclick="showqq()"><i><img class="icon" src="https://miss918.github.io/media/images/QQ.png" alt=""></i></a>
+        
+        
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none">544465786</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="/" class="menubutton">
+            首页
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/archives" class="menubutton">
+            归档
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/tags" class="menubutton">
+            标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/post/about" class="menubutton">
+            关于
+        </a>
+    </div>
+    
+    
+    
+        <div class="mchocie describtion">
+            <a href="https://miss918.github.io/friends" class="menubutton">友人帐</a>
+        </div>
+    
+    <hr>
+    <div id="footinfo">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | Theme: <a href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    <div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div>
+    <div id="cussitetime" style="display:none">07/05/2020</div>
+    </div>
+</body>
+
+</html>
+<script src="https://miss918.github.io/media/js/wordshow.js"></script>
+<script>
+    //----------------------站点运行时间
+    var now = new Date();
+
+    function createtime() {
+        var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+        var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+            snum = "0" + snum;
+        }
+        document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+        document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            console.log(arrItems);
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            alert("博主的QQ联系方式为：" + qq);
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script></div>
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div id="main" class="col-xs-12 col-sm-7">
+                    <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-14</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 8 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/MSWz_4w_dA/" class="postlink">
+                        <i class="fa fa-tag"></i> HTML
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>CSS弹性盒(flex)</h2>
+            </div>
+            <div class="text ">
+                <p>#flex(弹性盒、伸缩盒)</p>
+<ul>
+<li>是CSS中的又一种布局手段，它主要用来代替浮动来完成页面的布局</li>
+<li>flex可以使元素具有弹性，让元素可以跟随页面的大小的改变而改变</li>
+<li>弹性容器
+<ul>
+<li>要使用弹性盒，必须先将一个元素设置为弹性容器</li>
+<li>我们 通过 display 来设置弹性容器
+<ul>
+<li>display:flex 设置为块级弹性容器</li>
+<li>display:inline-flex 设置为行内的弹性容器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>弹性元素
+<ul>
+<li>弹性容器的子元素是弹性元素（弹性项）</li>
+<li>弹性元素可以同时是弹性容器</li>
+</ul>
+</li>
+</ul>
+<h3 id="示例">示例:</h3>
+<pre><code>       &lt;ul&gt;
+         &lt;li&gt;1&lt;/li&gt;
+         &lt;li&gt;2&lt;/li&gt;
+         &lt;li&gt;3&lt;/li&gt;
+     &lt;/ul&gt;
+</code></pre>
+<h2 id="弹性容器direction">弹性容器(direction)</h2>
+<ul>
+<li>
+<p>flex-direction指定容器中弹性元素的排列方式</p>
+</li>
+<li>
+<p>可选值：</p>
+<ul>
+<li>row默认值，弹性元素在容器中水平排列（左向右）
+<ul>
+<li>主轴 自左向右</li>
+</ul>
+</li>
+<li>row-reverse弹性元素在容器中反向水平排列（右向左）
+<ul>
+<li>主轴 自右向左</li>
+</ul>
+</li>
+<li>column弹性元素纵向排列（自上向下）</li>
+<li>column-reverse弹性元素方向纵向排列（自下向上）</li>
+</ul>
+</li>
+<li>
+<p>主轴：</p>
+<ul>
+<li>弹性元素的排列方向称为主轴</li>
+</ul>
+</li>
+<li>
+<p>侧轴：</p>
+<ul>
+<li>与主轴垂直方向的称为侧轴</li>
+</ul>
+</li>
+</ul>
+<h3 id="示例-2">示例:</h3>
+<pre><code>        ul{
+          width: 500px;
+          border: 10px red solid;
+          display: flex;
+          flex-direction: row;
+      }
+</code></pre>
+<h2 id="弹性元素的属性">弹性元素的属性</h2>
+<ul>
+<li>flex-grow 指定弹性元素的伸展的系数
+<ul>
+<li>当父元素有多余空间的时，子元素如何伸展</li>
+<li>父元素的剩余空间，会按照比例进行分配<br>
+<code>flex-grow: 1</code></li>
+</ul>
+</li>
+<li>flex-shrink 指定弹性元素的收缩系数
+<ul>
+<li>当父元素中的空间不足以容纳所有的子元素时，如果对子元素进行收缩<br>
+<code>flex-shrink: 0;</code><br>
+###示例:</li>
+</ul>
+</li>
+</ul>
+<pre><code>        li{
+            width: 200px;
+            height: 100px;
+            background-color: #bfa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            flex-shrink: 0;     
+        }
+        li:nth-child(1){
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        li:nth-child(2){
+            background-color: pink;
+            flex-grow: 2;
+            flex-shrink: 2;
+        }
+
+        li:nth-child(3){
+            background-color: orange;
+            flex-grow: 3;
+            flex-shrink: 3;
+        }
+</code></pre>
+<p>#弹性容器的样式<br>
+##flex-wrap:</p>
+<ul>
+<li>设置弹性元素是否在弹性容器中自动换行</li>
+<li>可选值：
+<ul>
+<li>nowrap 默认值，元素不会自动换行</li>
+<li>wrap 元素沿着辅轴方向自动换行</li>
+<li>wrap-reverse 元素沿着辅轴反方向换行</li>
+</ul>
+</li>
+</ul>
+<h2 id="justify-content">justify-content</h2>
+<ul>
+<li>如何分配主轴上的空白空间（主轴上的元素如何排列）</li>
+<li>可选值：
+<ul>
+<li>flex-start 元素沿着主轴起边排列</li>
+<li>flex-end 元素沿着主轴终边排列</li>
+<li>center 元素居中排列</li>
+<li>space-around 空白分布到元素两侧</li>
+<li>space-between 空白均匀分布到元素间</li>
+<li>space-evenly 空白分布到元素的单侧</li>
+</ul>
+</li>
+</ul>
+<h2 id="align-items">align-items:</h2>
+<pre><code>* 元素在辅轴上如何对齐
+* 元素间的关系
+    * 可选值：
+        - stretch 默认值，将元素的长度设置为相同的值
+        - flex-start 元素不会拉伸，沿着辅轴起边对齐
+        - flex-end 沿着辅轴的终边对齐
+        - center 居中对齐
+        - baseline 基线对齐
+</code></pre>
+<h1 id="弹性的系数">弹性的系数</h1>
+<ul>
+<li>弹性元素的缩减系数
+<ul>
+<li>缩减系数的计算方式比较复杂</li>
+<li>缩减多少是根据 缩减系数 和 元素大小来计算</li>
+</ul>
+</li>
+</ul>
+<h2 id="元素基础长度">元素基础长度</h2>
+<ul>
+<li>flex-basis 指定的是元素在主轴上的基础长度
+<ul>
+<li>如果主轴是 横向的 则 该值指定的就是元素的宽度</li>
+<li>如果主轴是 纵向的 则 该值指定的是就是元素的高度</li>
+</ul>
+<ul>
+<li>默认值是 auto，表示参考元素自身的高度或宽度</li>
+<li>如果传递了一个具体的数值，则以该值为准</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<ul>
+<li>flex 可以设置弹性元素所有的三个样式
+<ul>
+<li>flex 增长 缩减 基础;
+<ul>
+<li>initial &quot;flex: 0 1 auto&quot;.</li>
+<li>auto &quot;flex: 1 1 auto&quot;</li>
+<li>none &quot;flex: 0 0 auto&quot; 弹性元素没有弹性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>order 决定弹性元素的排列顺序</li>
+</ul>
+<h1 id="像素">像素</h1>
+<ul>
+<li>
+<p>像素点:</p>
+<ul>
+<li>屏幕是由一个一个发光的小点构成，这一个个的小点就是像素</li>
+<li>分辨率：1920 x 1080 说的就是屏幕中小点的数量</li>
+<li>在前端开发中像素要分成两种情况讨论：CSS像素 和 物理像素</li>
+<li>物理像素，上述所说的小点点就属于物理像素</li>
+<li>CSS像素，编写网页时，我们所用像素都是CSS像素
+<ul>
+<li>浏览器在显示网页时，需要将CSS像素转换为物理像素然后再呈现</li>
+<li>一个css像素最终由几个物理像素显示，由浏览器决定：</li>
+</ul>
+<ul>
+<li>默认情况下在pc端，一个css像素 = 一个物理像素</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>视口（viewport）</p>
+<ul>
+<li>视口就是屏幕中用来显示网页的区域</li>
+<li>可以通过查看视口的大小，来观察CSS像素和物理像素的比值</li>
+<li>默认情况下：</li>
+</ul>
+<ul>
+<li>视口宽度:
+<ul>
+<li>1920px（CSS像素）</li>
+<li>1920px（物理像素）</li>
+</ul>
+<ul>
+<li>此时，css像素和物理像素的比是 1:1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>放大两倍的情况：</p>
+<ul>
+<li>视口宽度
+<ul>
+<li>960px（CSS像素）</li>
+<li>1920px（物理像素）</li>
+</ul>
+<ul>
+<li>此时，css像素和物理像素的比是1:2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>我们可以通过改变视口的大小，来改变CSS像素和物理像素的比值</p>
+</li>
+</ul>
+<h1 id="移动端页面">移动端页面</h1>
+<ul>
+<li>移动端默认的视口大小是980px(css像素)，
+<ul>
+<li>默认情况下，移动端的像素比就是 980/移动端宽度 （980/750）</li>
+<li>如果我们直接在网页中编写移动端代码，这样在980的视口下，像素比是非常不好，
+<ul>
+<li>导致网页中的内容非常非常的小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>编写移动页面时，必须要确保有一个比较合理的像素比：
+<ul>
+<li>1css像素 对应 2个物理像素</li>
+<li>1css像素 对应 3个物理像素</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>可以通过meta标签来设置视口大小</p>
+</li>
+<li>
+<p>每一款移动设备设计时，都会有一个最佳的像素比，</p>
+<ul>
+<li>一般我们只需要将像素比设置为该值即可得到一个最佳效果</li>
+<li>将像素比设置为最佳像素比的视口大小我们称其为完美视口</li>
+<li>设置视口大小 device-width表示设备的宽度（完美视口）</li>
+<li>以后再写移动端的页面，就把这个内用先写上<br>
+<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="视口">视口</h1>
+<p>网页中字体大小最小是12px，不能设置一个比12像素还小的字体<br>
+如果我们设置了一个小于12px的字体，则字体自动设置为12</p>
+<ul>
+<li>
+<p>不同的设备完美视口的大小是不一样的</p>
+<ul>
+<li>iphone6 -- 375</li>
+<li>iphone6plus -- 414</li>
+</ul>
+</li>
+<li>
+<p>由于不同设备视口和像素比不同，所以同样的375个像素在不同的设备下意义是不一样，</p>
+<ul>
+<li>比如在iphone6中 375就是全屏，而到了plus中375就会缺一块</li>
+</ul>
+</li>
+<li>
+<p>所以在移动端开发时，就不能再使用px来进行布局了</p>
+</li>
+<li>
+<p>vw 表示的是视口的宽度（viewport width）</p>
+<ul>
+<li>100vw = 一个视口的宽度</li>
+<li>1vw = 1%视口宽度</li>
+</ul>
+</li>
+<li>
+<p>vw这个单位永远相当于视口宽度进行计算</p>
+<ul>
+<li>
+<p>设计图的宽度:750px 1125px</p>
+</li>
+<li>
+<p>设计图 : 750px</p>
+</li>
+<li>
+<p>使用vw作为单位:100vw</p>
+</li>
+<li>
+<p>使用rem做单位:1 rem = 1 html的字体大小<br>
+1 rem = 40 px(设计图)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>#响应式布局</p>
+<ul>
+<li>网页可以根据不通的设备或窗口大小呈现出不同的效果</li>
+<li>使用响应式布局，可以使一个网页适用于所有设备</li>
+<li>响应布局的关键就是 媒体查询</li>
+<li>通过媒体查询，可以为不通的设备，或设备不同状态来分别设置样式<br>
+##使用媒体查询</li>
+<li>语法： @media 查询规则{}
+<ul>
+<li>媒体类型：
+<ul>
+<li>all 所有设备</li>
+<li>print 打印设备</li>
+<li>screen 带屏幕的设备</li>
+<li>speech 屏幕阅读器</li>
+<li>可以使用,连接多个媒体类型，这样它们之间就是一个或的关系</li>
+</ul>
+</li>
+<li>可以在媒体类型前添加一个only，表示只有。</li>
+<li>only的使用主要是为了兼容一些老版本浏览器</li>
+</ul>
+</li>
+</ul>
+<pre><code>  @media only screen {
+	body{
+		background-color: #bfa;
+ 	}
+}
+</code></pre>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+                    <div name="comment" style="background: white">
+                        <div class="commentcontainer">
+                            
+                            <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="toc-container">
+                    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E7%A4%BA%E4%BE%8B">示例:</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%B9%E6%80%A7%E5%AE%B9%E5%99%A8direction">弹性容器(direction)</a>
+<ul>
+<li><a href="#%E7%A4%BA%E4%BE%8B-2">示例:</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%B9%E6%80%A7%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7">弹性元素的属性</a></li>
+<li><a href="#justify-content">justify-content</a></li>
+<li><a href="#align-items">align-items:</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%B9%E6%80%A7%E7%9A%84%E7%B3%BB%E6%95%B0">弹性的系数</a>
+<ul>
+<li><a href="#%E5%85%83%E7%B4%A0%E5%9F%BA%E7%A1%80%E9%95%BF%E5%BA%A6">元素基础长度</a></li>
+</ul>
+</li>
+<li><a href="#%E5%83%8F%E7%B4%A0">像素</a></li>
+<li><a href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B5%E9%9D%A2">移动端页面</a></li>
+<li><a href="#%E8%A7%86%E5%8F%A3">视口</a></li>
+</ul>
+
+                </div>
+            </div>
+        </div>
+        <div id="bg">
+        </div>
+        <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
+    </div>
+    <!-- 响应式布局，针对手机端内容显示 -->
+    <div class="nav-small">
+        <head>
+
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://miss918.github.io/media/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Miss918&nbsp;&nbsp;|</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="/">
+              首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives">
+              归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags">
+              标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              关于
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://miss918.github.io/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- 引入BootStrap核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+        <div style="margin-top:30px"></div>
+        <link rel="stylesheet" href="https://miss918.github.io/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-14</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 8 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.github.io/tag/MSWz_4w_dA/" class="postlink">
+                        <i class="fa fa-tag"></i> HTML
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>CSS弹性盒(flex)</h2>
+            </div>
+            <div class="text ">
+                <p>#flex(弹性盒、伸缩盒)</p>
+<ul>
+<li>是CSS中的又一种布局手段，它主要用来代替浮动来完成页面的布局</li>
+<li>flex可以使元素具有弹性，让元素可以跟随页面的大小的改变而改变</li>
+<li>弹性容器
+<ul>
+<li>要使用弹性盒，必须先将一个元素设置为弹性容器</li>
+<li>我们 通过 display 来设置弹性容器
+<ul>
+<li>display:flex 设置为块级弹性容器</li>
+<li>display:inline-flex 设置为行内的弹性容器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>弹性元素
+<ul>
+<li>弹性容器的子元素是弹性元素（弹性项）</li>
+<li>弹性元素可以同时是弹性容器</li>
+</ul>
+</li>
+</ul>
+<h3 id="示例">示例:</h3>
+<pre><code>       &lt;ul&gt;
+         &lt;li&gt;1&lt;/li&gt;
+         &lt;li&gt;2&lt;/li&gt;
+         &lt;li&gt;3&lt;/li&gt;
+     &lt;/ul&gt;
+</code></pre>
+<h2 id="弹性容器direction">弹性容器(direction)</h2>
+<ul>
+<li>
+<p>flex-direction指定容器中弹性元素的排列方式</p>
+</li>
+<li>
+<p>可选值：</p>
+<ul>
+<li>row默认值，弹性元素在容器中水平排列（左向右）
+<ul>
+<li>主轴 自左向右</li>
+</ul>
+</li>
+<li>row-reverse弹性元素在容器中反向水平排列（右向左）
+<ul>
+<li>主轴 自右向左</li>
+</ul>
+</li>
+<li>column弹性元素纵向排列（自上向下）</li>
+<li>column-reverse弹性元素方向纵向排列（自下向上）</li>
+</ul>
+</li>
+<li>
+<p>主轴：</p>
+<ul>
+<li>弹性元素的排列方向称为主轴</li>
+</ul>
+</li>
+<li>
+<p>侧轴：</p>
+<ul>
+<li>与主轴垂直方向的称为侧轴</li>
+</ul>
+</li>
+</ul>
+<h3 id="示例-2">示例:</h3>
+<pre><code>        ul{
+          width: 500px;
+          border: 10px red solid;
+          display: flex;
+          flex-direction: row;
+      }
+</code></pre>
+<h2 id="弹性元素的属性">弹性元素的属性</h2>
+<ul>
+<li>flex-grow 指定弹性元素的伸展的系数
+<ul>
+<li>当父元素有多余空间的时，子元素如何伸展</li>
+<li>父元素的剩余空间，会按照比例进行分配<br>
+<code>flex-grow: 1</code></li>
+</ul>
+</li>
+<li>flex-shrink 指定弹性元素的收缩系数
+<ul>
+<li>当父元素中的空间不足以容纳所有的子元素时，如果对子元素进行收缩<br>
+<code>flex-shrink: 0;</code><br>
+###示例:</li>
+</ul>
+</li>
+</ul>
+<pre><code>        li{
+            width: 200px;
+            height: 100px;
+            background-color: #bfa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            flex-shrink: 0;     
+        }
+        li:nth-child(1){
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        li:nth-child(2){
+            background-color: pink;
+            flex-grow: 2;
+            flex-shrink: 2;
+        }
+
+        li:nth-child(3){
+            background-color: orange;
+            flex-grow: 3;
+            flex-shrink: 3;
+        }
+</code></pre>
+<p>#弹性容器的样式<br>
+##flex-wrap:</p>
+<ul>
+<li>设置弹性元素是否在弹性容器中自动换行</li>
+<li>可选值：
+<ul>
+<li>nowrap 默认值，元素不会自动换行</li>
+<li>wrap 元素沿着辅轴方向自动换行</li>
+<li>wrap-reverse 元素沿着辅轴反方向换行</li>
+</ul>
+</li>
+</ul>
+<h2 id="justify-content">justify-content</h2>
+<ul>
+<li>如何分配主轴上的空白空间（主轴上的元素如何排列）</li>
+<li>可选值：
+<ul>
+<li>flex-start 元素沿着主轴起边排列</li>
+<li>flex-end 元素沿着主轴终边排列</li>
+<li>center 元素居中排列</li>
+<li>space-around 空白分布到元素两侧</li>
+<li>space-between 空白均匀分布到元素间</li>
+<li>space-evenly 空白分布到元素的单侧</li>
+</ul>
+</li>
+</ul>
+<h2 id="align-items">align-items:</h2>
+<pre><code>* 元素在辅轴上如何对齐
+* 元素间的关系
+    * 可选值：
+        - stretch 默认值，将元素的长度设置为相同的值
+        - flex-start 元素不会拉伸，沿着辅轴起边对齐
+        - flex-end 沿着辅轴的终边对齐
+        - center 居中对齐
+        - baseline 基线对齐
+</code></pre>
+<h1 id="弹性的系数">弹性的系数</h1>
+<ul>
+<li>弹性元素的缩减系数
+<ul>
+<li>缩减系数的计算方式比较复杂</li>
+<li>缩减多少是根据 缩减系数 和 元素大小来计算</li>
+</ul>
+</li>
+</ul>
+<h2 id="元素基础长度">元素基础长度</h2>
+<ul>
+<li>flex-basis 指定的是元素在主轴上的基础长度
+<ul>
+<li>如果主轴是 横向的 则 该值指定的就是元素的宽度</li>
+<li>如果主轴是 纵向的 则 该值指定的是就是元素的高度</li>
+</ul>
+<ul>
+<li>默认值是 auto，表示参考元素自身的高度或宽度</li>
+<li>如果传递了一个具体的数值，则以该值为准</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<ul>
+<li>flex 可以设置弹性元素所有的三个样式
+<ul>
+<li>flex 增长 缩减 基础;
+<ul>
+<li>initial &quot;flex: 0 1 auto&quot;.</li>
+<li>auto &quot;flex: 1 1 auto&quot;</li>
+<li>none &quot;flex: 0 0 auto&quot; 弹性元素没有弹性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>order 决定弹性元素的排列顺序</li>
+</ul>
+<h1 id="像素">像素</h1>
+<ul>
+<li>
+<p>像素点:</p>
+<ul>
+<li>屏幕是由一个一个发光的小点构成，这一个个的小点就是像素</li>
+<li>分辨率：1920 x 1080 说的就是屏幕中小点的数量</li>
+<li>在前端开发中像素要分成两种情况讨论：CSS像素 和 物理像素</li>
+<li>物理像素，上述所说的小点点就属于物理像素</li>
+<li>CSS像素，编写网页时，我们所用像素都是CSS像素
+<ul>
+<li>浏览器在显示网页时，需要将CSS像素转换为物理像素然后再呈现</li>
+<li>一个css像素最终由几个物理像素显示，由浏览器决定：</li>
+</ul>
+<ul>
+<li>默认情况下在pc端，一个css像素 = 一个物理像素</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>视口（viewport）</p>
+<ul>
+<li>视口就是屏幕中用来显示网页的区域</li>
+<li>可以通过查看视口的大小，来观察CSS像素和物理像素的比值</li>
+<li>默认情况下：</li>
+</ul>
+<ul>
+<li>视口宽度:
+<ul>
+<li>1920px（CSS像素）</li>
+<li>1920px（物理像素）</li>
+</ul>
+<ul>
+<li>此时，css像素和物理像素的比是 1:1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>放大两倍的情况：</p>
+<ul>
+<li>视口宽度
+<ul>
+<li>960px（CSS像素）</li>
+<li>1920px（物理像素）</li>
+</ul>
+<ul>
+<li>此时，css像素和物理像素的比是1:2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>我们可以通过改变视口的大小，来改变CSS像素和物理像素的比值</p>
+</li>
+</ul>
+<h1 id="移动端页面">移动端页面</h1>
+<ul>
+<li>移动端默认的视口大小是980px(css像素)，
+<ul>
+<li>默认情况下，移动端的像素比就是 980/移动端宽度 （980/750）</li>
+<li>如果我们直接在网页中编写移动端代码，这样在980的视口下，像素比是非常不好，
+<ul>
+<li>导致网页中的内容非常非常的小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>编写移动页面时，必须要确保有一个比较合理的像素比：
+<ul>
+<li>1css像素 对应 2个物理像素</li>
+<li>1css像素 对应 3个物理像素</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>可以通过meta标签来设置视口大小</p>
+</li>
+<li>
+<p>每一款移动设备设计时，都会有一个最佳的像素比，</p>
+<ul>
+<li>一般我们只需要将像素比设置为该值即可得到一个最佳效果</li>
+<li>将像素比设置为最佳像素比的视口大小我们称其为完美视口</li>
+<li>设置视口大小 device-width表示设备的宽度（完美视口）</li>
+<li>以后再写移动端的页面，就把这个内用先写上<br>
+<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="视口">视口</h1>
+<p>网页中字体大小最小是12px，不能设置一个比12像素还小的字体<br>
+如果我们设置了一个小于12px的字体，则字体自动设置为12</p>
+<ul>
+<li>
+<p>不同的设备完美视口的大小是不一样的</p>
+<ul>
+<li>iphone6 -- 375</li>
+<li>iphone6plus -- 414</li>
+</ul>
+</li>
+<li>
+<p>由于不同设备视口和像素比不同，所以同样的375个像素在不同的设备下意义是不一样，</p>
+<ul>
+<li>比如在iphone6中 375就是全屏，而到了plus中375就会缺一块</li>
+</ul>
+</li>
+<li>
+<p>所以在移动端开发时，就不能再使用px来进行布局了</p>
+</li>
+<li>
+<p>vw 表示的是视口的宽度（viewport width）</p>
+<ul>
+<li>100vw = 一个视口的宽度</li>
+<li>1vw = 1%视口宽度</li>
+</ul>
+</li>
+<li>
+<p>vw这个单位永远相当于视口宽度进行计算</p>
+<ul>
+<li>
+<p>设计图的宽度:750px 1125px</p>
+</li>
+<li>
+<p>设计图 : 750px</p>
+</li>
+<li>
+<p>使用vw作为单位:100vw</p>
+</li>
+<li>
+<p>使用rem做单位:1 rem = 1 html的字体大小<br>
+1 rem = 40 px(设计图)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>#响应式布局</p>
+<ul>
+<li>网页可以根据不通的设备或窗口大小呈现出不同的效果</li>
+<li>使用响应式布局，可以使一个网页适用于所有设备</li>
+<li>响应布局的关键就是 媒体查询</li>
+<li>通过媒体查询，可以为不通的设备，或设备不同状态来分别设置样式<br>
+##使用媒体查询</li>
+<li>语法： @media 查询规则{}
+<ul>
+<li>媒体类型：
+<ul>
+<li>all 所有设备</li>
+<li>print 打印设备</li>
+<li>screen 带屏幕的设备</li>
+<li>speech 屏幕阅读器</li>
+<li>可以使用,连接多个媒体类型，这样它们之间就是一个或的关系</li>
+</ul>
+</li>
+<li>可以在媒体类型前添加一个only，表示只有。</li>
+<li>only的使用主要是为了兼容一些老版本浏览器</li>
+</ul>
+</li>
+</ul>
+<pre><code>  @media only screen {
+	body{
+		background-color: #bfa;
+ 	}
+}
+</code></pre>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+        <div name="comment" style="background: white">
+            <div class="commentcontainer">
+                
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                
+            </div>
+        </div>
+    </div>
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+</body>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://miss918.github.io/media/js/post.js"></script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://ericam.top/' //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="https://miss918.github.io/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://miss918.github.io/media/live2d/assets/tororo.model.json");
+</script>
