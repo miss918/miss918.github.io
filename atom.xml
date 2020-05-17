@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://miss918.github.io</id>
+    <id>https://miss918.cn</id>
     <title>Miss918</title>
-    <updated>2020-05-17T08:07:08.875Z</updated>
+    <updated>2020-05-17T08:21:26.464Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://miss918.github.io"/>
-    <link rel="self" href="https://miss918.github.io/atom.xml"/>
+    <link rel="alternate" href="https://miss918.cn"/>
+    <link rel="self" href="https://miss918.cn/atom.xml"/>
     <subtitle>少管闲事,少说闲话,不做闲人</subtitle>
-    <logo>https://miss918.github.io/images/avatar.png</logo>
-    <icon>https://miss918.github.io/favicon.ico</icon>
+    <logo>https://miss918.cn/images/avatar.png</logo>
+    <icon>https://miss918.cn/favicon.ico</icon>
     <rights>All rights reserved 2020, Miss918</rights>
     <entry>
         <title type="html"><![CDATA[前端笔记]]></title>
-        <id>https://miss918.github.io/post/qiandun-note/</id>
-        <link href="https://miss918.github.io/post/qiandun-note/">
+        <id>https://miss918.cn/post/qiandun-note/</id>
+        <link href="https://miss918.cn/post/qiandun-note/">
         </link>
         <updated>2120-05-17T06:22:16.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[英语笔记]]></title>
-        <id>https://miss918.github.io/post/English/</id>
-        <link href="https://miss918.github.io/post/English/">
+        <id>https://miss918.cn/post/English/</id>
+        <link href="https://miss918.cn/post/English/">
         </link>
         <updated>2120-05-17T06:22:05.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[JAVA笔记]]></title>
-        <id>https://miss918.github.io/post/java_code/</id>
-        <link href="https://miss918.github.io/post/java_code/">
+        <id>https://miss918.cn/post/java_code/</id>
+        <link href="https://miss918.cn/post/java_code/">
         </link>
         <updated>2120-05-17T06:21:54.000Z</updated>
     </entry>
