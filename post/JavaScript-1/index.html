@@ -1,18 +1,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="2020.5.17
-2020.5.16
-2020.5.15
-前段时间一直在忙比赛的事情,和一些杂事,现在开始写博客
+    <meta name="description" content="逻辑运算符
+&quot;!&quot;
 
-2019.9.7
-2019.9.6
-2019.9.5
-2019.9.4
-2019.9.3--咸鱼
-2019.9.2--咸鱼..." />
-    <meta name="keywords" content="每日总结" />
+非运算可以对一个布尔值进行取反，true变false false边true
+当对非布尔值使用!时，会先将其转换为布尔值然后再取反
+我们可以利用!来将其他的数据类型转换为布尔值
+
+&amp;&amp;..." />
+    <meta name="keywords" content="JavaScirpt" />
     <link rel="stylesheet" href="https://miss918.cn/media/css/bootstrap.min.css">
     
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
@@ -318,52 +315,179 @@
         <div class="postshow">
             
             <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
-                <img src="https://miss918.cn/post-images/summary.jpg" class="postimage" style="cursor:auto">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
             </div>
             <div class="postinfo">
-                <div class="postdate"><i class="fa fa-calendar"></i>2042-08-18</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-17</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 5 min read</div>
                 <div class="posttag">
                     
-                    <a href="https://miss918.cn/tag/asTMVA18iQ/" class="postlink">
-                        <i class="fa fa-tag"></i> 每日总结
+                    <a href="https://miss918.cn/tag/0S9VNKWru/" class="postlink">
+                        <i class="fa fa-tag"></i> JavaScirpt
                     </a>
                     
                 </div>
             </div>
             
             <div id="texttitle" style="text-align: center">
-                <h2>每日总结</h2>
+                <h2>JavaScript运算符</h2>
             </div>
             <div class="text ">
-                <h1 id="2020517"><a href="../2020517/">2020.5.17</a></h1>
-<h1 id="2020516"><a href="../2020516/">2020.5.16</a></h1>
-<h1 id="2020515"><a href="../2020515/">2020.5.15</a></h1>
-<h1 id="前段时间一直在忙比赛的事情和一些杂事现在开始写博客">前段时间一直在忙比赛的事情,和一些杂事,现在开始写博客</h1>
-<hr>
-<h1 id="201997"><a href="../201997/">2019.9.7</a></h1>
-<h1 id="201996"><a href="../201996/">2019.9.6</a></h1>
-<h1 id="201995"><a href="../201995/">2019.9.5</a></h1>
-<h1 id="201994"><a href="../201994/">2019.9.4</a></h1>
-<h1 id="201993-咸鱼"><a href="../xian-yu/">2019.9.3--咸鱼</a></h1>
-<h1 id="201992-咸鱼"><a href="../xian-yu/">2019.9.2--咸鱼</a></h1>
-<h1 id="201991-咸鱼"><a href="../xian-yu/">2019.9.1--咸鱼</a></h1>
-<h1 id="2019830-咸鱼"><a href="../xian-yu/">2019.8.30--咸鱼</a></h1>
-<h1 id="2019829"><a href="../2019829/">2019.8.29</a></h1>
-<h1 id="2019828"><a href="../2019828/">2019.8.28</a></h1>
-<h1 id="2019827-咸鱼"><a href="../xian-yu/">2019.8.27--咸鱼</a></h1>
-<h1 id="2019826"><a href="../2019826/">2019.8.26</a></h1>
-<h1 id="2019825"><a href="../2019825/">2019.8.25</a></h1>
-<h1 id="2019824"><a href="../2019824/">2019.8.24</a></h1>
-<h1 id="2019823"><a href="../2019823/">2019.8.23</a></h1>
-<h1 id="2019822"><a href="../2019822/">2019.8.22</a></h1>
-<h1 id="2019821"><a href="../2019821/">2019.8.21</a></h1>
-<h1 id="2019820-咸鱼"><a href="../xian-yu/">2019.8.20--咸鱼</a></h1>
-<h1 id="2019819-咸鱼"><a href="../xian-yu/">2019.8.19--咸鱼</a></h1>
-<h1 id="2019818"><a href="../2019818/">2019.8.18</a></h1>
-<h1 id="2019817"><a href="../2019817/">2019.8.17</a></h1>
-<h1 id="2019816"><a href="../2019816/">2019.8.16</a></h1>
-<h1 id="2019815"><a href="../2019815/">2019.8.15</a></h1>
+                <h1 id="逻辑运算符">逻辑运算符</h1>
+<h2 id="">&quot;!&quot;</h2>
+<ul>
+<li>非运算可以对一个布尔值进行取反，true变false false边true</li>
+<li>当对非布尔值使用!时，会先将其转换为布尔值然后再取反</li>
+<li>我们可以利用!来将其他的数据类型转换为布尔值</li>
+</ul>
+<h2 id="-2">&amp;&amp;</h2>
+<ul>
+<li>&amp;&amp;可以对符号两侧的值进行与运算</li>
+<li>只有两端的值都为true时，才会返回true。只要有一个false就会返回false。</li>
+<li>与是一个短路的与，如果第一个值是false，则不再检查第二个值</li>
+<li>对于非布尔值，它会将其转换为布尔值然后做运算，并返回原值
+<ul>
+<li>规则：</li>
+<li>1.如果第一个值为false，则返回第一个值</li>
+<li>2.如果第一个值为true，则返回第二个值</li>
+</ul>
+</li>
+</ul>
+<h2 id="-3">||</h2>
+<ul>
+<li>||可以对符号两侧的值进行或运算</li>
+<li>只有两端都是false时，才会返回false。只要有一个true，就会返回true。</li>
+<li>或是一个短路的或，如果第一个值是true，则不再检查第二个值</li>
+<li>对于非布尔值，它会将其转换为布尔值然后做运算，并返回原值
+<ul>
+<li>规则：</li>
+<li>1.如果第一个值为true，则返回第一个值</li>
+<li>2.如果第一个值为false，则返回第二个值</li>
+</ul>
+</li>
+</ul>
+<h1 id="赋值运算符">赋值运算符</h1>
+<h2 id="-4">&quot; = &quot;</h2>
+<p>可以将符号右侧的值赋值给左侧变量</p>
+<h2 id="-5">&quot; + = &quot;</h2>
+<pre><code>a += 5 相当于 a = a+5    
+var str = &quot;hello&quot;;  str += &quot;world&quot;;
+</code></pre>
+<h2 id="-">&quot; - = &quot;</h2>
+<pre><code>a -= 5  相当于 a = a-5  
+</code></pre>
+<h2 id="-6">&quot; * = &quot;</h2>
+<pre><code>a *= 5 相当于 a = a*5  
+</code></pre>
+<p>&quot; / = &quot;</p>
+<pre><code>a /= 5 相当于 a = a/5	
+</code></pre>
+<p>&quot; % = &quot;</p>
+<pre><code>a %= 5 相当于 a = a%5 
+</code></pre>
+<h1 id="关系运算符">关系运算符</h1>
+<h2 id="关系运算符用来比较两个值之间的大小关系的">关系运算符用来比较两个值之间的大小关系的</h2>
+<pre><code>* &gt;
+* &gt;=
+* &lt;
+* &lt;=
+</code></pre>
+<ul>
+<li>关系运算符的规则和数学中一致，用来比较两个值之间的关系，</li>
+<li>如果关系成立则返回true，关系不成立则返回false。</li>
+<li>如果比较的两个值是非数值，会将其转换为Number然后再比较。</li>
+<li>如果比较的两个值都是字符串，此时会比较字符串的Unicode编码，而不会转换为Number。</li>
+<li>任何值和NaN做任何比较都是false</li>
+</ul>
+<h1 id="编码">编码</h1>
+<h2 id="在js中">在JS中</h2>
+<ul>
+<li>在字符串中使用转义字符输入Unicode编码</li>
+<li>\u四位编码</li>
+</ul>
+<pre><code>console.log(&quot;\u2620&quot;);  //在js中
+</code></pre>
+<h2 id="在网页中">在网页中:</h2>
+<ul>
+<li>在网页中使用Unicode编码</li>
+<li>&amp;#编码; 这里的编码需要的是10进制</li>
+</ul>
+<pre><code>&lt;h1 style=&quot;font-size: 200px;&quot;&gt;&amp;#9760;&lt;/h1&gt;
+&lt;h1 style=&quot;font-size: 200px;&quot;&gt;&amp;#9856;&lt;/h1&gt;
+</code></pre>
+<h1 id="相等运算符">相等运算符</h1>
+<ul>
+<li>相等，判断左右两个值是否相等，如果相等返回true，如果不等返回false</li>
+<li>相等会自动对两个值进行类型转换，如果对不同的类型进行比较，会将其转换为相同的类型然后再比较，转换后相等它也会返回true，null == undifined</li>
+</ul>
+<h2 id="-7">&quot; ! = &quot;</h2>
+<ul>
+<li>不等，判断左右两个值是否不等，如果不等则返回true，如果相等则返回false</li>
+<li>不等也会做自动的类型转换。</li>
+</ul>
+<h2 id="-8">&quot;  === &quot;</h2>
+<ul>
+<li>全等，判断左右两个值是否全等，它和相等类似，只不过它不会进行自动的类型转换，</li>
+<li>如果两个值的类型不同，则直接返回false</li>
+</ul>
+<h2 id="-9">&quot; !== &quot;</h2>
+<ul>
+<li>不全等，和不等类似，但是它不会进行自动的类型转换，如果两个值的类型不同，它会直接返回true</li>
+</ul>
+<h2 id="特殊的值">特殊的值：</h2>
+<ul>
+<li>null和undefined
+<ul>
+<li>由于undefined衍生自null，所以null == undefined 会返回true。</li>
+<li>但是 null === undefined 会返回false。</li>
+</ul>
+</li>
+<li>NaN
+<ul>
+<li>NaN不与任何值相等，报告它自身 NaN == NaN //false</li>
+<li>判断一个值是否是NaN</li>
+<li>使用isNaN()函数</li>
+</ul>
+</li>
+</ul>
+<h2 id="运算符">&quot; , &quot;运算符</h2>
+<ul>
+<li>使用,可以分割多个语句，一般可以在声明多个变量时使用,</li>
+<li>可以同时声明多个变量并赋值</li>
+<li>var a=1 , b=2 , c=3;</li>
+<li>alert(b);</li>
+</ul>
+<h2 id="优先级">优先级:</h2>
+<ul>
+<li>在JS中有一个运算符优先级的表</li>
+<li>在表中越靠上优先级越高，优先级越高越优先计算</li>
+<li>如果优先级一样，则从左往右计算。</li>
+<li>可以使用()来改变优先级</li>
+</ul>
+<h1 id="三元运算符">三元运算符：</h1>
+<h2 id="-10">&quot; ? &quot;:</h2>
+<ul>
+<li>语法：条件表达式?语句1:语句2;
+<ul>
+<li>执行流程：
+<ul>
+<li>先对条件表达式求值判断，</li>
+<li>如果判断结果为true，则执行语句1，并返回执行结果</li>
+<li>如果判断结果为false，则执行语句2，并返回执行结果</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>优先级：
+<ul>
+<li>和数学中一样，JS中的运算符也是具有优先级的，</li>
+<li>比如 先乘除 后加减 先与 后或</li>
+<li>具体的优先级可以参考优先级的表格，在表格中越靠上的优先级越高，</li>
+<li>优先级越高的越优先计算，优先级相同的，从左往右计算。</li>
+<li>优先级不需要记忆，如果越到拿不准的，使用()来改变优先级。</li>
+</ul>
+</li>
+</ul>
 
             </div>
             
@@ -497,33 +621,47 @@
                 </div>
                 <div class="toc-container">
                     <ul class="markdownIt-TOC">
-<li><a href="#2020517">2020.5.17</a></li>
-<li><a href="#2020516">2020.5.16</a></li>
-<li><a href="#2020515">2020.5.15</a></li>
-<li><a href="#%E5%89%8D%E6%AE%B5%E6%97%B6%E9%97%B4%E4%B8%80%E7%9B%B4%E5%9C%A8%E5%BF%99%E6%AF%94%E8%B5%9B%E7%9A%84%E4%BA%8B%E6%83%85%E5%92%8C%E4%B8%80%E4%BA%9B%E6%9D%82%E4%BA%8B%E7%8E%B0%E5%9C%A8%E5%BC%80%E5%A7%8B%E5%86%99%E5%8D%9A%E5%AE%A2">前段时间一直在忙比赛的事情,和一些杂事,现在开始写博客</a></li>
-<li><a href="#201997">2019.9.7</a></li>
-<li><a href="#201996">2019.9.6</a></li>
-<li><a href="#201995">2019.9.5</a></li>
-<li><a href="#201994">2019.9.4</a></li>
-<li><a href="#201993-%E5%92%B8%E9%B1%BC">2019.9.3--咸鱼</a></li>
-<li><a href="#201992-%E5%92%B8%E9%B1%BC">2019.9.2--咸鱼</a></li>
-<li><a href="#201991-%E5%92%B8%E9%B1%BC">2019.9.1--咸鱼</a></li>
-<li><a href="#2019830-%E5%92%B8%E9%B1%BC">2019.8.30--咸鱼</a></li>
-<li><a href="#2019829">2019.8.29</a></li>
-<li><a href="#2019828">2019.8.28</a></li>
-<li><a href="#2019827-%E5%92%B8%E9%B1%BC">2019.8.27--咸鱼</a></li>
-<li><a href="#2019826">2019.8.26</a></li>
-<li><a href="#2019825">2019.8.25</a></li>
-<li><a href="#2019824">2019.8.24</a></li>
-<li><a href="#2019823">2019.8.23</a></li>
-<li><a href="#2019822">2019.8.22</a></li>
-<li><a href="#2019821">2019.8.21</a></li>
-<li><a href="#2019820-%E5%92%B8%E9%B1%BC">2019.8.20--咸鱼</a></li>
-<li><a href="#2019819-%E5%92%B8%E9%B1%BC">2019.8.19--咸鱼</a></li>
-<li><a href="#2019818">2019.8.18</a></li>
-<li><a href="#2019817">2019.8.17</a></li>
-<li><a href="#2019816">2019.8.16</a></li>
-<li><a href="#2019815">2019.8.15</a></li>
+<li><a href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6">逻辑运算符</a>
+<ul>
+<li><a href="#">&quot;!&quot;</a></li>
+<li><a href="#-2">&amp;&amp;</a></li>
+<li><a href="#-3">||</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6">赋值运算符</a>
+<ul>
+<li><a href="#-4">&quot; = &quot;</a></li>
+<li><a href="#-5">&quot; + = &quot;</a></li>
+<li><a href="#-">&quot; - = &quot;</a></li>
+<li><a href="#-6">&quot; * = &quot;</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6">关系运算符</a>
+<ul>
+<li><a href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E7%94%A8%E6%9D%A5%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E5%80%BC%E4%B9%8B%E9%97%B4%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%85%B3%E7%B3%BB%E7%9A%84">关系运算符用来比较两个值之间的大小关系的</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BC%96%E7%A0%81">编码</a>
+<ul>
+<li><a href="#%E5%9C%A8js%E4%B8%AD">在JS中</a></li>
+<li><a href="#%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%AD">在网页中:</a></li>
+</ul>
+</li>
+<li><a href="#%E7%9B%B8%E7%AD%89%E8%BF%90%E7%AE%97%E7%AC%A6">相等运算符</a>
+<ul>
+<li><a href="#-7">&quot; ! = &quot;</a></li>
+<li><a href="#-8">&quot;  === &quot;</a></li>
+<li><a href="#-9">&quot; !== &quot;</a></li>
+<li><a href="#%E7%89%B9%E6%AE%8A%E7%9A%84%E5%80%BC">特殊的值：</a></li>
+<li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6">&quot; , &quot;运算符</a></li>
+<li><a href="#%E4%BC%98%E5%85%88%E7%BA%A7">优先级:</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6">三元运算符：</a>
+<ul>
+<li><a href="#-10">&quot; ? &quot;:</a></li>
+</ul>
+</li>
 </ul>
 
                 </div>
@@ -634,52 +772,179 @@
         <div class="postshow">
             
             <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
-                <img src="https://miss918.cn/post-images/summary.jpg" class="postimage" style="cursor:auto">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
             </div>
             <div class="postinfo">
-                <div class="postdate"><i class="fa fa-calendar"></i>2042-08-18</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-17</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 5 min read</div>
                 <div class="posttag">
                     
-                    <a href="https://miss918.cn/tag/asTMVA18iQ/" class="postlink">
-                        <i class="fa fa-tag"></i> 每日总结
+                    <a href="https://miss918.cn/tag/0S9VNKWru/" class="postlink">
+                        <i class="fa fa-tag"></i> JavaScirpt
                     </a>
                     
                 </div>
             </div>
             
             <div id="texttitle" style="text-align: center">
-                <h2>每日总结</h2>
+                <h2>JavaScript运算符</h2>
             </div>
             <div class="text ">
-                <h1 id="2020517"><a href="../2020517/">2020.5.17</a></h1>
-<h1 id="2020516"><a href="../2020516/">2020.5.16</a></h1>
-<h1 id="2020515"><a href="../2020515/">2020.5.15</a></h1>
-<h1 id="前段时间一直在忙比赛的事情和一些杂事现在开始写博客">前段时间一直在忙比赛的事情,和一些杂事,现在开始写博客</h1>
-<hr>
-<h1 id="201997"><a href="../201997/">2019.9.7</a></h1>
-<h1 id="201996"><a href="../201996/">2019.9.6</a></h1>
-<h1 id="201995"><a href="../201995/">2019.9.5</a></h1>
-<h1 id="201994"><a href="../201994/">2019.9.4</a></h1>
-<h1 id="201993-咸鱼"><a href="../xian-yu/">2019.9.3--咸鱼</a></h1>
-<h1 id="201992-咸鱼"><a href="../xian-yu/">2019.9.2--咸鱼</a></h1>
-<h1 id="201991-咸鱼"><a href="../xian-yu/">2019.9.1--咸鱼</a></h1>
-<h1 id="2019830-咸鱼"><a href="../xian-yu/">2019.8.30--咸鱼</a></h1>
-<h1 id="2019829"><a href="../2019829/">2019.8.29</a></h1>
-<h1 id="2019828"><a href="../2019828/">2019.8.28</a></h1>
-<h1 id="2019827-咸鱼"><a href="../xian-yu/">2019.8.27--咸鱼</a></h1>
-<h1 id="2019826"><a href="../2019826/">2019.8.26</a></h1>
-<h1 id="2019825"><a href="../2019825/">2019.8.25</a></h1>
-<h1 id="2019824"><a href="../2019824/">2019.8.24</a></h1>
-<h1 id="2019823"><a href="../2019823/">2019.8.23</a></h1>
-<h1 id="2019822"><a href="../2019822/">2019.8.22</a></h1>
-<h1 id="2019821"><a href="../2019821/">2019.8.21</a></h1>
-<h1 id="2019820-咸鱼"><a href="../xian-yu/">2019.8.20--咸鱼</a></h1>
-<h1 id="2019819-咸鱼"><a href="../xian-yu/">2019.8.19--咸鱼</a></h1>
-<h1 id="2019818"><a href="../2019818/">2019.8.18</a></h1>
-<h1 id="2019817"><a href="../2019817/">2019.8.17</a></h1>
-<h1 id="2019816"><a href="../2019816/">2019.8.16</a></h1>
-<h1 id="2019815"><a href="../2019815/">2019.8.15</a></h1>
+                <h1 id="逻辑运算符">逻辑运算符</h1>
+<h2 id="">&quot;!&quot;</h2>
+<ul>
+<li>非运算可以对一个布尔值进行取反，true变false false边true</li>
+<li>当对非布尔值使用!时，会先将其转换为布尔值然后再取反</li>
+<li>我们可以利用!来将其他的数据类型转换为布尔值</li>
+</ul>
+<h2 id="-2">&amp;&amp;</h2>
+<ul>
+<li>&amp;&amp;可以对符号两侧的值进行与运算</li>
+<li>只有两端的值都为true时，才会返回true。只要有一个false就会返回false。</li>
+<li>与是一个短路的与，如果第一个值是false，则不再检查第二个值</li>
+<li>对于非布尔值，它会将其转换为布尔值然后做运算，并返回原值
+<ul>
+<li>规则：</li>
+<li>1.如果第一个值为false，则返回第一个值</li>
+<li>2.如果第一个值为true，则返回第二个值</li>
+</ul>
+</li>
+</ul>
+<h2 id="-3">||</h2>
+<ul>
+<li>||可以对符号两侧的值进行或运算</li>
+<li>只有两端都是false时，才会返回false。只要有一个true，就会返回true。</li>
+<li>或是一个短路的或，如果第一个值是true，则不再检查第二个值</li>
+<li>对于非布尔值，它会将其转换为布尔值然后做运算，并返回原值
+<ul>
+<li>规则：</li>
+<li>1.如果第一个值为true，则返回第一个值</li>
+<li>2.如果第一个值为false，则返回第二个值</li>
+</ul>
+</li>
+</ul>
+<h1 id="赋值运算符">赋值运算符</h1>
+<h2 id="-4">&quot; = &quot;</h2>
+<p>可以将符号右侧的值赋值给左侧变量</p>
+<h2 id="-5">&quot; + = &quot;</h2>
+<pre><code>a += 5 相当于 a = a+5    
+var str = &quot;hello&quot;;  str += &quot;world&quot;;
+</code></pre>
+<h2 id="-">&quot; - = &quot;</h2>
+<pre><code>a -= 5  相当于 a = a-5  
+</code></pre>
+<h2 id="-6">&quot; * = &quot;</h2>
+<pre><code>a *= 5 相当于 a = a*5  
+</code></pre>
+<p>&quot; / = &quot;</p>
+<pre><code>a /= 5 相当于 a = a/5	
+</code></pre>
+<p>&quot; % = &quot;</p>
+<pre><code>a %= 5 相当于 a = a%5 
+</code></pre>
+<h1 id="关系运算符">关系运算符</h1>
+<h2 id="关系运算符用来比较两个值之间的大小关系的">关系运算符用来比较两个值之间的大小关系的</h2>
+<pre><code>* &gt;
+* &gt;=
+* &lt;
+* &lt;=
+</code></pre>
+<ul>
+<li>关系运算符的规则和数学中一致，用来比较两个值之间的关系，</li>
+<li>如果关系成立则返回true，关系不成立则返回false。</li>
+<li>如果比较的两个值是非数值，会将其转换为Number然后再比较。</li>
+<li>如果比较的两个值都是字符串，此时会比较字符串的Unicode编码，而不会转换为Number。</li>
+<li>任何值和NaN做任何比较都是false</li>
+</ul>
+<h1 id="编码">编码</h1>
+<h2 id="在js中">在JS中</h2>
+<ul>
+<li>在字符串中使用转义字符输入Unicode编码</li>
+<li>\u四位编码</li>
+</ul>
+<pre><code>console.log(&quot;\u2620&quot;);  //在js中
+</code></pre>
+<h2 id="在网页中">在网页中:</h2>
+<ul>
+<li>在网页中使用Unicode编码</li>
+<li>&amp;#编码; 这里的编码需要的是10进制</li>
+</ul>
+<pre><code>&lt;h1 style=&quot;font-size: 200px;&quot;&gt;&amp;#9760;&lt;/h1&gt;
+&lt;h1 style=&quot;font-size: 200px;&quot;&gt;&amp;#9856;&lt;/h1&gt;
+</code></pre>
+<h1 id="相等运算符">相等运算符</h1>
+<ul>
+<li>相等，判断左右两个值是否相等，如果相等返回true，如果不等返回false</li>
+<li>相等会自动对两个值进行类型转换，如果对不同的类型进行比较，会将其转换为相同的类型然后再比较，转换后相等它也会返回true，null == undifined</li>
+</ul>
+<h2 id="-7">&quot; ! = &quot;</h2>
+<ul>
+<li>不等，判断左右两个值是否不等，如果不等则返回true，如果相等则返回false</li>
+<li>不等也会做自动的类型转换。</li>
+</ul>
+<h2 id="-8">&quot;  === &quot;</h2>
+<ul>
+<li>全等，判断左右两个值是否全等，它和相等类似，只不过它不会进行自动的类型转换，</li>
+<li>如果两个值的类型不同，则直接返回false</li>
+</ul>
+<h2 id="-9">&quot; !== &quot;</h2>
+<ul>
+<li>不全等，和不等类似，但是它不会进行自动的类型转换，如果两个值的类型不同，它会直接返回true</li>
+</ul>
+<h2 id="特殊的值">特殊的值：</h2>
+<ul>
+<li>null和undefined
+<ul>
+<li>由于undefined衍生自null，所以null == undefined 会返回true。</li>
+<li>但是 null === undefined 会返回false。</li>
+</ul>
+</li>
+<li>NaN
+<ul>
+<li>NaN不与任何值相等，报告它自身 NaN == NaN //false</li>
+<li>判断一个值是否是NaN</li>
+<li>使用isNaN()函数</li>
+</ul>
+</li>
+</ul>
+<h2 id="运算符">&quot; , &quot;运算符</h2>
+<ul>
+<li>使用,可以分割多个语句，一般可以在声明多个变量时使用,</li>
+<li>可以同时声明多个变量并赋值</li>
+<li>var a=1 , b=2 , c=3;</li>
+<li>alert(b);</li>
+</ul>
+<h2 id="优先级">优先级:</h2>
+<ul>
+<li>在JS中有一个运算符优先级的表</li>
+<li>在表中越靠上优先级越高，优先级越高越优先计算</li>
+<li>如果优先级一样，则从左往右计算。</li>
+<li>可以使用()来改变优先级</li>
+</ul>
+<h1 id="三元运算符">三元运算符：</h1>
+<h2 id="-10">&quot; ? &quot;:</h2>
+<ul>
+<li>语法：条件表达式?语句1:语句2;
+<ul>
+<li>执行流程：
+<ul>
+<li>先对条件表达式求值判断，</li>
+<li>如果判断结果为true，则执行语句1，并返回执行结果</li>
+<li>如果判断结果为false，则执行语句2，并返回执行结果</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>优先级：
+<ul>
+<li>和数学中一样，JS中的运算符也是具有优先级的，</li>
+<li>比如 先乘除 后加减 先与 后或</li>
+<li>具体的优先级可以参考优先级的表格，在表格中越靠上的优先级越高，</li>
+<li>优先级越高的越优先计算，优先级相同的，从左往右计算。</li>
+<li>优先级不需要记忆，如果越到拿不准的，使用()来改变优先级。</li>
+</ul>
+</li>
+</ul>
 
             </div>
             
