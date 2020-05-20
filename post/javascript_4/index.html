@@ -1,0 +1,1222 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript规定了一组语句（也称为流控制语句）。从本质上看，语句定义了 JavaScript 中的主要语法，语句通常使用一或多个关键字来完成给定任务。语句可以很简单，例如通知函数退出；也可以比
+较复杂，例如指定重复执行某个命令的次数..." />
+    <meta name="keywords" content="JavaScirpt" />
+    <link rel="stylesheet" href="https://miss918.cn/media/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
+              
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://miss918.cn/media/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://miss918.cn/media/css/bootstrap.min.css">
+    <title>Miss918</title>
+</head>
+
+<body>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div class="nav-large">
+            <div class="row">
+                <div class="side"><html>
+
+<head>
+    <link rel="stylesheet" href="https://miss918.cn/styles/main.css">
+    <meta name="description" content="少管闲事,少说闲话,不做闲人" />
+    <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://miss918.cn/images/avatar.png?v=1589980416270" class="avatar">
+        </div>
+        <div class="sitename">Miss918</div>
+        <span class="describtion" data-text='["少管闲事,少说闲话,不做闲人"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ^_^">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        <a href="213" target="_blank"><i><img class="icon"
+                    src="https://miss918.cn/media/images/github.png" alt=""></i></a>
+        
+        
+        <a onclick="showqq()"><i><img class="icon" src="https://miss918.cn/media/images/QQ.png" alt=""></i></a>
+        
+        
+        <a href="123" target="_blank"><i><img class="icon"
+                    src="https://miss918.cn/media/images/zh.png" alt=""></i></a>
+        
+        
+        <a href="213" target="_blank"><i><img class="icon"
+                    src="https://miss918.cn/media/images/bilibili.png" alt=""></i></a>
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none">544465786</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="/" class="menubutton">
+            首页
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/archives" class="menubutton">
+            归档
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/tags" class="menubutton">
+            标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://miss918.cn/post/Guided-graph" class="menubutton">
+            思维导图
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://miss918.cn/post/summary" class="menubutton">
+            每日总结
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://miss918.cn/post/about" class="menubutton">
+            生活笔记
+        </a>
+    </div>
+    
+    
+    
+        <div class="mchocie describtion">
+            <a href="https://miss918.cn/friends" class="menubutton">友人帐</a>
+        </div>
+    
+    <hr>
+    <div id="footinfo">Powered by <a href="https://github.com/Miss0918" target="_blank">Gridea</a> | Theme: <a href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    <div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div>
+    <div id="cussitetime" style="display:none">17/05/2020</div>
+    </div>
+</body>
+
+</html>
+<script src="https://miss918.cn/media/js/wordshow.js"></script>
+<script>
+    //----------------------站点运行时间
+    var now = new Date();
+
+    function createtime() {
+        var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+        var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+            snum = "0" + snum;
+        }
+        document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+        document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            console.log(arrItems);
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            alert("博主的QQ联系方式为：" + qq);
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script></div>
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div id="main" class="col-xs-12 col-sm-7">
+                    <link rel="stylesheet" href="https://miss918.cn/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-20</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 9 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.cn/tag/0S9VNKWru/" class="postlink">
+                        <i class="fa fa-tag"></i> JavaScirpt
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>JavaScript-语句</h2>
+            </div>
+            <div class="text ">
+                <p>JavaScript规定了一组语句（<code>也称为流控制语句</code>）。从本质上看，语句定义了 JavaScript 中的主要语法，语句通常使用一或多个关键字来完成给定任务。语句可以很简单，例如通知函数退出；也可以比<br>
+较复杂，例如指定重复执行某个命令的次数。</p>
+<hr>
+<h2 id="if语句">if语句</h2>
+<p>大多数编程语言中最为常用的一个语句就是 if 语句。以下是 if 语句的语法：</p>
+<pre><code>if (condition) {
+    statement1
+}else{
+    内容
+}
+</code></pre>
+<ul>
+<li>其中的 <code>condition</code>（条件）可以是<code>任意表达式</code>；而且对这个表达式求值的结果<code>不一定</code>是<code>布尔值</code>。ECMAScript 会<code>自动调用</code> <code>Boolean()</code>转换函数将这个表达式的结果<code>转换为一个布尔值</code>。如果对 <code>condition</code>求值的结果是<code>true</code>，则执行 <code>statement1</code>（语句 1），如果对<code>condition</code>求值的结果是<code>false</code>，则执行 <code>statement2</code>（语句 2）。而且这两个语句既可以是一行代码，也可以是一个<code>代码块</code>（以<code>一对花括号括起来的多行代码</code>）。</li>
+<li><strong>请看下面的例子:</strong></li>
+</ul>
+<pre><code>if (i &gt; 25) { 
+     alert(&quot;Greater than 25.&quot;); 
+} else if (i &lt; 0) { 
+    alert(&quot;Less than 0.&quot;); 
+} else { 
+     alert(&quot;Between 0 and 25, inclusive.&quot;); 
+} 
+</code></pre>
+<hr>
+<h2 id="do-while语句">do-while语句</h2>
+<ul>
+<li><code>do-while</code> 语句是一种<code>后测试循环语句</code>，即只有在循环体中的代码执行之后，才会测试出口条件.在对条件表达式求值之前，循环体内的<code>代码至少</code>会被<code>执行一次</code></li>
+<li><strong>请看下面的例子:</strong></li>
+</ul>
+<pre><code>var i = 0; 
+do { 
+ i += 2; 
+} while (i &lt; 10); 
+alert(i); 
+</code></pre>
+<hr>
+<h2 id="while语句">while语句</h2>
+<ul>
+<li>while 语句属于<code>前测试循环语句</code>，也就是说，在循环体内的代码被执行之前，就会对<code>出口条件求值</code>。因此，<code>循环体内</code>的代码有可能永远<code>不会被执行</code>。</li>
+<li><strong>请看下面的例子:</strong></li>
+</ul>
+<pre><code>var i = 0; 
+while (i &lt; 10) { 
+    i += 2; 
+	alert(i);
+} 
+</code></pre>
+<ul>
+<li>变量 i 开始时的值为 0，每次循环都会递增 2。而只要 i 的值小于 10，循环就会继续下去</li>
+</ul>
+<hr>
+<h2 id="for语句">for语句</h2>
+<p>for 语句也是一种前测试循环语句，但它具有在执行循环之前初始化变量和定义循环后要执行的代<br>
+码的能力。<br>
+<strong>下面是一个示例：</strong></p>
+<pre><code>var count = 10; 
+for (var i = 0; i &lt; count; i++){ 
+    alert(i); 
+} 
+</code></pre>
+<p>for 语句中的<code>初始化表达式</code>、<code>控制表达式</code>和<code>循环后表达式</code>都是可选的。将这三个表达式<code>全部省略</code>，就会创建一个<code>无限循环</code></p>
+<pre><code>for (;;) { // 无限循环
+ doSomething(); 
+} 
+</code></pre>
+<p>控制表达式实际上就把<code>for 循环</code>转换成了 <code>while 循环</code></p>
+<pre><code>var count = 10; 
+var i = 0; 
+for (; i &lt; count; ){ 
+ alert(i); 
+ i++; 
+} 
+</code></pre>
+<hr>
+<h2 id="for-in语句">for-in语句</h2>
+<ul>
+<li>for-in 语句是一种精准的迭代语句，可以用来枚举对象的属性。</li>
+<li><strong>下面是一个示例：</strong><br>
+for (var propName in window) {<br>
+document.write(propName);<br>
+}</li>
+<li>在这个例子中，我们使用 <code>for-in</code>循环来显示了<code>BOM</code> 中 <code>window</code> 对象的所有属性。每次执行循环时，都会将 <code>window</code> 对象中存在的一个<code>属性名赋值</code>给<code>变量 propName</code>。这个过程会一直持续到对象中的<code>所有属性都被枚举一遍为止</code>。与 <code>for 语句类似</code>，这里控制语句中的 <code>var 操作符也不是必需</code>的。但是，为了保证使用<code>局部变量</code></li>
+<li>如果表示要迭代的对象的变量值为 <code>null</code> 或 <code>undefined</code>，<code>for-in 语句会抛出错误</code>。</li>
+</ul>
+<hr>
+<h2 id="label语句">label语句</h2>
+<ul>
+<li>使用 label 语句可以在代码中添加标签，以便将来使用。</li>
+<li><strong>下面是一个示例：</strong></li>
+</ul>
+<pre><code>start: for (var i=0; i &lt; count; i++) { 
+    alert(i); 
+} 
+</code></pre>
+<ul>
+<li>这个例子中定义的 <code>start 标签</code>可以在将来由 <code>break</code> 或 <code>continue</code> 语句引用。加标签的语句一般都要与<code>for 语句</code>等<code>循环语句</code>配合使用。</li>
+</ul>
+<hr>
+<h2 id="break和continue语句">break和continue语句</h2>
+<ul>
+<li><code>break</code>和 <code>continue</code> 语句用于在循环中精确地控制代码的执行。</li>
+<li>其中，<code>break</code> 语句会<code>立即退出循环</code>，强制继续<code>执行循环后面的语句</code>。</li>
+<li>而<code>continue</code>语句虽然也是<code>立即退出循环</code>，但退出循环后会从<code>循环的顶部继续执行</code>。</li>
+<li><code>break</code>请看下面的例子：</li>
+</ul>
+<pre><code>var num = 0; 
+for (var i=1; i &lt; 10; i++) { 
+ if (i % 5 == 0) { 
+     break; 
+ } 
+ num++; 
+} 
+alert(num); //4 
+</code></pre>
+<ul>
+<li><code>continue</code>请看下面的例子：</li>
+</ul>
+<pre><code>var num = 0; 
+for (var i=1; i &lt; 10; i++) { 
+ if (i % 5 == 0) { 
+    continue; 
+ } 
+    num++; 
+} 
+alert(num); //8 
+</code></pre>
+<ul>
+<li>例子的<code>结果显示 8</code>，也就是循环总共<code>执行了 8 次</code>。当变量<code>i 等于 5</code>时，循环会在<code>num</code> 再次递增之前退出，但接下来<code>执行</code>的是<code>下一次循环</code>，即<code>i</code> 的<code>值等于 6 的循环</code>。于是，<code>循环又继续执行</code>，直到<code>i 等于10</code> 时自然结束。而 num 的最终值之所以是 8，是因为 <code>continue</code> 语句导致它<code>少递增了一次</code>。</li>
+<li>break 和 continue 语句都可以与 label 语句联合使用，从而返回代码中特定的位置。这种联合</li>
+<li>使用的情况多发生在循环嵌套的情况下，如下面的例子所示：</li>
+</ul>
+<pre><code>var num = 0; 
+outermost: 
+for (var i=0; i &lt; 10; i++) { 
+ for (var j=0; j &lt; 10; j++) { 
+    if (i == 5 &amp;&amp; j == 5) { 
+        break outermost; 
+ } 
+    num++; 
+ } 
+} 
+alert(num); //55 
+</code></pre>
+<ul>
+<li>在这个例子中，<code>outermost</code>标签表示<code>外部</code>的 <code>for 语</code>句。如果每个循环<code>正常执行 10 次</code>，则 <code>num++语句</code>就会<code>正常执行 100</code>次。换句话说，如果<code>两个循环都自然结束</code>，<code>num 的值应该是 100</code>。但内部循环中的<code>break 语句带了一个参数</code>：要<code>返回到的标签</code>。<code>添加这个标签</code>的结果将导致 <code>break 语句不仅会退出内部的 for 语句</code>（即使用变量 j 的循环），而且<code>也会退出外部的 for 语句</code>（即使用<code>变量 i 的循环</code>）。为此，当变量 i 和 j 都等于 5 时，<code>num</code> 的值正好是 <code>55</code>。同样，<code>continue</code> 语句也可以像这样与 <code>label</code> 语句联</li>
+<li>用，如下面的例子所示：</li>
+</ul>
+<pre><code>var num = 0; 
+outermost: 
+for (var i=0; i &lt; 10; i++) { 
+ for (var j=0; j &lt; 10; j++) { 
+    if (i == 5 &amp;&amp; j == 5) { 
+        continue outermost; 
+ } 
+     num++; 
+ } 
+} 
+alert(num); //95 
+</code></pre>
+<ul>
+<li>在这种情况下，<code>continue</code> 语句会<code>强制继续执行循环</code>——<code>退出内部循环</code>，执行<code>外部循环</code>。当 <code>j 是 5时</code>，<code>continue 语句执行</code>，而这也就意味着<code>内部循环少执行了 5 次</code>，因此 <code>num 的结果</code>是 <code>95</code>。</li>
+<li>虽然联用 break、continue 和 label 语句能够执行复杂的操作，但如果使用过度，也会给调试带来麻烦。在此，我们建议如果使用 label 语句，一定要使用描述性的标签，同时不要<code>嵌套过多</code>的循环。</li>
+</ul>
+<hr>
+<h2 id="with语句">with语句</h2>
+<ul>
+<li>with 语句的作用是将代码的作用域设置到一个特定的对象中。with 语句的语法如下：<br>
+<code>with (expression) statement;</code></li>
+<li>定义 with 语句的目的主要是为了简化多次编写同一个对象的工作，如下面的例子所示：</li>
+</ul>
+<pre><code>var qs = location.search.substring(1); 
+var hostName = location.hostname; 
+var url = location.href; 
+</code></pre>
+<ul>
+<li>上面几行代码都包含 location 对象。如果使用 with 语句，可以把上面的代码改写成如下所示：</li>
+</ul>
+<pre><code>with(location){ 
+    var qs = search.substring(1); 
+    var hostName = hostname; 
+    var url = href; 
+} 
+</code></pre>
+<ul>
+<li>在这个重写后的例子中，使用<code>with</code>语句关联了<code>location 对象</code>。这意味着在 with 语句的代码块内部，<code>每个变量</code>首先被认为是一个<code>局部变量</code>，而如果在<code>局部环境</code>中<code>找不到该变量的定义</code>，就会<code>查询location 对象</code>中<code>是否有同名的属性</code>。如果<code>发现了同名属性</code>，则以 <code>location 对象属性的值</code>作为<code>变量的值</code>。</li>
+<li><code>严格模式</code>下<code>不允许使用 with 语句</code>，否则将<code>视为语法错误</code>。</li>
+</ul>
+<hr>
+<h2 id="switch语句">switch语句</h2>
+<ul>
+<li>switch 语句与 if 语句的关系最为密切，而且也是在其他语言中普遍使用的一种流控制语句。</li>
+</ul>
+<pre><code>switch (expression) { 
+    case value: statement 
+        break; 
+    case value: statement 
+        break; 
+    case value: statement 
+        break; 
+    case value: statement 
+        break; 
+    default: statement 
+} 
+</code></pre>
+<ul>
+<li><code>switch</code> 语句中的每一种情形<code>（case）</code>的含义是：“如果表达式等于这个值<code>（value）</code>，则执行后面的语句<code>（statement）</code>”。而 <code>break 关键字</code>会导致代码执行流<code>跳出 switch 语句</code>。如果省略<code>break 关键字</code>，就会导致执行完当前 <code>case</code> 后，<code>继续执行下一个 case</code>。最后的<code>default</code>关键字则用于在表达式<code>不匹配前面任何一种情形</code>的时候，<code>执行机动代码</code>（因此，也<code>相当于一个 else</code> 语句）。</li>
+</ul>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+                    <div name="comment" style="background: white">
+                        <div class="commentcontainer">
+                            
+                            <head>
+    <script src='https://miss918.cn/media/js/valine.min.js'></script>
+    <script src="https://miss918.cn/media/js/jquery.min.js"></script>
+</head>
+<style>
+    @media screen and (min-width: 1300px) {
+    .v .vbtn.vsubmit {
+        border-radius: 0;
+        padding: 0;
+        color: #fff;
+        line-height: 44px;
+        width: 100%;
+        border: none;
+        background: #1abc9c;
+    }
+
+    .v .vwrap .vedit .vctrl span.vpreview-btn,
+    .v .vwrap .vcontrol .col.col-20,
+    .v .vlist .vcard .vhead .vsys {
+        display: none;
+    }
+
+    .v .vwrap .vmark .valert {
+        padding-top: 0px;
+    }
+
+    .vtext{
+        padding: 0;
+    }
+}
+
+    @media screen and (max-width: 1300px) {
+        .v .vwrap .vmark .valert{
+            margin-top:60%;
+        }
+        .vwrap{
+            margin: 15px;
+            width: 90%;
+        }
+        .v .vwrap .vheader .vinput {
+            padding: 10px 5px;
+        }
+        .v .vwrap{
+            overflow: auto;
+        }
+        .v .veditor {
+            min-height: 30rem;
+            resize: none;
+        }
+
+        .v .vinput {
+            padding: 10px 15px;
+            font-size: 20px;
+        }
+
+        .v .vwrap .vedit .vctrl {
+            right: 0;
+        }
+
+        .v .vempty {
+            padding: 1.25em;
+            text-align: center;
+            color: #999;
+            font-size: 25px;
+        }
+
+    }
+</style>
+
+<body>
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'y6fGrpVvsTjXFhi8IXKDEtQJ-gzGzoHsz ',
+            appKey: '5pqdxBmrGfx9gXLEbRYTAiYY ',
+            notify: true,
+            verify: false,
+            avatar: 'retro',
+            pageSize: 30,
+            placeholder: '既然来了，何不畅所欲言呢？',
+        })
+    </script>
+</body>
+                            <div class="clear"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="toc-container">
+                    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#if%E8%AF%AD%E5%8F%A5">if语句</a></li>
+<li><a href="#do-while%E8%AF%AD%E5%8F%A5">do-while语句</a></li>
+<li><a href="#while%E8%AF%AD%E5%8F%A5">while语句</a></li>
+<li><a href="#for%E8%AF%AD%E5%8F%A5">for语句</a></li>
+<li><a href="#for-in%E8%AF%AD%E5%8F%A5">for-in语句</a></li>
+<li><a href="#label%E8%AF%AD%E5%8F%A5">label语句</a></li>
+<li><a href="#break%E5%92%8Ccontinue%E8%AF%AD%E5%8F%A5">break和continue语句</a></li>
+<li><a href="#with%E8%AF%AD%E5%8F%A5">with语句</a></li>
+<li><a href="#switch%E8%AF%AD%E5%8F%A5">switch语句</a></li>
+</ul>
+</li>
+</ul>
+
+                </div>
+            </div>
+        </div>
+        <div id="bg">
+        </div>
+        <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
+    </div>
+    <!-- 响应式布局，针对手机端内容显示 -->
+    <div class="nav-small">
+        <head>
+
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://miss918.cn/media/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Miss918&nbsp;&nbsp;|</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="/">
+              首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archives">
+              归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags">
+              标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://miss918.cn/post/Guided-graph">
+              思维导图
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://miss918.cn/post/summary">
+              每日总结
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://miss918.cn/post/about">
+              生活笔记
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://miss918.cn/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- 引入BootStrap核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+        <div style="margin-top:30px"></div>
+        <link rel="stylesheet" href="https://miss918.cn/media/css/font-awesome.css">
+<style>
+
+</style>
+
+<body>
+    <div class="allcontent">
+        <div class="postshow">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
+                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
+            </div>
+            <div class="postinfo">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-20</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 9 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://miss918.cn/tag/0S9VNKWru/" class="postlink">
+                        <i class="fa fa-tag"></i> JavaScirpt
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div id="texttitle" style="text-align: center">
+                <h2>JavaScript-语句</h2>
+            </div>
+            <div class="text ">
+                <p>JavaScript规定了一组语句（<code>也称为流控制语句</code>）。从本质上看，语句定义了 JavaScript 中的主要语法，语句通常使用一或多个关键字来完成给定任务。语句可以很简单，例如通知函数退出；也可以比<br>
+较复杂，例如指定重复执行某个命令的次数。</p>
+<hr>
+<h2 id="if语句">if语句</h2>
+<p>大多数编程语言中最为常用的一个语句就是 if 语句。以下是 if 语句的语法：</p>
+<pre><code>if (condition) {
+    statement1
+}else{
+    内容
+}
+</code></pre>
+<ul>
+<li>其中的 <code>condition</code>（条件）可以是<code>任意表达式</code>；而且对这个表达式求值的结果<code>不一定</code>是<code>布尔值</code>。ECMAScript 会<code>自动调用</code> <code>Boolean()</code>转换函数将这个表达式的结果<code>转换为一个布尔值</code>。如果对 <code>condition</code>求值的结果是<code>true</code>，则执行 <code>statement1</code>（语句 1），如果对<code>condition</code>求值的结果是<code>false</code>，则执行 <code>statement2</code>（语句 2）。而且这两个语句既可以是一行代码，也可以是一个<code>代码块</code>（以<code>一对花括号括起来的多行代码</code>）。</li>
+<li><strong>请看下面的例子:</strong></li>
+</ul>
+<pre><code>if (i &gt; 25) { 
+     alert(&quot;Greater than 25.&quot;); 
+} else if (i &lt; 0) { 
+    alert(&quot;Less than 0.&quot;); 
+} else { 
+     alert(&quot;Between 0 and 25, inclusive.&quot;); 
+} 
+</code></pre>
+<hr>
+<h2 id="do-while语句">do-while语句</h2>
+<ul>
+<li><code>do-while</code> 语句是一种<code>后测试循环语句</code>，即只有在循环体中的代码执行之后，才会测试出口条件.在对条件表达式求值之前，循环体内的<code>代码至少</code>会被<code>执行一次</code></li>
+<li><strong>请看下面的例子:</strong></li>
+</ul>
+<pre><code>var i = 0; 
+do { 
+ i += 2; 
+} while (i &lt; 10); 
+alert(i); 
+</code></pre>
+<hr>
+<h2 id="while语句">while语句</h2>
+<ul>
+<li>while 语句属于<code>前测试循环语句</code>，也就是说，在循环体内的代码被执行之前，就会对<code>出口条件求值</code>。因此，<code>循环体内</code>的代码有可能永远<code>不会被执行</code>。</li>
+<li><strong>请看下面的例子:</strong></li>
+</ul>
+<pre><code>var i = 0; 
+while (i &lt; 10) { 
+    i += 2; 
+	alert(i);
+} 
+</code></pre>
+<ul>
+<li>变量 i 开始时的值为 0，每次循环都会递增 2。而只要 i 的值小于 10，循环就会继续下去</li>
+</ul>
+<hr>
+<h2 id="for语句">for语句</h2>
+<p>for 语句也是一种前测试循环语句，但它具有在执行循环之前初始化变量和定义循环后要执行的代<br>
+码的能力。<br>
+<strong>下面是一个示例：</strong></p>
+<pre><code>var count = 10; 
+for (var i = 0; i &lt; count; i++){ 
+    alert(i); 
+} 
+</code></pre>
+<p>for 语句中的<code>初始化表达式</code>、<code>控制表达式</code>和<code>循环后表达式</code>都是可选的。将这三个表达式<code>全部省略</code>，就会创建一个<code>无限循环</code></p>
+<pre><code>for (;;) { // 无限循环
+ doSomething(); 
+} 
+</code></pre>
+<p>控制表达式实际上就把<code>for 循环</code>转换成了 <code>while 循环</code></p>
+<pre><code>var count = 10; 
+var i = 0; 
+for (; i &lt; count; ){ 
+ alert(i); 
+ i++; 
+} 
+</code></pre>
+<hr>
+<h2 id="for-in语句">for-in语句</h2>
+<ul>
+<li>for-in 语句是一种精准的迭代语句，可以用来枚举对象的属性。</li>
+<li><strong>下面是一个示例：</strong><br>
+for (var propName in window) {<br>
+document.write(propName);<br>
+}</li>
+<li>在这个例子中，我们使用 <code>for-in</code>循环来显示了<code>BOM</code> 中 <code>window</code> 对象的所有属性。每次执行循环时，都会将 <code>window</code> 对象中存在的一个<code>属性名赋值</code>给<code>变量 propName</code>。这个过程会一直持续到对象中的<code>所有属性都被枚举一遍为止</code>。与 <code>for 语句类似</code>，这里控制语句中的 <code>var 操作符也不是必需</code>的。但是，为了保证使用<code>局部变量</code></li>
+<li>如果表示要迭代的对象的变量值为 <code>null</code> 或 <code>undefined</code>，<code>for-in 语句会抛出错误</code>。</li>
+</ul>
+<hr>
+<h2 id="label语句">label语句</h2>
+<ul>
+<li>使用 label 语句可以在代码中添加标签，以便将来使用。</li>
+<li><strong>下面是一个示例：</strong></li>
+</ul>
+<pre><code>start: for (var i=0; i &lt; count; i++) { 
+    alert(i); 
+} 
+</code></pre>
+<ul>
+<li>这个例子中定义的 <code>start 标签</code>可以在将来由 <code>break</code> 或 <code>continue</code> 语句引用。加标签的语句一般都要与<code>for 语句</code>等<code>循环语句</code>配合使用。</li>
+</ul>
+<hr>
+<h2 id="break和continue语句">break和continue语句</h2>
+<ul>
+<li><code>break</code>和 <code>continue</code> 语句用于在循环中精确地控制代码的执行。</li>
+<li>其中，<code>break</code> 语句会<code>立即退出循环</code>，强制继续<code>执行循环后面的语句</code>。</li>
+<li>而<code>continue</code>语句虽然也是<code>立即退出循环</code>，但退出循环后会从<code>循环的顶部继续执行</code>。</li>
+<li><code>break</code>请看下面的例子：</li>
+</ul>
+<pre><code>var num = 0; 
+for (var i=1; i &lt; 10; i++) { 
+ if (i % 5 == 0) { 
+     break; 
+ } 
+ num++; 
+} 
+alert(num); //4 
+</code></pre>
+<ul>
+<li><code>continue</code>请看下面的例子：</li>
+</ul>
+<pre><code>var num = 0; 
+for (var i=1; i &lt; 10; i++) { 
+ if (i % 5 == 0) { 
+    continue; 
+ } 
+    num++; 
+} 
+alert(num); //8 
+</code></pre>
+<ul>
+<li>例子的<code>结果显示 8</code>，也就是循环总共<code>执行了 8 次</code>。当变量<code>i 等于 5</code>时，循环会在<code>num</code> 再次递增之前退出，但接下来<code>执行</code>的是<code>下一次循环</code>，即<code>i</code> 的<code>值等于 6 的循环</code>。于是，<code>循环又继续执行</code>，直到<code>i 等于10</code> 时自然结束。而 num 的最终值之所以是 8，是因为 <code>continue</code> 语句导致它<code>少递增了一次</code>。</li>
+<li>break 和 continue 语句都可以与 label 语句联合使用，从而返回代码中特定的位置。这种联合</li>
+<li>使用的情况多发生在循环嵌套的情况下，如下面的例子所示：</li>
+</ul>
+<pre><code>var num = 0; 
+outermost: 
+for (var i=0; i &lt; 10; i++) { 
+ for (var j=0; j &lt; 10; j++) { 
+    if (i == 5 &amp;&amp; j == 5) { 
+        break outermost; 
+ } 
+    num++; 
+ } 
+} 
+alert(num); //55 
+</code></pre>
+<ul>
+<li>在这个例子中，<code>outermost</code>标签表示<code>外部</code>的 <code>for 语</code>句。如果每个循环<code>正常执行 10 次</code>，则 <code>num++语句</code>就会<code>正常执行 100</code>次。换句话说，如果<code>两个循环都自然结束</code>，<code>num 的值应该是 100</code>。但内部循环中的<code>break 语句带了一个参数</code>：要<code>返回到的标签</code>。<code>添加这个标签</code>的结果将导致 <code>break 语句不仅会退出内部的 for 语句</code>（即使用变量 j 的循环），而且<code>也会退出外部的 for 语句</code>（即使用<code>变量 i 的循环</code>）。为此，当变量 i 和 j 都等于 5 时，<code>num</code> 的值正好是 <code>55</code>。同样，<code>continue</code> 语句也可以像这样与 <code>label</code> 语句联</li>
+<li>用，如下面的例子所示：</li>
+</ul>
+<pre><code>var num = 0; 
+outermost: 
+for (var i=0; i &lt; 10; i++) { 
+ for (var j=0; j &lt; 10; j++) { 
+    if (i == 5 &amp;&amp; j == 5) { 
+        continue outermost; 
+ } 
+     num++; 
+ } 
+} 
+alert(num); //95 
+</code></pre>
+<ul>
+<li>在这种情况下，<code>continue</code> 语句会<code>强制继续执行循环</code>——<code>退出内部循环</code>，执行<code>外部循环</code>。当 <code>j 是 5时</code>，<code>continue 语句执行</code>，而这也就意味着<code>内部循环少执行了 5 次</code>，因此 <code>num 的结果</code>是 <code>95</code>。</li>
+<li>虽然联用 break、continue 和 label 语句能够执行复杂的操作，但如果使用过度，也会给调试带来麻烦。在此，我们建议如果使用 label 语句，一定要使用描述性的标签，同时不要<code>嵌套过多</code>的循环。</li>
+</ul>
+<hr>
+<h2 id="with语句">with语句</h2>
+<ul>
+<li>with 语句的作用是将代码的作用域设置到一个特定的对象中。with 语句的语法如下：<br>
+<code>with (expression) statement;</code></li>
+<li>定义 with 语句的目的主要是为了简化多次编写同一个对象的工作，如下面的例子所示：</li>
+</ul>
+<pre><code>var qs = location.search.substring(1); 
+var hostName = location.hostname; 
+var url = location.href; 
+</code></pre>
+<ul>
+<li>上面几行代码都包含 location 对象。如果使用 with 语句，可以把上面的代码改写成如下所示：</li>
+</ul>
+<pre><code>with(location){ 
+    var qs = search.substring(1); 
+    var hostName = hostname; 
+    var url = href; 
+} 
+</code></pre>
+<ul>
+<li>在这个重写后的例子中，使用<code>with</code>语句关联了<code>location 对象</code>。这意味着在 with 语句的代码块内部，<code>每个变量</code>首先被认为是一个<code>局部变量</code>，而如果在<code>局部环境</code>中<code>找不到该变量的定义</code>，就会<code>查询location 对象</code>中<code>是否有同名的属性</code>。如果<code>发现了同名属性</code>，则以 <code>location 对象属性的值</code>作为<code>变量的值</code>。</li>
+<li><code>严格模式</code>下<code>不允许使用 with 语句</code>，否则将<code>视为语法错误</code>。</li>
+</ul>
+<hr>
+<h2 id="switch语句">switch语句</h2>
+<ul>
+<li>switch 语句与 if 语句的关系最为密切，而且也是在其他语言中普遍使用的一种流控制语句。</li>
+</ul>
+<pre><code>switch (expression) { 
+    case value: statement 
+        break; 
+    case value: statement 
+        break; 
+    case value: statement 
+        break; 
+    case value: statement 
+        break; 
+    default: statement 
+} 
+</code></pre>
+<ul>
+<li><code>switch</code> 语句中的每一种情形<code>（case）</code>的含义是：“如果表达式等于这个值<code>（value）</code>，则执行后面的语句<code>（statement）</code>”。而 <code>break 关键字</code>会导致代码执行流<code>跳出 switch 语句</code>。如果省略<code>break 关键字</code>，就会导致执行完当前 <code>case</code> 后，<code>继续执行下一个 case</code>。最后的<code>default</code>关键字则用于在表达式<code>不匹配前面任何一种情形</code>的时候，<code>执行机动代码</code>（因此，也<code>相当于一个 else</code> 语句）。</li>
+</ul>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+    var t_img; // 定时器
+    var isLoad = true; // 控制变量
+    isImgLoad(function () {
+        // 加载完成
+        $('.postdetailimg').css("display", "block");
+    });
+    // 判断图片加载的函数
+    function isImgLoad(callback) {
+        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+        // 查找所有封面图，迭代处理
+        $('.postdetailimg').each(function () {
+            // 找到为0就将isLoad设为false，并退出each
+            if (this.height === 0) {
+                isLoad = false;
+                return false;
+            }
+        });
+        // 为true，没有发现为0的。加载完毕
+        if (isLoad) {
+            clearTimeout(t_img); // 清除定时器
+            // 回调函数
+            callback();
+            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+        } else {
+            isLoad = true;
+            t_img = setTimeout(function () {
+                isImgLoad(callback); // 递归扫描
+            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+        }
+    }
+</script>
+        <div name="comment" style="background: white">
+            <div class="commentcontainer">
+                
+                <head>
+        <script src='https://miss918.cn/media/js/valine.min.js'></script>
+        <script src="https://miss918.cn/media/js/jquery.min.js"></script>
+    </head>
+    <style>
+        @media screen and (min-width: 1300px) {
+            .v {
+                margin-top: 10%;
+            }
+    
+            .v .vwrap {
+                overflow: hidden;
+            }
+    
+            .v .vwrap {
+                padding: 0 0 44px;
+            }
+    
+            .v .veditor {
+                min-height: 7rem;
+                resize: none;
+            }
+    
+            .v .vwrap .vedit {
+                padding-top: 0
+            }
+    
+            .v .vwrap .vheader {
+                width: 80%;
+                bottom: 0;
+                position: absolute;
+                background: #f7f7f7;
+            }
+    
+            .v .vinput {
+                padding: 10px 15px;
+            }
+    
+            .v .vwrap .vheader .vinput {
+                border-bottom: 0px
+            }
+    
+            .v .vwrap .vedit .vctrl {
+                margin-top: -44px;
+                right: 0;
+                position: absolute;
+                margin-right: -3px;
+            }
+    
+            .v .vwrap .vcontrol {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 20%;
+                padding-top: 0px;
+            }
+        }
+    
+        .v .vwrap .vcontrol .col.col-80 {
+            width: 100%;
+        }
+    
+        .v .vbtn.vsubmit {
+            border-radius: 0;
+            padding: 0;
+            color: #fff;
+            line-height: 44px;
+            width: 100%;
+            border: none;
+            background: #1abc9c;
+        }
+    
+        .v .vwrap .vedit .vctrl span.vpreview-btn,
+        .v .vwrap .vcontrol .col.col-20,
+        .v .vlist .vcard .vhead .vsys {
+            display: none;
+        }
+    
+        .v .vwrap .vmark .valert {
+            padding-top: 0px;
+        }
+    
+        .vtext{
+            padding: 0;
+        }
+    
+        @media screen and (max-width: 1300px) {
+            .v .vwrap .vmark .valert{
+                margin-top:60%;
+            }
+            .vwrap{
+                margin: 15px;
+                width: 100%;
+            }
+            .v .vwrap .vheader .vinput {
+                padding: 10px 5px;
+            }
+            .v .vwrap{
+                overflow: auto;
+            }
+            .v .veditor {
+                min-height: 30rem;
+                resize: none;
+            }
+    
+            .v .vinput {
+                padding: 10px 15px;
+                font-size: 20px;
+            }
+    
+            .v .vwrap .vedit .vctrl {
+                right: 0;
+            }
+    
+            .v .vempty {
+                padding: 1.25em;
+                text-align: center;
+                color: #999;
+                font-size: 25px;
+            }
+    
+        }
+    </style>
+    
+    <body>
+        <div id="vcomments1"></div>
+        <script>
+            new Valine({
+                el: '#vcomments1',
+                appId: 'y6fGrpVvsTjXFhi8IXKDEtQJ-gzGzoHsz ',
+                appKey: '5pqdxBmrGfx9gXLEbRYTAiYY ',
+                notify: true,
+                verify: false,
+                avatar: 'retro',
+                pageSize: 30,
+                placeholder: '既然来了，那就留个痕迹吧~',
+            })
+        </script>
+    </body>
+                <div class="clear"></div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+</body>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://miss918.cn/media/js/post.js"></script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'http://ericam.top/' //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://miss918.cn/media/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="https://miss918.cn/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://miss918.cn/media/live2d/assets/tororo.model.json");
+</script>

@@ -37,7 +37,7 @@
 <body>
     <div id=side>
         <div class="avatar-border">
-            <img src="https://miss918.cn/images/avatar.png?v=1589968218086" class="avatar">
+            <img src="https://miss918.cn/images/avatar.png?v=1589980416270" class="avatar">
         </div>
         <div class="sitename">Miss918</div>
         <span class="describtion" data-text='["少管闲事,少说闲话,不做闲人"]'>&nbsp;</span>
@@ -316,7 +316,7 @@
             </div>
             <div class="postinfo">
                 <div class="postdate"><i class="fa fa-calendar"></i>2020-05-19</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 10 min read</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 19 min read</div>
                 <div class="posttag">
                     
                     <a href="https://miss918.cn/tag/0S9VNKWru/" class="postlink">
@@ -596,6 +596,236 @@ alert(!12345); // false 0
 <li>第一个操作数的求值结果为true，就不会对第二个操作数求值了<br>
 var result = true || false;<br>
 <img src="https://miss918.cn/post-images/1589898564999.png" alt="" loading="lazy"></li>
+</ul>
+<h2 id="乘性操作符">乘性操作符</h2>
+<ul>
+<li>定义了<code>3</code>个乘性操作符：<code>乘法</code>、<code>除法</code>和<code>求模</code></li>
+<li>操作数为<code>非数值</code>的情况下会执行<code>自动的类型转换</code></li>
+<li>参与<code>乘性计算</code>的某个<code>操作数不是数值</code>，<code>后台</code>会先使用<code>Number()</code>转型函数将其<code>转换为数值</code></li>
+<li><code>空字符串</code>将被当作<code>0</code>，<code>布尔值 true</code> 将被当作 <code>1</code>
+<ol>
+<li>
+<p>乘法</p>
+<ul>
+<li>乘法操作符由一个星号<code>（*）</code>表示，用于计算<code>两个数值</code>的<code>乘积</code>
+<ul>
+<li><code>var result = 34 * 56;</code></li>
+</ul>
+</li>
+<li>在处理<code>特殊值</code>的情况下，乘法操作符遵循下列特殊的<code>规则</code>:</li>
+</ul>
+<ol>
+<li>如果操作数都是数值，执行常规的乘法计算，即<code>两个正数</code>或<code>两个负数``相乘</code>的结果还是<code>正数</code>，而如果只有<code>一个操作数有符号</code>，那么<code>结果</code>就是<code>负数</code>。如果<code>乘积</code>超过了<code>ECMAScript 数值</code>的表示<code>范围</code>，则返回 <code>Infinity(无穷大)</code> 或<code>-Infinity</code>；</li>
+<li>如果有一个操作数是 <code>NaN</code>，则<code>结果</code>是 NaN；</li>
+<li>如果是<code>Infinity</code> 与 <code>0</code> <code>相乘</code>，则<code>结果</code>是 NaN；</li>
+<li>如果是 <code>Infinity</code>与<code>非 0</code>数值<code>相乘</code>，则<code>结果</code>是<code>Infinity</code> 或<code>-Infinity</code>，取决于<code>有符号</code>操作数的<code>符号</code>；</li>
+<li>如果是 <code>Infinity</code> 与 <code>Infinity</code> 相乘，则结果是 <code>Infinity</code>；</li>
+<li>如果有一个操作数<code>不是数值</code>，则在后台调用<code>Number()</code>将其<code>转换为数值</code>，然后再应用上面的规则。</li>
+</ol>
+</li>
+<li>
+<p>除法</p>
+<ul>
+<li>除法操作符由一个斜线符号（/）表示，执行第二个操作数除第一个操作数的计算
+<ul>
+<li><code>var result = 66 / 11;</code></li>
+</ul>
+</li>
+<li>与乘法操作符类似，<code>除法操作符</code>对特殊的值也有特殊的处理<code>规则如上</code></li>
+</ul>
+</li>
+<li>
+<p>求模</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="加性操作符">加性操作符</h2>
+<p>这两个操作符却都有一系列的特殊行为<br>
+与乘性操作符类似，加性操作符也会在后台转换不同的数据类型</p>
+<ol>
+<li>加法
+<ul>
+<li>加法操作符（+）的用法如下所示：
+<ul>
+<li><code>var result = 1 + 2;</code></li>
+</ul>
+</li>
+<li>如果<code>两个操作符</code>都是<code>数值</code>，执行常规的加法计算，然后根据<code>下列规则返回结果</code>：
+<ul>
+<li>如果有一个操作数是 <code>NaN</code>，则结果是<code>NaN</code>；</li>
+<li>如果是 <code>Infinity</code> 加 <code>Infinity</code>，则结果是<code>Infinity</code>；</li>
+<li>如果是<code>-Infinity 加-Infinity</code>，则结果是<code>-Infinity</code>；</li>
+<li>如果是 <code>Infinity 加-Infinit</code>y，则结果是 <code>NaN</code>；</li>
+<li>如果是<code>+0 加+0</code>，则结果是<code>+0</code>；</li>
+<li>如果是<code>-0 加-0</code>，则结果是<code>-0</code>；</li>
+<li>如果是<code>+0 加-0</code>，则结果是<code>+0</code>。</li>
+</ul>
+</li>
+<li>不过，如果<code>有一个操作数</code>是<code>字符串</code>，那么就要应用如下规则：
+<ul>
+<li>如果<code>两个操作数都是字符串</code>，则将第<code>二个操作数</code>与<code>第一个操作数拼接</code>起来；</li>
+<li>如果<code>只有一个操作数是字符串</code>，则将<code>另一个操作数转换为字符串</code>，然后再将<code>两个字符串拼接 起来</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>如果有一个操作数是对象、数值或布尔值，则调用它们的 toString()方法取得相应的字符串值，然后再应用前面关于字符串的规则。</li>
+<li>对于 undefined 和 null，则分别调用 String()函数并取得字符串&quot;undefined&quot;和&quot;null&quot;。</li>
+<li>如果想先对数值执行算术计算，然后再将结果与字符串拼接起来，应该像下面这样使用圆括号：</li>
+</ul>
+<pre><code>var num1 = 5; 
+var num2 = 10; 
+var message = &quot;The sum of 5 and 10 is &quot; + (num1 + num2); 
+alert(message); //&quot;The sum of 5 and 10 is 15&quot; 
+</code></pre>
+<ol start="2">
+<li>减法</li>
+</ol>
+<ul>
+<li>减法操作符（-）是另一个极为常用的操作符</li>
+<li>var result = 2 - 1;</li>
+<li>与加法操作符类似，ECMAScript 中的减法操作符在处理各种数据类型转换时，同样需要遵循一些特殊规则:
+<ol>
+<li>如果是<code>Infinity</code> 减 <code>Infinity</code>，则结果是 <code>NaN</code>；</li>
+<li>如果是<code>-Infinity</code> 减<code>-Infinity</code>，则结果是 <code>NaN</code>；</li>
+<li>如果是 <code>Infinity</code> 减<code>-Infinity</code>，则结果是 <code>Infinity</code>；</li>
+<li>如果是<code>-Infinity</code> 减 <code>Infinity</code>，则结果是<code>-Infinity</code>；</li>
+<li>如果是<code>+0</code> 减<code>-0</code>，则结果是<code>-0</code>；</li>
+<li>如果是<code>-0</code>减<code>-0</code>，则结果是<code>+0</code>；</li>
+<li>如果有一个操作数是对象，则调用对象的 valueOf()方法以取得表示该对象的数值。如果得到</li>
+<li>的值是 NaN，则减法的结果就是 NaN。</li>
+<li>如果对象没有 valueOf()方法，则调用其 toString()方法并将得到的字符串转换为数值。</li>
+</ol>
+</li>
+</ul>
+<pre><code>var result1 = 5 - true; // 4，因为 true 被转换成了 1 
+var result2 = NaN - 1; // NaN 
+var result3 = 5 - 3; // 2 
+var result4 = 5 - &quot;&quot;; // 5，因为&quot;&quot; 被转换成了 0 
+var result5 = 5 - &quot;2&quot;; // 3，因为&quot;2&quot;被转换成了 2 
+var result6 = 5 - null; // 5，因为 null 被转换成了 0 
+</code></pre>
+<h2 id="关系操作符">关系操作符</h2>
+<ul>
+<li>小于<code>（&lt;）</code>、大于<code>（&gt;）</code>、小于等于<code>（&lt;=）</code>和大于等于<code>（&gt;=）</code>这几个关系操作符用于对两个值进行比较,这几个操作符都<code>返回</code>一个<code>布尔值</code></li>
+</ul>
+<pre><code>var result1 = 5 &gt; 3; //true 
+var result2 = 5 &lt; 3; //false 
+</code></pre>
+<ul>
+<li>当关系操作符的操作数使用了<code>非数值</code>时，也要进行数据转换或完成某些奇怪的操作。以下就是相应的规则。
+<ul>
+<li>如果<code>两个操作</code>数都是<code>数值</code>，则执行<code>数值比较</code>。</li>
+<li>如果<code>两个操作数</code>都是<code>字符串</code>，则<code>比较两个字符串</code>对应的<code>字符编码值</code>。</li>
+<li>如果<code>一个操作数</code>是<code>数值</code>，则将<code>另一个</code>操作数<code>转换</code>为一个<code>数值</code>，然后<code>执行数值比较</code>。</li>
+<li>如果<code>一个操作数</code>是<code>对象</code>，则调用这个对象的 <code>valueOf()方法</code>，用得到的结果按照前面的规则执行比较。如果对象<code>没有</code> valueOf()方法，则调用 toString()方法，并用得到的结果根据前面的规则执行比较。</li>
+<li>如果一个操作数是<code>布尔值</code>，则先将其<code>转换为数值</code>，然后<code>再执行比较</code>。</li>
+</ul>
+</li>
+</ul>
+<h2 id="相等操作符">相等操作符</h2>
+<ul>
+<li>相等和不相等,<code>先转换再比较</code></li>
+<li>全等和不全等,<code>仅比较而不转换</code></li>
+</ul>
+<ol>
+<li>相等和不相等</li>
+</ol>
+<ul>
+<li>相等操作符由两个<code>等于</code>号<code>（==）</code>表示，如果两个操作数相等，则返回 true。而<code>不相等操作符</code>由叹号后跟等于号<code>（!=）</code>表示，如果<code>两个操作数不相等</code>，则返回<code>true</code>。这两个操作符都会<code>先转换操作数</code>（通常称为<code>强制转型</code>），然后再<code>比较它们的相等性</code>。
+<ul>
+<li>在转换不同的数据类型时，相等和不相等操作符遵循下列<code>基本规则</code>：
+<ul>
+<li>如果有一个操作数是<code>布尔值</code>，则在比较相等性之前先将其<code>转换为数值</code>——<code>false 转换为 0</code>，而<code>true 转换为 1</code>；</li>
+<li>如果一个操作数是<code>字符串</code>，另一个操作数是<code>数值</code>，在比较相等性之前先将<code>字符串转换为数值</code>；</li>
+<li>如果一个操作数是<code>对象</code>，另一个操作数<code>不是</code>，则调用对象的 <code>valueOf()</code>方法，用得到的<code>基本类型值</code>按照前面的规则<code>进行比较</code>；</li>
+</ul>
+</li>
+<li>这两个操作符在进行比较时则要遵循下列规则。
+<ul>
+<li><code>null</code>和 <code>undefined</code>是相等的。</li>
+<li>要<code>比较相等性</code>之前，<code>不能</code>将 <code>null</code> 和<code>undefined ``转换</code>成<code>其他任何值</code>。</li>
+<li>如果有一个操作数是 <code>NaN</code>，则相等操作符返回 <code>false</code>，而<code>不相等操作符</code>返回 <code>tru</code>e。重要提示：即使<code>两个操作数</code>都是 <code>NaN</code>，<code>相等操作符</code>也返回 <code>false</code>；因为按照规则，<code>NaN 不等于 NaN</code>。</li>
+<li>如果两个操作数都是<code>对象</code>，则<code>比较</code>它们是不是<code>同一个对象</code>。如果<code>两个操作数</code>都指向<code>同一个对象</code>，则<code>相等操作符返回 true</code>；否则，<code>返回 false。</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>下表列出了一些特殊情况及比较结果：<br>
+<img src="https://miss918.cn/post-images/1589972957107.png" alt="" loading="lazy"></li>
+</ul>
+<ol start="2">
+<li>全等和不全等<br>
+全等操作符由 3 个等于号<code>（===）</code>表示，它只在两个操作数<code>未经转换</code>就相等的情况下返回<code>true</code></li>
+</ol>
+<pre><code>var result1 = (&quot;55&quot; == 55); //true，因为转换后相等
+var result2 = (&quot;55&quot; === 55); //false，因为不同的数据类型不相等
+</code></pre>
+<ul>
+<li>不全等操作符由一个叹号后跟两个等于号<code>（!==）</code>表示，它在两个操作数<code>未经转换</code>就不相等的情况下返回 true。</li>
+</ul>
+<pre><code>var result1 = (&quot;55&quot; != 55); //false，因为转换后相等
+var result2 = (&quot;55&quot; !== 55); //true，因为不同的数据类型不相等
+</code></pre>
+<ul>
+<li><code>注意:</code>null == undefined 会返回 true，因为它们是类似的值；但 null === undefined 会返回false，因为它们是不同类型的值。</li>
+</ul>
+<h2 id="条件操作符">条件操作符</h2>
+<ul>
+<li>条件操作符应该算是 ECMAScript 中最灵活的一种操作符了，而且它遵循与 Java 中的条件操作符相同的语法形式，如下面的例子所示:</li>
+</ul>
+<pre><code>variable = boolean_expression ? true_value : false_value; 
+</code></pre>
+<ul>
+<li>本质上，这行代码的含义就是基于对 <code>boolean_expression</code> 求值的结果，决定给变量 <code>variable</code></li>
+<li>赋什么值。如果求值结果为<code>true</code>，则给变量 <code>variable</code> 赋 <code>true_value</code>值；如果求值结果为 <code>false</code>，则给变量 <code>variable</code> 赋 <code>false_value</code> 值。再看一个例子：</li>
+</ul>
+<pre><code> var max = (num1 &gt; num2) ? num1 : num2; 
+</code></pre>
+<ul>
+<li>在这个例子中，<code>max</code> 中将会保存一个最大的值。这个表达式的意思是：如果<code>num1 大于 num2</code>（关</li>
+<li>系表达式返回 <code>true</code>），则将 <code>num1</code> 的值赋给 <code>max</code>；如果 num1 <code>小于或等于</code> num2（关系表达式返回 <code>false</code>），则将 <code>num2</code> 的值赋给 <code>max</code>。</li>
+</ul>
+<h2 id="赋值操作符">赋值操作符</h2>
+<ul>
+<li>简单的赋值操作符由等于号（=）表示，其作用就是把右侧的值赋给左侧的变量<br>
+<code>var num = 10;</code></li>
+<li>如果在等于号（=）前面再添加乘性操作符、加性操作符或位操作符，就可以完成复合赋值操作。这种复合赋值操作相当于是对下面常规表达式的简写形式：</li>
+</ul>
+<pre><code>var num = 10; 
+num = num + 10; 
+</code></pre>
+<ul>
+<li>其中的第二行代码可以用一个复合赋值来代替：</li>
+</ul>
+<pre><code>var num = 10; 
+num += 10; 
+</code></pre>
+<ul>
+<li>每个主要算术操作符（以及个别的其他操作符）都有对应的复合赋值操作符。这些操作符如下所示：
+<ol>
+<li>乘/赋值（*=）；</li>
+<li>除/赋值（/=）；</li>
+<li>模/赋值（%=）；</li>
+<li>加/赋值（+=）；</li>
+<li>减/赋值（=）；</li>
+<li>左移/赋值（&lt;&lt;=）；</li>
+<li>有符号右移/赋值（&gt;&gt;=）；</li>
+<li>无符号右移/赋值（&gt;&gt;&gt;=）。<br>
+<strong>设计这些操作符的主要目的就是简化赋值操作。使用它们不会带来任何性能的提升。</strong></li>
+</ol>
+</li>
+</ul>
+<h2 id="逗号操作符">逗号操作符</h2>
+<p>使用逗号操作符可以在一条语句中执行多个操作，如下面的例子所示：<br>
+<code>var num1=1, num2=2, num3=3;</code></p>
+<ul>
+<li>逗号操作符多用于声明多个变量；但除此之外，逗号操作符还可以用于赋值。在用于赋值时，逗号操作符总会返回表达式中的最后一项，如下面的例子所示：<br>
+<code>var num = (5, 1, 4, 8, 0); // num 的值为 0</code></li>
+<li>由于 0 是表达式中的最后一项，因此 num 的值就是 0。</li>
 </ul>
 
             </div>
@@ -740,6 +970,13 @@ var result = true || false;<br>
 </li>
 <li><a href="#%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6">位操作符</a></li>
 <li><a href="#%E5%B8%83%E5%B0%94%E6%93%8D%E4%BD%9C%E7%AC%A6">布尔操作符</a></li>
+<li><a href="#%E4%B9%98%E6%80%A7%E6%93%8D%E4%BD%9C%E7%AC%A6">乘性操作符</a></li>
+<li><a href="#%E5%8A%A0%E6%80%A7%E6%93%8D%E4%BD%9C%E7%AC%A6">加性操作符</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C%E7%AC%A6">关系操作符</a></li>
+<li><a href="#%E7%9B%B8%E7%AD%89%E6%93%8D%E4%BD%9C%E7%AC%A6">相等操作符</a></li>
+<li><a href="#%E6%9D%A1%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%AC%A6">条件操作符</a></li>
+<li><a href="#%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C%E7%AC%A6">赋值操作符</a></li>
+<li><a href="#%E9%80%97%E5%8F%B7%E6%93%8D%E4%BD%9C%E7%AC%A6">逗号操作符</a></li>
 </ul>
 </li>
 </ul>
@@ -856,7 +1093,7 @@ var result = true || false;<br>
             </div>
             <div class="postinfo">
                 <div class="postdate"><i class="fa fa-calendar"></i>2020-05-19</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 10 min read</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 19 min read</div>
                 <div class="posttag">
                     
                     <a href="https://miss918.cn/tag/0S9VNKWru/" class="postlink">
@@ -1136,6 +1373,236 @@ alert(!12345); // false 0
 <li>第一个操作数的求值结果为true，就不会对第二个操作数求值了<br>
 var result = true || false;<br>
 <img src="https://miss918.cn/post-images/1589898564999.png" alt="" loading="lazy"></li>
+</ul>
+<h2 id="乘性操作符">乘性操作符</h2>
+<ul>
+<li>定义了<code>3</code>个乘性操作符：<code>乘法</code>、<code>除法</code>和<code>求模</code></li>
+<li>操作数为<code>非数值</code>的情况下会执行<code>自动的类型转换</code></li>
+<li>参与<code>乘性计算</code>的某个<code>操作数不是数值</code>，<code>后台</code>会先使用<code>Number()</code>转型函数将其<code>转换为数值</code></li>
+<li><code>空字符串</code>将被当作<code>0</code>，<code>布尔值 true</code> 将被当作 <code>1</code>
+<ol>
+<li>
+<p>乘法</p>
+<ul>
+<li>乘法操作符由一个星号<code>（*）</code>表示，用于计算<code>两个数值</code>的<code>乘积</code>
+<ul>
+<li><code>var result = 34 * 56;</code></li>
+</ul>
+</li>
+<li>在处理<code>特殊值</code>的情况下，乘法操作符遵循下列特殊的<code>规则</code>:</li>
+</ul>
+<ol>
+<li>如果操作数都是数值，执行常规的乘法计算，即<code>两个正数</code>或<code>两个负数``相乘</code>的结果还是<code>正数</code>，而如果只有<code>一个操作数有符号</code>，那么<code>结果</code>就是<code>负数</code>。如果<code>乘积</code>超过了<code>ECMAScript 数值</code>的表示<code>范围</code>，则返回 <code>Infinity(无穷大)</code> 或<code>-Infinity</code>；</li>
+<li>如果有一个操作数是 <code>NaN</code>，则<code>结果</code>是 NaN；</li>
+<li>如果是<code>Infinity</code> 与 <code>0</code> <code>相乘</code>，则<code>结果</code>是 NaN；</li>
+<li>如果是 <code>Infinity</code>与<code>非 0</code>数值<code>相乘</code>，则<code>结果</code>是<code>Infinity</code> 或<code>-Infinity</code>，取决于<code>有符号</code>操作数的<code>符号</code>；</li>
+<li>如果是 <code>Infinity</code> 与 <code>Infinity</code> 相乘，则结果是 <code>Infinity</code>；</li>
+<li>如果有一个操作数<code>不是数值</code>，则在后台调用<code>Number()</code>将其<code>转换为数值</code>，然后再应用上面的规则。</li>
+</ol>
+</li>
+<li>
+<p>除法</p>
+<ul>
+<li>除法操作符由一个斜线符号（/）表示，执行第二个操作数除第一个操作数的计算
+<ul>
+<li><code>var result = 66 / 11;</code></li>
+</ul>
+</li>
+<li>与乘法操作符类似，<code>除法操作符</code>对特殊的值也有特殊的处理<code>规则如上</code></li>
+</ul>
+</li>
+<li>
+<p>求模</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="加性操作符">加性操作符</h2>
+<p>这两个操作符却都有一系列的特殊行为<br>
+与乘性操作符类似，加性操作符也会在后台转换不同的数据类型</p>
+<ol>
+<li>加法
+<ul>
+<li>加法操作符（+）的用法如下所示：
+<ul>
+<li><code>var result = 1 + 2;</code></li>
+</ul>
+</li>
+<li>如果<code>两个操作符</code>都是<code>数值</code>，执行常规的加法计算，然后根据<code>下列规则返回结果</code>：
+<ul>
+<li>如果有一个操作数是 <code>NaN</code>，则结果是<code>NaN</code>；</li>
+<li>如果是 <code>Infinity</code> 加 <code>Infinity</code>，则结果是<code>Infinity</code>；</li>
+<li>如果是<code>-Infinity 加-Infinity</code>，则结果是<code>-Infinity</code>；</li>
+<li>如果是 <code>Infinity 加-Infinit</code>y，则结果是 <code>NaN</code>；</li>
+<li>如果是<code>+0 加+0</code>，则结果是<code>+0</code>；</li>
+<li>如果是<code>-0 加-0</code>，则结果是<code>-0</code>；</li>
+<li>如果是<code>+0 加-0</code>，则结果是<code>+0</code>。</li>
+</ul>
+</li>
+<li>不过，如果<code>有一个操作数</code>是<code>字符串</code>，那么就要应用如下规则：
+<ul>
+<li>如果<code>两个操作数都是字符串</code>，则将第<code>二个操作数</code>与<code>第一个操作数拼接</code>起来；</li>
+<li>如果<code>只有一个操作数是字符串</code>，则将<code>另一个操作数转换为字符串</code>，然后再将<code>两个字符串拼接 起来</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>如果有一个操作数是对象、数值或布尔值，则调用它们的 toString()方法取得相应的字符串值，然后再应用前面关于字符串的规则。</li>
+<li>对于 undefined 和 null，则分别调用 String()函数并取得字符串&quot;undefined&quot;和&quot;null&quot;。</li>
+<li>如果想先对数值执行算术计算，然后再将结果与字符串拼接起来，应该像下面这样使用圆括号：</li>
+</ul>
+<pre><code>var num1 = 5; 
+var num2 = 10; 
+var message = &quot;The sum of 5 and 10 is &quot; + (num1 + num2); 
+alert(message); //&quot;The sum of 5 and 10 is 15&quot; 
+</code></pre>
+<ol start="2">
+<li>减法</li>
+</ol>
+<ul>
+<li>减法操作符（-）是另一个极为常用的操作符</li>
+<li>var result = 2 - 1;</li>
+<li>与加法操作符类似，ECMAScript 中的减法操作符在处理各种数据类型转换时，同样需要遵循一些特殊规则:
+<ol>
+<li>如果是<code>Infinity</code> 减 <code>Infinity</code>，则结果是 <code>NaN</code>；</li>
+<li>如果是<code>-Infinity</code> 减<code>-Infinity</code>，则结果是 <code>NaN</code>；</li>
+<li>如果是 <code>Infinity</code> 减<code>-Infinity</code>，则结果是 <code>Infinity</code>；</li>
+<li>如果是<code>-Infinity</code> 减 <code>Infinity</code>，则结果是<code>-Infinity</code>；</li>
+<li>如果是<code>+0</code> 减<code>-0</code>，则结果是<code>-0</code>；</li>
+<li>如果是<code>-0</code>减<code>-0</code>，则结果是<code>+0</code>；</li>
+<li>如果有一个操作数是对象，则调用对象的 valueOf()方法以取得表示该对象的数值。如果得到</li>
+<li>的值是 NaN，则减法的结果就是 NaN。</li>
+<li>如果对象没有 valueOf()方法，则调用其 toString()方法并将得到的字符串转换为数值。</li>
+</ol>
+</li>
+</ul>
+<pre><code>var result1 = 5 - true; // 4，因为 true 被转换成了 1 
+var result2 = NaN - 1; // NaN 
+var result3 = 5 - 3; // 2 
+var result4 = 5 - &quot;&quot;; // 5，因为&quot;&quot; 被转换成了 0 
+var result5 = 5 - &quot;2&quot;; // 3，因为&quot;2&quot;被转换成了 2 
+var result6 = 5 - null; // 5，因为 null 被转换成了 0 
+</code></pre>
+<h2 id="关系操作符">关系操作符</h2>
+<ul>
+<li>小于<code>（&lt;）</code>、大于<code>（&gt;）</code>、小于等于<code>（&lt;=）</code>和大于等于<code>（&gt;=）</code>这几个关系操作符用于对两个值进行比较,这几个操作符都<code>返回</code>一个<code>布尔值</code></li>
+</ul>
+<pre><code>var result1 = 5 &gt; 3; //true 
+var result2 = 5 &lt; 3; //false 
+</code></pre>
+<ul>
+<li>当关系操作符的操作数使用了<code>非数值</code>时，也要进行数据转换或完成某些奇怪的操作。以下就是相应的规则。
+<ul>
+<li>如果<code>两个操作</code>数都是<code>数值</code>，则执行<code>数值比较</code>。</li>
+<li>如果<code>两个操作数</code>都是<code>字符串</code>，则<code>比较两个字符串</code>对应的<code>字符编码值</code>。</li>
+<li>如果<code>一个操作数</code>是<code>数值</code>，则将<code>另一个</code>操作数<code>转换</code>为一个<code>数值</code>，然后<code>执行数值比较</code>。</li>
+<li>如果<code>一个操作数</code>是<code>对象</code>，则调用这个对象的 <code>valueOf()方法</code>，用得到的结果按照前面的规则执行比较。如果对象<code>没有</code> valueOf()方法，则调用 toString()方法，并用得到的结果根据前面的规则执行比较。</li>
+<li>如果一个操作数是<code>布尔值</code>，则先将其<code>转换为数值</code>，然后<code>再执行比较</code>。</li>
+</ul>
+</li>
+</ul>
+<h2 id="相等操作符">相等操作符</h2>
+<ul>
+<li>相等和不相等,<code>先转换再比较</code></li>
+<li>全等和不全等,<code>仅比较而不转换</code></li>
+</ul>
+<ol>
+<li>相等和不相等</li>
+</ol>
+<ul>
+<li>相等操作符由两个<code>等于</code>号<code>（==）</code>表示，如果两个操作数相等，则返回 true。而<code>不相等操作符</code>由叹号后跟等于号<code>（!=）</code>表示，如果<code>两个操作数不相等</code>，则返回<code>true</code>。这两个操作符都会<code>先转换操作数</code>（通常称为<code>强制转型</code>），然后再<code>比较它们的相等性</code>。
+<ul>
+<li>在转换不同的数据类型时，相等和不相等操作符遵循下列<code>基本规则</code>：
+<ul>
+<li>如果有一个操作数是<code>布尔值</code>，则在比较相等性之前先将其<code>转换为数值</code>——<code>false 转换为 0</code>，而<code>true 转换为 1</code>；</li>
+<li>如果一个操作数是<code>字符串</code>，另一个操作数是<code>数值</code>，在比较相等性之前先将<code>字符串转换为数值</code>；</li>
+<li>如果一个操作数是<code>对象</code>，另一个操作数<code>不是</code>，则调用对象的 <code>valueOf()</code>方法，用得到的<code>基本类型值</code>按照前面的规则<code>进行比较</code>；</li>
+</ul>
+</li>
+<li>这两个操作符在进行比较时则要遵循下列规则。
+<ul>
+<li><code>null</code>和 <code>undefined</code>是相等的。</li>
+<li>要<code>比较相等性</code>之前，<code>不能</code>将 <code>null</code> 和<code>undefined ``转换</code>成<code>其他任何值</code>。</li>
+<li>如果有一个操作数是 <code>NaN</code>，则相等操作符返回 <code>false</code>，而<code>不相等操作符</code>返回 <code>tru</code>e。重要提示：即使<code>两个操作数</code>都是 <code>NaN</code>，<code>相等操作符</code>也返回 <code>false</code>；因为按照规则，<code>NaN 不等于 NaN</code>。</li>
+<li>如果两个操作数都是<code>对象</code>，则<code>比较</code>它们是不是<code>同一个对象</code>。如果<code>两个操作数</code>都指向<code>同一个对象</code>，则<code>相等操作符返回 true</code>；否则，<code>返回 false。</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>下表列出了一些特殊情况及比较结果：<br>
+<img src="https://miss918.cn/post-images/1589972957107.png" alt="" loading="lazy"></li>
+</ul>
+<ol start="2">
+<li>全等和不全等<br>
+全等操作符由 3 个等于号<code>（===）</code>表示，它只在两个操作数<code>未经转换</code>就相等的情况下返回<code>true</code></li>
+</ol>
+<pre><code>var result1 = (&quot;55&quot; == 55); //true，因为转换后相等
+var result2 = (&quot;55&quot; === 55); //false，因为不同的数据类型不相等
+</code></pre>
+<ul>
+<li>不全等操作符由一个叹号后跟两个等于号<code>（!==）</code>表示，它在两个操作数<code>未经转换</code>就不相等的情况下返回 true。</li>
+</ul>
+<pre><code>var result1 = (&quot;55&quot; != 55); //false，因为转换后相等
+var result2 = (&quot;55&quot; !== 55); //true，因为不同的数据类型不相等
+</code></pre>
+<ul>
+<li><code>注意:</code>null == undefined 会返回 true，因为它们是类似的值；但 null === undefined 会返回false，因为它们是不同类型的值。</li>
+</ul>
+<h2 id="条件操作符">条件操作符</h2>
+<ul>
+<li>条件操作符应该算是 ECMAScript 中最灵活的一种操作符了，而且它遵循与 Java 中的条件操作符相同的语法形式，如下面的例子所示:</li>
+</ul>
+<pre><code>variable = boolean_expression ? true_value : false_value; 
+</code></pre>
+<ul>
+<li>本质上，这行代码的含义就是基于对 <code>boolean_expression</code> 求值的结果，决定给变量 <code>variable</code></li>
+<li>赋什么值。如果求值结果为<code>true</code>，则给变量 <code>variable</code> 赋 <code>true_value</code>值；如果求值结果为 <code>false</code>，则给变量 <code>variable</code> 赋 <code>false_value</code> 值。再看一个例子：</li>
+</ul>
+<pre><code> var max = (num1 &gt; num2) ? num1 : num2; 
+</code></pre>
+<ul>
+<li>在这个例子中，<code>max</code> 中将会保存一个最大的值。这个表达式的意思是：如果<code>num1 大于 num2</code>（关</li>
+<li>系表达式返回 <code>true</code>），则将 <code>num1</code> 的值赋给 <code>max</code>；如果 num1 <code>小于或等于</code> num2（关系表达式返回 <code>false</code>），则将 <code>num2</code> 的值赋给 <code>max</code>。</li>
+</ul>
+<h2 id="赋值操作符">赋值操作符</h2>
+<ul>
+<li>简单的赋值操作符由等于号（=）表示，其作用就是把右侧的值赋给左侧的变量<br>
+<code>var num = 10;</code></li>
+<li>如果在等于号（=）前面再添加乘性操作符、加性操作符或位操作符，就可以完成复合赋值操作。这种复合赋值操作相当于是对下面常规表达式的简写形式：</li>
+</ul>
+<pre><code>var num = 10; 
+num = num + 10; 
+</code></pre>
+<ul>
+<li>其中的第二行代码可以用一个复合赋值来代替：</li>
+</ul>
+<pre><code>var num = 10; 
+num += 10; 
+</code></pre>
+<ul>
+<li>每个主要算术操作符（以及个别的其他操作符）都有对应的复合赋值操作符。这些操作符如下所示：
+<ol>
+<li>乘/赋值（*=）；</li>
+<li>除/赋值（/=）；</li>
+<li>模/赋值（%=）；</li>
+<li>加/赋值（+=）；</li>
+<li>减/赋值（=）；</li>
+<li>左移/赋值（&lt;&lt;=）；</li>
+<li>有符号右移/赋值（&gt;&gt;=）；</li>
+<li>无符号右移/赋值（&gt;&gt;&gt;=）。<br>
+<strong>设计这些操作符的主要目的就是简化赋值操作。使用它们不会带来任何性能的提升。</strong></li>
+</ol>
+</li>
+</ul>
+<h2 id="逗号操作符">逗号操作符</h2>
+<p>使用逗号操作符可以在一条语句中执行多个操作，如下面的例子所示：<br>
+<code>var num1=1, num2=2, num3=3;</code></p>
+<ul>
+<li>逗号操作符多用于声明多个变量；但除此之外，逗号操作符还可以用于赋值。在用于赋值时，逗号操作符总会返回表达式中的最后一项，如下面的例子所示：<br>
+<code>var num = (5, 1, 4, 8, 0); // num 的值为 0</code></li>
+<li>由于 0 是表达式中的最后一项，因此 num 的值就是 0。</li>
 </ul>
 
             </div>
