@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://miss918.cn</id>
     <title>Miss918</title>
-    <updated>2020-05-20T13:14:01.528Z</updated>
+    <updated>2020-05-25T14:18:18.009Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://miss918.cn"/>
     <link rel="self" href="https://miss918.cn/atom.xml"/>
@@ -30,6 +30,20 @@
         <link href="https://miss918.cn/post/java_code/">
         </link>
         <updated>2120-05-17T06:21:54.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[进来先看这个]]></title>
+        <id>https://miss918.cn/post/jin-lai-xian-kan-zhe-ge/</id>
+        <link href="https://miss918.cn/post/jin-lai-xian-kan-zhe-ge/">
+        </link>
+        <updated>2020-05-25T14:17:43.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[笔记方法]]></title>
+        <id>https://miss918.cn/post/Notes_method/</id>
+        <link href="https://miss918.cn/post/Notes_method/">
+        </link>
+        <updated>2020-05-21T03:55:51.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Markdown 教程]]></title>
